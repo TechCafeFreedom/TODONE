@@ -10,6 +10,7 @@ apply from: rootProject.file('gradle/common.gradle')
 android.dataBinding.enabled = true
 dependencies {
     implementation project(':model')
+    implementation project(':data:repository')
 
     implementation Dep.AndroidX.constraint
     implementation Dep.AndroidX.coreKtx
