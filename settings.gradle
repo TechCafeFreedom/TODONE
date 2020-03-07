@@ -1,10 +1,11 @@
 rootProject.name='Todone'
 include ':app'
 include ':buildSrc'
-include ':model'
 
 // Feature
 include ':features:profile'
 // Data
 include ':data:repository'
-
+include ':data:api'
+// Model
+include ':model'

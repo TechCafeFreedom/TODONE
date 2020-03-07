@@ -1,4 +1,5 @@
 import dependencies.Versions
+import dependencies.Dep
 
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
@@ -26,5 +27,9 @@ android {
 }
 
 dependencies {
-    implementation project(':model')
+    implementation Dep.Retrofit.retrofit
+    implementation Dep.Retrofit.coroutine
+    implementation Dep.Retrofit.converter
+    implementation Dep.OkHttp.client
+    implementation Dep.OkHttp.loggingInterceptor
 }
