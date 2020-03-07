@@ -21,4 +21,10 @@ dependencies {
     implementation Dep.AndroidX.lifecycleLiveData
     implementation Dep.AndroidX.activityKtx
     implementation Dep.AndroidX.liveDataCoreKtx
+    // DI
+    implementation Dep.Koin.koin
+    implementation Dep.Koin.viewModel
+
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 }
