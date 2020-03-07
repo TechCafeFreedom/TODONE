@@ -1,8 +1,10 @@
+import dependencies.Dep
 import dependencies.Versions
 
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion Versions.androidCompileSdkVersion
@@ -26,7 +28,11 @@ android {
 }
 
 dependencies {
-    api project(':model')
-    implementation project(':data:api')
-    implementation project(':data:db')
+    implementation project(':model')
+
+    implementation Dep.AndroidX.Room.compiler
+    implementation Dep.AndroidX.Room.coroutine
+    implementation Dep.AndroidX.Room.runtime
+
+
 }

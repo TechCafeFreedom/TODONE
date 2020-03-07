@@ -9,3 +9,4 @@ include ':data:repository'
 include ':data:api'
 // Model
 include ':model'
+include ':data:db'
