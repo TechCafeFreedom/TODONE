@@ -39,6 +39,11 @@ android {
 }
 
 dependencies {
+    implementation project(':features:profile')
+    implementation project(':data:repository')
+    implementation project(':data:api')
+    implementation project(':data:db')
+
     implementation Dep.Kotlin.stdlib
     implementation Dep.AndroidX.appCompat
     implementation Dep.AndroidX.coreKtx
