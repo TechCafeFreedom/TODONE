@@ -48,6 +48,7 @@ dependencies {
     implementation Dep.AndroidX.appCompat
     implementation Dep.AndroidX.coreKtx
     implementation Dep.AndroidX.constraint
+    implementation Dep.Koin.koin
     testImplementation Dep.Test.junit
     androidTestImplementation Dep.Test.espressoCore
     androidTestImplementation Dep.Test.androidJunit4Ktx
