@@ -4,27 +4,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
-android {
-    compileSdkVersion Versions.androidCompileSdkVersion
-    buildToolsVersion "29.0.2"
-
-    defaultConfig {
-        minSdkVersion Versions.androidMinSdkVersion
-        targetSdkVersion Versions.androidTargetSdkVersion
-        versionCode 1
-        versionName "1.0"
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-    }
-
-    buildTypes {
-        release {
-            minifyEnabled false
-        }
-    }
-
-}
-
+apply from: rootProject.file('gradle/common.gradle')
 dependencies {
 
 }
