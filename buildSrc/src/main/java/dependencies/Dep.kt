@@ -2,7 +2,7 @@ package dependencies
 
 object Dep {
     object GradlePlugin {
-        val android = "com.android.tools.build:gradle:3.6.0-rc03"
+        val android = "com.android.tools.build:gradle:3.6.1"
         val kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Kotlin.version}"
         val safeArgs = "androidx.navigation:navigation-safe-args-gradle-plugin:${AndroidX.Navigation.version}"
         val crashlytics = "com.google.firebase:firebase-crashlytics-gradle:2.0.0-beta01"
