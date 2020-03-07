@@ -1,10 +1,8 @@
-import dependencies.Dep
 import dependencies.Versions
 
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
-apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion Versions.androidCompileSdkVersion
@@ -24,23 +22,9 @@ android {
             minifyEnabled false
         }
     }
-    dataBinding {
-        enabled = true
-    }
 
 }
 
 dependencies {
-    implementation project(':model')
 
-    implementation Dep.AndroidX.constraint
-    implementation Dep.AndroidX.coreKtx
-    implementation Dep.AndroidX.appCompat
-    implementation Dep.AndroidX.recyclerView
-    implementation Dep.AndroidX.design
-    implementation Dep.AndroidX.liveDataKtx
-    implementation Dep.AndroidX.fragmentKtx
-    implementation Dep.AndroidX.lifecycleLiveData
-    implementation Dep.AndroidX.activityKtx
-    implementation Dep.AndroidX.liveDataCoreKtx
 }
