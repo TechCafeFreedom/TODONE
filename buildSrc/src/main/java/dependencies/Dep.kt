@@ -2,10 +2,9 @@ package dependencies
 
 object Dep {
     object GradlePlugin {
-        val android = "com.android.tools.build:gradle:3.6.0-rc03"
+        val android = "com.android.tools.build:gradle:3.6.1"
         val kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Kotlin.version}"
-        val safeArgs =
-            "androidx.navigation:navigation-safe-args-gradle-plugin:${AndroidX.Navigation.version}"
+        val safeArgs = "androidx.navigation:navigation-safe-args-gradle-plugin:${AndroidX.Navigation.version}"
         val crashlytics = "com.google.firebase:firebase-crashlytics-gradle:2.0.0-beta01"
     }
 
@@ -85,6 +84,14 @@ object Dep {
         val client = "com.squareup.okhttp3:okhttp:$version"
         val loggingInterceptor = "com.squareup.okhttp3:logging-interceptor:$version"
         val okio = "com.squareup.okio:okio:1.14.0"
+    }
+
+    object Retrofit {
+        val version = "2.7.2"
+        val retrofit = "com.squareup.retrofit2:retrofit:$version"
+        val converter = "com.squareup.retrofit2:converter-moshi:$version"
+        val coroutine = "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2"
+
     }
 
     val liveEvent = "com.github.hadilq.liveevent:liveevent:1.0.1"
