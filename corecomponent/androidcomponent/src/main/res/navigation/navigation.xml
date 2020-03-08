@@ -15,4 +15,8 @@
         android:id="@+id/notifications"
         android:name="com.techcafe.todone.notifications.NotificationsFragment"
         android:label="Notifications" />
+    <fragment
+        android:id="@+id/profile"
+        android:name="com.techcafe.todone.profile.ProfileFragment"
+        android:label="Profile" />
 </navigation>

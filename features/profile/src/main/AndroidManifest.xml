@@ -1,9 +1,2 @@
-<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.techcafe.profile">
-
-    <application>
-        <activity android:name=".ProfileActivity"></activity>
-    </application>
-
-</manifest>
+    package="com.techcafe.todone.profile" />
