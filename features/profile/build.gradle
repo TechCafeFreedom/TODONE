@@ -21,4 +21,5 @@ dependencies {
     implementation Dep.AndroidX.lifecycleLiveData
     implementation Dep.AndroidX.activityKtx
     implementation Dep.AndroidX.liveDataCoreKtx
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 }
