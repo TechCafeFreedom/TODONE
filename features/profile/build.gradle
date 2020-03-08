@@ -6,4 +6,23 @@ apply from: rootProject.file('gradle/common.gradle')
 dependencies {
     implementation project(':corecomponent:androidcomponent')
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation project(':model')
+    implementation project(':data:repository')
+
+    implementation Dep.AndroidX.constraint
+    implementation Dep.AndroidX.coreKtx
+    implementation Dep.AndroidX.appCompat
+    implementation Dep.AndroidX.recyclerView
+    implementation Dep.AndroidX.design
+    implementation Dep.AndroidX.liveDataKtx
+    implementation Dep.AndroidX.fragmentKtx
+    implementation Dep.AndroidX.lifecycleLiveData
+    implementation Dep.AndroidX.activityKtx
+    implementation Dep.AndroidX.liveDataCoreKtx
+    // DI
+    implementation Dep.Koin.koin
+    implementation Dep.Koin.viewModel
+
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 }

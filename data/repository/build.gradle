@@ -1,3 +1,4 @@
+import dependencies.Dep
 import dependencies.Versions
 
 apply plugin: 'com.android.library'
@@ -9,4 +10,6 @@ dependencies {
     api project(':model')
     implementation project(':data:api')
     implementation project(':data:db')
+
+    implementation Dep.Koin.koin
 }
