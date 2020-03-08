@@ -28,6 +28,8 @@ class MainActivity : AppCompatActivity() {
         actionBarDrawerToggle.syncState()
 
         nav_view.getHeaderView(0).setOnClickListener {
+//            findNavController().navigate(R.id.profile)
+            navController.navigate(R.id.profile, null)
             Toast.makeText(applicationContext, "headerだよ", Toast.LENGTH_SHORT).show()
             drawer_layout.closeDrawer(nav_view)
         }
