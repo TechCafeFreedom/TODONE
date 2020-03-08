@@ -5,4 +5,5 @@ apply plugin: 'kotlin-android-extensions'
 apply from: rootProject.file('gradle/common.gradle')
 dependencies {
     implementation project(':corecomponent:androidcomponent')
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 }
