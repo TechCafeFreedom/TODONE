@@ -1,4 +1,4 @@
-package com.techcafe.api.di
+package com.techcafe.todone.api.di
 
 import org.koin.dsl.module
 

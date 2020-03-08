@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.techcafe.profile">
+    package="com.techcafe.todone.profile">
 
     <application>
-        <activity android:name=".edit.ProfileEditActivity"></activity>
+        <activity android:name="com.techcafe.todone.profile.edit.ProfileEditActivity"></activity>
         <activity android:name=".ProfileActivity" />
     </application>
 

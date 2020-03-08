@@ -1,7 +1,7 @@
-package com.techcafe.repository.impl
+package com.techcafe.todone.repository.impl
 
 import android.util.Log
-import com.techcafe.repository.TestRepository
+import com.techcafe.todone.repository.TestRepository
 
 // TODO: 削除
 class TestRepositoryImpl : TestRepository {

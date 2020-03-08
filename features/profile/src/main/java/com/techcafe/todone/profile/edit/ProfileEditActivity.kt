@@ -1,9 +1,9 @@
-package com.techcafe.profile.edit
+package com.techcafe.todone.profile.edit
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import com.techcafe.profile.R
+import com.techcafe.todone.profile.R
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class ProfileEditActivity : AppCompatActivity() {

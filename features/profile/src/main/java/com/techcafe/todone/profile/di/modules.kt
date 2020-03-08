@@ -1,6 +1,6 @@
-package com.techcafe.profile.di
+package com.techcafe.todone.profile.di
 
-import com.techcafe.profile.edit.ProfileEditorViewModel
+import com.techcafe.todone.profile.edit.ProfileEditorViewModel
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
