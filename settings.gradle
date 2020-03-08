@@ -10,3 +10,7 @@ include ':data:api'
 // Model
 include ':model'
 include ':data:db'
+include ':corecomponent:androidcomponent'
+include ':features:home'
+include ':features:notifications'
+include ':features:now'

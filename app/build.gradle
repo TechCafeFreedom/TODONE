@@ -39,10 +39,15 @@ android {
 }
 
 dependencies {
+    implementation project(':features:home')
+    implementation project(':features:now')
+    implementation project(':features:notifications')
     implementation project(':features:profile')
+
     implementation project(':data:repository')
     implementation project(':data:api')
     implementation project(':data:db')
+    implementation project(':corecomponent:androidcomponent')
 
     implementation Dep.Kotlin.stdlib
     implementation Dep.AndroidX.appCompat
