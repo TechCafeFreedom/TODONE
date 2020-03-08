@@ -3,10 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/navigation"
     app:startDestination="@id/home">
-
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/navigation"
-    app:startDestination="@id/home">
     <fragment
         android:id="@+id/home"
         android:name="com.techcafe.todone.home.HomeFragment"
