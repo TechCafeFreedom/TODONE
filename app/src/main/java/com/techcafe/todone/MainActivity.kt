@@ -2,10 +2,12 @@ package com.techcafe.todone
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI.setupWithNavController
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.nav_drawer_header.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,5 +24,25 @@ class MainActivity : AppCompatActivity() {
         )
         drawer_layout.addDrawerListener(actionBarDrawerToggle)
         actionBarDrawerToggle.syncState()
+
+//        drawer_header_container.setOnClickListener {
+//            Toast.makeText(applicationContext, "header!", Toast.LENGTH_SHORT).show()
+//        }
+
+        nav_view.setNavigationItemSelectedListener {
+            when (it.itemId) {
+                R.id.drawer_menu_1 -> {
+                    Toast.makeText(applicationContext, "item1だよ", Toast.LENGTH_SHORT).show()
+                }
+                R.id.drawer_menu_2 -> {
+                    Toast.makeText(applicationContext, "item2だよ", Toast.LENGTH_SHORT).show()
+                }
+                R.id.drawer_menu_3 -> {
+                    Toast.makeText(applicationContext, "item3だよ", Toast.LENGTH_SHORT).show()
+                }
+            }
+            drawer_layout.closeDrawer(nav_view)
+            true
+        }
     }
 }
