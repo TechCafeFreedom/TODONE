@@ -3,7 +3,8 @@
     package="com.techcafe.profile">
 
     <application>
-        <activity android:name=".ProfileActivity"></activity>
+        <activity android:name=".edit.ProfileEditActivity"></activity>
+        <activity android:name=".ProfileActivity" />
     </application>
 
 </manifest>

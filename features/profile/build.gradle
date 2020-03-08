@@ -10,6 +10,7 @@ apply from: rootProject.file('gradle/common.gradle')
 android.dataBinding.enabled = true
 dependencies {
     implementation project(':model')
+    implementation project(':data:repository')
 
     implementation Dep.AndroidX.constraint
     implementation Dep.AndroidX.coreKtx
@@ -21,4 +22,10 @@ dependencies {
     implementation Dep.AndroidX.lifecycleLiveData
     implementation Dep.AndroidX.activityKtx
     implementation Dep.AndroidX.liveDataCoreKtx
+    // DI
+    implementation Dep.Koin.koin
+    implementation Dep.Koin.viewModel
+
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 }

@@ -13,4 +13,6 @@ dependencies {
     implementation Dep.AndroidX.Room.coroutine
     implementation Dep.AndroidX.Room.runtime
     kapt Dep.AndroidX.Room.compiler
+
+    implementation Dep.Koin.koin
 }
