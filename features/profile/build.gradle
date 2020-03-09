@@ -8,6 +8,8 @@ apply from: rootProject.file('gradle/common.gradle')
 dependencies {
     implementation project(':model')
     implementation project(':data:repository')
+    implementation project(':corecomponent:androidcomponent')
+
 
     implementation Dep.AndroidX.constraint
     implementation Dep.AndroidX.coreKtx
@@ -22,9 +24,4 @@ dependencies {
     // DI
     implementation Dep.Koin.koin
     implementation Dep.Koin.viewModel
-
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    implementation project(':corecomponent:androidcomponent')
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 }
