@@ -1,8 +1,13 @@
 rootProject.name='Todone'
 include ':app'
 include ':buildSrc'
+include ':corecomponent:androidcomponent'
+
 
 // Feature
+include ':features:home'
+include ':features:notifications'
+include ':features:now'
 include ':features:profile'
 // Data
 include ':data:repository'

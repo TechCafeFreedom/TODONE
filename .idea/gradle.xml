@@ -12,11 +12,16 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/buildSrc" />
+            <option value="$PROJECT_DIR$/corecomponent" />
+            <option value="$PROJECT_DIR$/corecomponent/androidcomponent" />
             <option value="$PROJECT_DIR$/data" />
             <option value="$PROJECT_DIR$/data/api" />
             <option value="$PROJECT_DIR$/data/db" />
             <option value="$PROJECT_DIR$/data/repository" />
             <option value="$PROJECT_DIR$/features" />
+            <option value="$PROJECT_DIR$/features/home" />
+            <option value="$PROJECT_DIR$/features/notifications" />
+            <option value="$PROJECT_DIR$/features/now" />
             <option value="$PROJECT_DIR$/features/profile" />
             <option value="$PROJECT_DIR$/model" />
           </set>

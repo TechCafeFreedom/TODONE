@@ -1,16 +1,17 @@
 import dependencies.Dep
-import dependencies.Versions
 
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
-apply plugin: 'kotlin-kapt'
 
 apply from: rootProject.file('gradle/common.gradle')
-android.dataBinding.enabled = true
 dependencies {
+    implementation project(':corecomponent:androidcomponent')
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation project(':model')
     implementation project(':data:repository')
+    implementation project(':corecomponent:androidcomponent')
+
 
     implementation Dep.AndroidX.constraint
     implementation Dep.AndroidX.coreKtx
@@ -25,7 +26,4 @@ dependencies {
     // DI
     implementation Dep.Koin.koin
     implementation Dep.Koin.viewModel
-
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 }
