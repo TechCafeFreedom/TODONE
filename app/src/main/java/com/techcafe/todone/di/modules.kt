@@ -1,9 +1,9 @@
 package com.techcafe.todone.di
 
-import com.techcafe.api.di.apiModule
-import com.techcafe.db.di.dbModule
-import com.techcafe.profile.di.profileModule
-import com.techcafe.repository.di.repositoryModule
+import com.techcafe.todone.api.di.apiModule
+import com.techcafe.todone.db.di.dbModule
+import com.techcafe.todone.profile.di.profileModule
+import com.techcafe.todone.repository.di.repositoryModule
 
 val moduleList = listOf(
     profileModule,

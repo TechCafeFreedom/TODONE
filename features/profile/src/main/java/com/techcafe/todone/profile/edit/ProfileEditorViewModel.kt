@@ -1,7 +1,7 @@
-package com.techcafe.profile.edit
+package com.techcafe.todone.profile.edit
 
 import androidx.lifecycle.ViewModel
-import com.techcafe.repository.TestRepository
+import com.techcafe.todone.repository.TestRepository
 
 // TODO: 消す
 class ProfileEditorViewModel(
