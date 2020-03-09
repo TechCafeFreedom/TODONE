@@ -8,6 +8,11 @@
 
 ## What is the value of this and can you measure success? (required)
 
+## How it was implemented
+
+## Where struggled
+
+## Reference links
 
 ## Screenshot
 
@@ -17,5 +22,5 @@ Before | After
 
 ## Notes
 
-- レビューOKならPRにApproveお願いします.
-- ２人以上Approveついたらセルフマージします.
+- If you are OK, please approve this PR.
+- If anyone approve this PR, I'll merge this PR myself.
