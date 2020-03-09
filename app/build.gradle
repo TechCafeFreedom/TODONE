@@ -53,6 +53,7 @@ dependencies {
     implementation Dep.AndroidX.appCompat
     implementation Dep.AndroidX.coreKtx
     implementation Dep.AndroidX.constraint
+    implementation Dep.AndroidX.design
     implementation Dep.Koin.koin
     implementation Dep.AndroidX.design
 
