@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-    <group android:checkableBehavior="single">
-        <item android:title="Menu1" android:id="@+id/drawer_menu_1" />
-        <item android:title="Menu2" android:id="@+id/drawer_menu_2"/>
-        <item android:title="Menu3" android:id="@+id/drawer_menu_3"/>
-    </group>
-</menu>

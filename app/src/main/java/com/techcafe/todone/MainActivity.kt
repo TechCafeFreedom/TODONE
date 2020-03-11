@@ -27,27 +27,20 @@ class MainActivity : AppCompatActivity() {
         drawer_layout.addDrawerListener(actionBarDrawerToggle)
         actionBarDrawerToggle.syncState()
 
-        nav_view.getHeaderView(0).setOnClickListener {
-//            findNavController().navigate(R.id.profile)
+        nav_header.setOnClickListener {
             navController.navigate(R.id.profile, null)
-            Toast.makeText(applicationContext, "headerだよ", Toast.LENGTH_SHORT).show()
             drawer_layout.closeDrawer(nav_view)
         }
 
-        nav_view.setNavigationItemSelectedListener {
-            when (it.itemId) {
-                R.id.drawer_menu_1 -> {
-                    Toast.makeText(applicationContext, "item1だよ", Toast.LENGTH_SHORT).show()
-                }
-                R.id.drawer_menu_2 -> {
-                    Toast.makeText(applicationContext, "item2だよ", Toast.LENGTH_SHORT).show()
-                }
-                R.id.drawer_menu_3 -> {
-                    Toast.makeText(applicationContext, "item3だよ", Toast.LENGTH_SHORT).show()
-                }
-            }
+        item_settings.setOnClickListener {
+            Toast.makeText(this, "Item Settings", Toast.LENGTH_SHORT).show()
             drawer_layout.closeDrawer(nav_view)
-            true
+        }
+        switch_settings.setOnCheckedChangeListener { _, isChecked ->
+            when (isChecked) {
+                true -> Toast.makeText(this, "ダークテーマ！", Toast.LENGTH_SHORT).show()
+                else -> Toast.makeText(this, "ダークテーマじゃない！", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 }
