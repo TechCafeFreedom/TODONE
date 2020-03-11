@@ -36,14 +36,8 @@ class MainActivity : AppCompatActivity() {
 
         nav_view.setNavigationItemSelectedListener {
             when (it.itemId) {
-                R.id.drawer_menu_1 -> {
-                    Toast.makeText(applicationContext, "item1だよ", Toast.LENGTH_SHORT).show()
-                }
-                R.id.drawer_menu_2 -> {
-                    Toast.makeText(applicationContext, "item2だよ", Toast.LENGTH_SHORT).show()
-                }
-                R.id.drawer_menu_3 -> {
-                    Toast.makeText(applicationContext, "item3だよ", Toast.LENGTH_SHORT).show()
+                R.id.drawer_menu_setting -> {
+                    Toast.makeText(applicationContext, "Settingだよ", Toast.LENGTH_SHORT).show()
                 }
             }
             drawer_layout.closeDrawer(nav_view)
