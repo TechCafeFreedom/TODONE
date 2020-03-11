@@ -3,8 +3,15 @@ import dependencies.Dep
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+kapt{
+    correctErrorTypes = true
+    Dep.Epoxy.databindingSupport
+}
 
 apply from: rootProject.file('gradle/common.gradle')
+
 android.dataBinding.enabled = true
 
 dependencies {
@@ -16,8 +23,11 @@ dependencies {
     implementation Dep.AndroidX.appCompat
     implementation Dep.AndroidX.constraint
     implementation Dep.AndroidX.recyclerView
+    implementation Dep.AndroidX.lifecycleLiveData
+    implementation Dep.AndroidX.liveDataCoreKtx
+    implementation Dep.AndroidX.liveDataKtx
 
 
     implementation Dep.Epoxy.epoxy
-    implementation Dep.Epoxy.processer
+    annotationProcessor Dep.Epoxy.processer
 }
