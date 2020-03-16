@@ -7,12 +7,12 @@
             android:icon="@drawable/ic_dashboard"
             android:title="@string/item_projects" />
         <item
-            android:id="@+id/drawer_menu_settings"
-            android:icon="@drawable/ic_settings"
-            android:title="@string/item_settings" />
-        <item
             android:id="@+id/drawer_menu_profile"
             android:icon="@drawable/ic_perm_identity"
             android:title="@string/item_profile" />
+        <item
+            android:id="@+id/drawer_menu_settings"
+            android:icon="@drawable/ic_settings"
+            android:title="@string/item_settings" />
     </group>
 </menu>

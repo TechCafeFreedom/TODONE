@@ -15,3 +15,5 @@ include ':data:api'
 // Model
 include ':model'
 include ':data:db'
+include ':features:settings'
+include ':features:projects'

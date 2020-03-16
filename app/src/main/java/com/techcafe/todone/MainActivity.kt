@@ -1,10 +1,8 @@
 package com.techcafe.todone
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI.setupWithNavController
 import kotlinx.android.synthetic.main.activity_main.*
@@ -34,13 +32,11 @@ class MainActivity : AppCompatActivity() {
 
         nav_view.setNavigationItemSelectedListener {
             when (it.itemId) {
-                R.id.drawer_menu_projects -> Toast.makeText(this, "Projects", Toast.LENGTH_SHORT)
-                    .show()
-                R.id.drawer_menu_settings -> Toast.makeText(this, "Settings", Toast.LENGTH_SHORT)
-                    .show()
-                R.id.drawer_menu_profile -> Toast.makeText(this, "Profile", Toast.LENGTH_SHORT)
-                    .show()
+                R.id.drawer_menu_projects -> navController.navigate(R.id.projects)
+                R.id.drawer_menu_settings -> navController.navigate(R.id.settings)
+                R.id.drawer_menu_profile -> navController.navigate(R.id.profile)
             }
+            drawer_layout.closeDrawer(nav_view)
             true
         }
 
