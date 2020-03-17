@@ -27,4 +27,8 @@
         android:id="@+id/projects"
         android:name="com.techcafe.todone.projects.ProjectsFragment"
         android:label="Profile" />
+    <fragment
+        android:id="@+id/aboutapp"
+        android:name="com.techcafe.todone.aboutapp.AboutAppFragment"
+        android:label="AboutApp" />
 </navigation>
