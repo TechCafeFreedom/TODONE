@@ -1,10 +1,8 @@
 package com.techcafe.todone
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI.setupWithNavController
 import kotlinx.android.synthetic.main.activity_main.*
@@ -27,20 +25,21 @@ class MainActivity : AppCompatActivity() {
         drawer_layout.addDrawerListener(actionBarDrawerToggle)
         actionBarDrawerToggle.syncState()
 
-        nav_header.setOnClickListener {
+        nav_view.getHeaderView(0).setOnClickListener {
             navController.navigate(R.id.profile, null)
             drawer_layout.closeDrawer(nav_view)
         }
 
-        item_settings.setOnClickListener {
-            Toast.makeText(this, "Item Settings", Toast.LENGTH_SHORT).show()
-            drawer_layout.closeDrawer(nav_view)
-        }
-        switch_settings.setOnCheckedChangeListener { _, isChecked ->
-            when (isChecked) {
-                true -> Toast.makeText(this, "ダークテーマ！", Toast.LENGTH_SHORT).show()
-                else -> Toast.makeText(this, "ダークテーマじゃない！", Toast.LENGTH_SHORT).show()
+        nav_view.setNavigationItemSelectedListener {
+            when (it.itemId) {
+                R.id.drawer_menu_projects -> navController.navigate(R.id.projects)
+                R.id.drawer_menu_settings -> navController.navigate(R.id.settings)
+                R.id.drawer_menu_profile -> navController.navigate(R.id.profile)
+                R.id.drawer_menu_about_app -> navController.navigate(R.id.aboutapp)
             }
+            drawer_layout.closeDrawer(nav_view)
+            true
         }
+
     }
 }

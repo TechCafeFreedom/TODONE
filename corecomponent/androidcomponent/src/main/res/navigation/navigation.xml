@@ -19,4 +19,16 @@
         android:id="@+id/profile"
         android:name="com.techcafe.todone.profile.ProfileFragment"
         android:label="Profile" />
+    <fragment
+        android:id="@+id/settings"
+        android:name="com.techcafe.todone.settings.SettingsFragment"
+        android:label="Profile" />
+    <fragment
+        android:id="@+id/projects"
+        android:name="com.techcafe.todone.projects.ProjectsFragment"
+        android:label="Profile" />
+    <fragment
+        android:id="@+id/aboutapp"
+        android:name="com.techcafe.todone.aboutapp.AboutAppFragment"
+        android:label="AboutApp" />
 </navigation>

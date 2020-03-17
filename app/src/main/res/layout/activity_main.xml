@@ -52,57 +52,9 @@
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
+        app:headerLayout="@layout/nav_drawer_header"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_gravity="start">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="8dp">
-
-            <include
-                android:id="@+id/nav_header"
-                layout="@layout/nav_drawer_header" />
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/item_settings"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/nav_header">
-
-                <ImageView
-                    android:id="@+id/settings_icon"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:src="@drawable/ic_settings"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:text="@string/settings"
-                    android:textColor="@android:color/black"
-                    android:textSize="16sp"
-                    app:layout_constraintBottom_toBottomOf="@+id/settings_icon"
-                    app:layout_constraintStart_toEndOf="@+id/settings_icon"
-                    app:layout_constraintTop_toTopOf="@+id/settings_icon" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <Switch
-                android:id="@+id/switch_settings"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="16dp"
-                android:text="@string/dark_theme"
-                android:textSize="16sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/item_settings" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </com.google.android.material.navigation.NavigationView>
+        android:layout_gravity="start"
+        app:menu="@menu/menu_nav_drawer" />
 </androidx.drawerlayout.widget.DrawerLayout>

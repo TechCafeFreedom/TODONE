@@ -9,4 +9,5 @@ dependencies {
     implementation project(':corecomponent:androidcomponent')
 
     implementation Dep.AndroidX.appCompat
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 }
