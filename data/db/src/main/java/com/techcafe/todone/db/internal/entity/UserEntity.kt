@@ -13,7 +13,5 @@ data class UserEntity(
     @ColumnInfo(name = "user_name")
     val name:String,
     @ColumnInfo(name = "user_thumbnail")
-    val thumbnail:String,
-    @Embedded
-    val project:List<ProjectEntity>
+    val thumbnail:String
 )
