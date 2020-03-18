@@ -21,8 +21,10 @@ data class ProjectEntity(
     val title: String,
     @ColumnInfo(name = "project_desc")
     val description: String,
+    @Embedded
     @ColumnInfo(name = "project_created")
     val createdAt: DateTime,
+    @Embedded
     @ColumnInfo(name = "project_updated")
     val updatedAt: DateTime,
     @Relation(
