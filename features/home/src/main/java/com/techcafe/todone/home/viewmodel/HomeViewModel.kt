@@ -6,4 +6,5 @@ import androidx.lifecycle.ViewModel
 class HomeViewModel : ViewModel() {
 
     val list = mutableListOf<MutableLiveData<String>>()
+
 }

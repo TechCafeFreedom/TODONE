@@ -7,7 +7,6 @@ apply plugin: 'kotlin-kapt'
 
 kapt{
     correctErrorTypes = true
-    Dep.Epoxy.databindingSupport
 }
 
 apply from: rootProject.file('gradle/common.gradle')
@@ -26,8 +25,4 @@ dependencies {
     implementation Dep.AndroidX.lifecycleLiveData
     implementation Dep.AndroidX.liveDataCoreKtx
     implementation Dep.AndroidX.liveDataKtx
-
-
-    implementation Dep.Epoxy.epoxy
-    annotationProcessor Dep.Epoxy.processer
 }
