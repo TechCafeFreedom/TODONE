@@ -1,10 +1,8 @@
 package com.techcafe.todone
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI.setupWithNavController
 import kotlinx.android.synthetic.main.activity_main.*
@@ -28,26 +26,20 @@ class MainActivity : AppCompatActivity() {
         actionBarDrawerToggle.syncState()
 
         nav_view.getHeaderView(0).setOnClickListener {
-//            findNavController().navigate(R.id.profile)
             navController.navigate(R.id.profile, null)
-            Toast.makeText(applicationContext, "headerだよ", Toast.LENGTH_SHORT).show()
             drawer_layout.closeDrawer(nav_view)
         }
 
         nav_view.setNavigationItemSelectedListener {
             when (it.itemId) {
-                R.id.drawer_menu_1 -> {
-                    Toast.makeText(applicationContext, "item1だよ", Toast.LENGTH_SHORT).show()
-                }
-                R.id.drawer_menu_2 -> {
-                    Toast.makeText(applicationContext, "item2だよ", Toast.LENGTH_SHORT).show()
-                }
-                R.id.drawer_menu_3 -> {
-                    Toast.makeText(applicationContext, "item3だよ", Toast.LENGTH_SHORT).show()
-                }
+                R.id.drawer_menu_projects -> navController.navigate(R.id.projects)
+                R.id.drawer_menu_settings -> navController.navigate(R.id.settings)
+                R.id.drawer_menu_profile -> navController.navigate(R.id.profile)
+                R.id.drawer_menu_about_app -> navController.navigate(R.id.aboutapp)
             }
             drawer_layout.closeDrawer(nav_view)
             true
         }
+
     }
 }

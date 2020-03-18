@@ -1,4 +1,12 @@
 package com.techcafe.todone.home.viewmodel
 
-class HomeViewModel {
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+
+class HomeViewModel : ViewModel() {
+
+    val list = mutableListOf<MutableLiveData<String>>()
+
+
+
 }

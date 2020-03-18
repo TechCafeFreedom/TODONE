@@ -3,13 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="viewmodel"
+            type="com.techcafe.todone.home.viewmodel.HomeViewModel" />
     </data>
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".HomeFragment">
+        tools:context=".ui.HomeFragment">
 
         <com.airbnb.epoxy.EpoxyRecyclerView
             android:id="@+id/recycler_view"

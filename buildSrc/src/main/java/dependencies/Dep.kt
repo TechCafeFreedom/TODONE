@@ -1,10 +1,29 @@
+
 package dependencies
 
 object Dep {
+    private object LibsVersion{
+        val Kotlin = "1.3.61"
+        val KotlinCoroutines = "1.3.3"
+        val Room = "2.2.3"
+        val Navigation = "2.2.1"
+        val Okhttp = "4.0.1"
+        val Retrofit = "2.7.2"
+        val Hyperion = "0.9.27"
+        val Koin = "2.0.1"
+        val Epoxy = "3.9.0"
+        val Coil = "0.9.5"
+        val MockK = "1.9.3"
+        val Timber = "5.0.0-SNAPSHOT"
+        val Stetho = "1.5.1"
+        val DynamicFutureFragment = "2.3.0-SNAPSHOT"
+        val LiveData = "2.2.0"
+    }
+
     object GradlePlugin {
         val android = "com.android.tools.build:gradle:3.6.1"
-        val kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Kotlin.version}"
-        val safeArgs = "androidx.navigation:navigation-safe-args-gradle-plugin:${AndroidX.Navigation.version}"
+        val kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${LibsVersion.Kotlin}"
+        val safeArgs = "androidx.navigation:navigation-safe-args-gradle-plugin:${LibsVersion.Navigation}"
         val crashlytics = "com.google.firebase:firebase-crashlytics-gradle:2.0.0-beta01"
     }
 
@@ -19,10 +38,10 @@ object Dep {
         val liveDataTestingKtx = "com.jraska.livedata:testing-ktx:1.1.0"
         val espressoCore = "androidx.test.espresso:espresso-core:3.3.0-alpha02"
         val coroutinesTest =
-            "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Kotlin.coroutinesVersion}"
+            "org.jetbrains.kotlinx:kotlinx-coroutines-test:${LibsVersion.KotlinCoroutines}"
         val kotlinTestAssertions = "io.kotlintest:kotlintest-assertions:3.1.10"
         val testingKtx =
-            "androidx.navigation:navigation-testing-ktx:${AndroidX.Navigation.version}"
+            "androidx.navigation:navigation-testing-ktx:${LibsVersion.Navigation}"
     }
 
     object AndroidX {
@@ -36,38 +55,37 @@ object Dep {
         val activityKtx = "androidx.activity:activity-ktx:1.1.0"
         val fragmentKtx = "androidx.fragment:fragment-ktx:1.2.2"
 
-        val lifecycleLiveData = "androidx.lifecycle:lifecycle-livedata:2.2.0"
-        val liveDataCoreKtx = "androidx.lifecycle:lifecycle-livedata-core-ktx:2.2.0"
-        val liveDataKtx = "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
+        val lifecycleLiveData = "androidx.lifecycle:lifecycle-livedata:${LibsVersion.LiveData}"
+        val liveDataCoreKtx = "androidx.lifecycle:lifecycle-livedata-core-ktx:${LibsVersion.LiveData}"
+        val liveDataKtx = "androidx.lifecycle:lifecycle-livedata-ktx:${LibsVersion.LiveData}"
 
         object Room {
-            val version = "2.2.3"
-            val compiler = "androidx.room:room-compiler:$version"
-            val runtime = "androidx.room:room-runtime:$version"
-            val coroutine = "androidx.room:room-ktx:$version"
+            val compiler = "androidx.room:room-compiler:${LibsVersion.Room}"
+            val runtime = "androidx.room:room-runtime:${LibsVersion.Room}"
+            val coroutine = "androidx.room:room-ktx:${LibsVersion.Room}"
         }
 
         object Navigation {
-            val version = "2.2.1"
-            val runtimeKtx = "androidx.navigation:navigation-runtime-ktx:$version"
-            val fragmentKtx = "androidx.navigation:navigation-fragment-ktx:$version"
-            val uiKtx = "androidx.navigation:navigation-ui-ktx:$version"
+            val runtimeKtx = "androidx.navigation:navigation-runtime-ktx:${LibsVersion.Navigation}"
+            val fragmentKtx = "androidx.navigation:navigation-fragment-ktx:${LibsVersion.Navigation}"
+            val uiKtx = "androidx.navigation:navigation-ui-ktx:${LibsVersion.Navigation}"
             val dynamicFeaturesFragment =
-                "androidx.navigation:navigation-dynamic-features-fragment:2.3.0-SNAPSHOT"
+                "androidx.navigation:navigation-dynamic-features-fragment:${LibsVersion.DynamicFutureFragment}"
             val dynamicFeaturesRuntime =
-                "androidx.navigation:navigation-dynamic-features-runtime:2.3.0-SNAPSHOT"
+                "androidx.navigation:navigation-dynamic-features-runtime:${LibsVersion.DynamicFutureFragment}"
         }
     }
 
     object Kotlin {
-        val version = "1.3.61"
-        val stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$version"
-        val coroutinesVersion = "1.3.3"
-        val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
+
+        val stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${LibsVersion.Kotlin}"
+
+        val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${LibsVersion.KotlinCoroutines}"
         val androidCoroutinesDispatcher =
-            "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
+            "org.jetbrains.kotlinx:kotlinx-coroutines-android:${LibsVersion.KotlinCoroutines}"
         val coroutinesReactive =
-            "org.jetbrains.kotlinx:kotlinx-coroutines-reactive:$coroutinesVersion"
+            "org.jetbrains.kotlinx:kotlinx-coroutines-reactive:${LibsVersion.KotlinCoroutines}"
+
     }
 
     object Firebase {
@@ -80,16 +98,14 @@ object Dep {
     }
 
     object OkHttp {
-        val version = "4.0.1"
-        val client = "com.squareup.okhttp3:okhttp:$version"
-        val loggingInterceptor = "com.squareup.okhttp3:logging-interceptor:$version"
+        val client = "com.squareup.okhttp3:okhttp:${LibsVersion.Okhttp}"
+        val loggingInterceptor = "com.squareup.okhttp3:logging-interceptor:${LibsVersion.Okhttp}"
         val okio = "com.squareup.okio:okio:1.14.0"
     }
 
     object Retrofit {
-        val version = "2.7.2"
-        val retrofit = "com.squareup.retrofit2:retrofit:$version"
-        val converter = "com.squareup.retrofit2:converter-moshi:$version"
+        val retrofit = "com.squareup.retrofit2:retrofit:${LibsVersion.Retrofit}"
+        val converter = "com.squareup.retrofit2:converter-moshi:${LibsVersion.Retrofit}"
         val coroutine = "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2"
 
     }
@@ -97,59 +113,54 @@ object Dep {
     val liveEvent = "com.github.hadilq.liveevent:liveevent:1.0.1"
 
     object LeakCanary {
-        val version = "2.1"
-        val leakCanary = "com.squareup.leakcanary:leakcanary-android:$version"
+        val LibsVersion = "2.1"
+        val leakCanary = "com.squareup.leakcanary:leakcanary-android:$LibsVersion"
     }
 
     object Stetho {
-        val stetho = "com.facebook.stetho:stetho:1.5.1"
+        val stetho = "com.facebook.stetho:stetho:${LibsVersion.Stetho}"
     }
 
     object Hyperion {
-        val version = "0.9.27"
+
         val hyperionPlugins = listOf(
-            "com.willowtreeapps.hyperion:hyperion-core:$version",
-            "com.willowtreeapps.hyperion:hyperion-attr:$version",
-            "com.willowtreeapps.hyperion:hyperion-measurement:$version",
-            "com.willowtreeapps.hyperion:hyperion-disk:$version",
-            "com.willowtreeapps.hyperion:hyperion-recorder:$version",
-            "com.willowtreeapps.hyperion:hyperion-phoenix:$version",
-            "com.willowtreeapps.hyperion:hyperion-crash:$version",
-            "com.willowtreeapps.hyperion:hyperion-shared-preferences:$version",
-            "com.willowtreeapps.hyperion:hyperion-geiger-counter:$version",
-            "com.willowtreeapps.hyperion:hyperion-build-config:$version",
-            "com.willowtreeapps.hyperion:hyperion-plugin:$version"
+            "com.willowtreeapps.hyperion:hyperion-core:${LibsVersion.Hyperion}",
+            "com.willowtreeapps.hyperion:hyperion-attr:${LibsVersion.Hyperion}",
+            "com.willowtreeapps.hyperion:hyperion-measurement:${LibsVersion.Hyperion}",
+            "com.willowtreeapps.hyperion:hyperion-disk:${LibsVersion.Hyperion}",
+            "com.willowtreeapps.hyperion:hyperion-recorder:${LibsVersion.Hyperion}",
+            "com.willowtreeapps.hyperion:hyperion-phoenix:${LibsVersion.Hyperion}",
+            "com.willowtreeapps.hyperion:hyperion-crash:${LibsVersion.Hyperion}",
+            "com.willowtreeapps.hyperion:hyperion-shared-preferences:${LibsVersion.Hyperion}",
+            "com.willowtreeapps.hyperion:hyperion-geiger-counter:${LibsVersion.Hyperion}",
+            "com.willowtreeapps.hyperion:hyperion-build-config:${LibsVersion.Hyperion}",
+            "com.willowtreeapps.hyperion:hyperion-plugin:${LibsVersion.Hyperion}"
         )
     }
 
     object Koin {
-        val version = "2.0.1"
-        val koin = "org.koin:koin-android:$version"
-        val lifecycle = "org.koin:koin-android-scope:$version"
-        val viewModel = "org.koin:koin-android-viewmodel:$version"
-
+        val koin = "org.koin:koin-android:${LibsVersion.Koin}"
+        val lifecycle = "org.koin:koin-android-scope:${LibsVersion.Koin}"
+        val viewModel = "org.koin:koin-android-viewmodel:${LibsVersion.Koin}"
     }
 
     object Epoxy {
-        val version = "3.9.0"
-        val epoxy = "com.airbnb.android:epoxy:$version"
-        val processer = "com.airbnb.android:epoxy-processor:$version"
-        val databindingSupport = "com.airbnb.android:epoxy-databinding:3.9.0"
+        val epoxy = "com.airbnb.android:epoxy:${LibsVersion.Epoxy}"
+        val processer = "com.airbnb.android:epoxy-processor:${LibsVersion.Epoxy}"
     }
 
     object Coil {
-        val version = "0.9.5"
-        val coil = "io.coil-kt:coil:$version"
+        val coil = "io.coil-kt:coil:${LibsVersion.Coil}"
     }
 
     object MockK {
-        val jvm = "io.mockk:mockk:1.9.3"
-        val common = "io.mockk:mockk-common:1.9.3"
+        val jvm = "io.mockk:mockk:${LibsVersion.MockK}"
+        val common = "io.mockk:mockk-common:${LibsVersion.MockK}"
     }
 
     object Timber {
-        val common = "com.jakewharton.timber:timber-common:5.0.0-SNAPSHOT"
-        val jdk = "com.jakewharton.timber:timber-jdk:5.0.0-SNAPSHOT"
-        val android = "com.jakewharton.timber:timber-android:5.0.0-SNAPSHOT"
+        val common = "com.jakewharton.timber:timber-common:${LibsVersion.Timber}"
+        val jdk = "com.jakewharton.timber:timber-jdk:${LibsVersion.Timber}"
+        val android = "com.jakewharton.timber:timber-android:${LibsVersion.Timber}"
     }
 }
