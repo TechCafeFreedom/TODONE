@@ -147,6 +147,7 @@ object Dep {
     object Epoxy {
         val epoxy = "com.airbnb.android:epoxy:${LibsVersion.Epoxy}"
         val processer = "com.airbnb.android:epoxy-processor:${LibsVersion.Epoxy}"
+        val databindingSupport = "com.airbnb.android:epoxy-databinding:3.9.0"
     }
 
     object Coil {
