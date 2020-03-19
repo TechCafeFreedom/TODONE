@@ -14,9 +14,11 @@ class ProfileEditorViewModel(
 ) : ViewModel() {
     val a = "test"
 
-    init {
+    fun TestMessage(){
         viewModelScope.launch {
-            repository.test()
+            withContext(Dispatchers.IO){
+                repository.test()
+            }
         }
     }
 }

@@ -26,5 +26,6 @@ class ProfileFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val model:ProfileEditorViewModel = getViewModel()
+        model.TestMessage()
     }
 }

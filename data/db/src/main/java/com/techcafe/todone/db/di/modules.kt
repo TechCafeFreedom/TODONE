@@ -8,5 +8,5 @@ import org.koin.dsl.module
 
 val dbModule = module {
     single { Room.databaseBuilder(androidContext(),LocalDataBase::class.java,"LocalDataBase.db").build() }
-    factory { get<LocalDataBase>().UserEntityDao() }
+    factory<UserEntityDao> { get<LocalDataBase>().UserEntityDao() }
 }
