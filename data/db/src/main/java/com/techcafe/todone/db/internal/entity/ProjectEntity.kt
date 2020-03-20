@@ -14,28 +14,28 @@ import androidx.room.*
 data class ProjectEntity(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "project_id")
-    val id: String,
+    val id: Int,
     @ColumnInfo(name = "author_id")
     val author: String,
     @ColumnInfo(name = "project_title")
     val title: String,
     @ColumnInfo(name = "project_desc")
     val description: String,
-    @Embedded
+//    @Embedded
     @ColumnInfo(name = "project_created")
-    val createdAt: DateTime,
-    @Embedded
+    val projectCreatedAt: DateTime,
+//    @Embedded
     @ColumnInfo(name = "project_updated")
-    val updatedAt: DateTime,
-    @Relation(
-        entity = LabelEntity::class,
-        parentColumn = "project_id",
-        entityColumn = "label_id",
-        associateBy = Junction(
-            value = ProjectWithLabel::class,
-            parentColumn = "project_withid",
-            entityColumn = "label_withid"
-        )
-    )
-    val label:List<LabelEntity>
+    val projectUpdatedAt: DateTime
+//    @Relation(
+//        entity = LabelEntity::class,
+//        parentColumn = "project_id",
+//        entityColumn = "label_id",
+//        associateBy = Junction(
+//            value = ProjectWithLabel::class,
+//            parentColumn = "project_withid",
+//            entityColumn = "label_withid"
+//        )
+//    )
+//    val label:List<LabelEntity>
 )

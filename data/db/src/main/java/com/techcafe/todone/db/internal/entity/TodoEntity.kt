@@ -15,7 +15,7 @@ import androidx.room.*
 data class TodoEntity(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "todo_id")
-    val id: String,
+    val id: Int,
     @ColumnInfo(name = "parent_project_id")
     val projectId: String,
     @ColumnInfo(name = "todo_title")
@@ -27,18 +27,18 @@ data class TodoEntity(
     @ColumnInfo(name = "todo_state")
     val state: String,
     @ColumnInfo(name = "todo_createdAt")
-    val createdAt: String,
+    val createdAt: DateTime,
     @ColumnInfo(name = "todo_updatedAt")
-    val updatedAt: String,
-    @Relation(
-        entity = LabelEntity::class,
-        parentColumn = "todo_id",
-        entityColumn = "label_id",
-        associateBy = Junction(
-            value = ProjectWithLabel::class,
-            parentColumn = "todo_withid",
-            entityColumn = "label_withid"
-        )
-    )
-    val label:List<LabelEntity>
+    val updatedAt: DateTime
+//    @Relation(
+//        entity = LabelEntity::class,
+//        parentColumn = "todo_id",
+//        entityColumn = "label_id",
+//        associateBy = Junction(
+//            value = ProjectWithLabel::class,
+//            parentColumn = "todo_withid",
+//            entityColumn = "label_withid"
+//        )
+//    )
+//    val label:List<LabelEntity>
 )
