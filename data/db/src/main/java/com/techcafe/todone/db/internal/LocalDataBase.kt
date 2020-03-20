@@ -11,15 +11,15 @@ import com.techcafe.todone.db.internal.entity.TodoEntity
 import com.techcafe.todone.db.internal.entity.UserEntity
 
 @Database(
-    entities = arrayOf(
+    entities = [
         UserEntity::class,
-        ProjectEntity::class,
-        TodoEntity::class
-    ),
-    version = 1
+        TodoEntity::class,
+        ProjectEntity::class
+    ],
+    version = 5
 )
 @TypeConverters(DateConverter::class)
 abstract class LocalDataBase: RoomDatabase(){
-    abstract fun UserEntityDao(): UserEntityDao
-    abstract fun ProjectEntityDao(): ProjectEntityDao
+    abstract fun userEntityDao(): UserEntityDao
+    abstract fun projectEntityDao(): ProjectEntityDao
 }
