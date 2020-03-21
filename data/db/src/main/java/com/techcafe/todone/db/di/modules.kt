@@ -8,7 +8,7 @@ import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
 
 val dbModule = module {
-    single { Room.databaseBuilder(androidContext(),LocalDataBase::class.java,"UserDataBase.db").build() }
-    factory<UserEntityDao> { get<LocalDataBase>().UserEntityDao() }
-    factory<ProjectEntityDao> {get<LocalDataBase>().ProjectEntityDao() }
+    single { Room.databaseBuilder(androidContext(),LocalDataBase::class.java,"LocalDataBase.db").fallbackToDestructiveMigration().build() }
+    factory { get<LocalDataBase>().userEntityDao() }
+    factory { get<LocalDataBase>().projectEntityDao() }
 }

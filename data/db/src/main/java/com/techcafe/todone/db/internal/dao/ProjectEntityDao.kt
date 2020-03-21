@@ -13,8 +13,8 @@ interface ProjectEntityDao {
     fun insertTodo(vararg todo: TodoEntity)
     @Transaction
     @Query("SELECT * FROM project_item")
-    fun getAllTodo():List<ProjectWithTodo>
+    fun getProjectTodoList():List<ProjectWithTodo>
     @Transaction
     @Query("SELECT * FROM todo_item WHERE parent_project_id = :projectId")
-    fun getTodoList(projectId: String): List<TodoEntity>
+    fun searchTodoList(projectId: String): List<TodoEntity>
 }
