@@ -27,7 +27,7 @@ class TestRepositoryImpl(
             ProjectEntity(
                 id = UUID.randomUUID().variant(),
                 author = "0",
-                title = "Washing",
+                title = "Brushing",
                 description = "Teeeth",
                 projectUpdatedAt = DateTime("20200320") ,
                 projectCreatedAt = DateTime("20200320")
