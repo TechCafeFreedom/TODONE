@@ -47,6 +47,7 @@ dependencies {
     implementation project(':features:projects')
     implementation project(':features:settings')
     implementation project(':features:aboutapp')
+    implementation project(':features:auth')
 
     implementation project(':data:repository')
     implementation project(':data:api')
