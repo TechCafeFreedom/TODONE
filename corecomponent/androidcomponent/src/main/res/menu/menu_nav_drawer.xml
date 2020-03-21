@@ -25,4 +25,13 @@
         android:id="@+id/drawer_menu_about_app"
         android:icon="@drawable/ic_local_cafe"
         android:title="@string/item_about_app" />
+    <!-- 開発用 -->
+    <group
+        android:id="@+id/play_ground"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/drawer_menu_sign_in"
+            android:icon="@drawable/ic_play_ground"
+            android:title="@string/title_sign_in" />
+    </group>
 </menu>

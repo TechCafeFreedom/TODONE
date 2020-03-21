@@ -31,4 +31,8 @@
         android:id="@+id/aboutapp"
         android:name="com.techcafe.todone.aboutapp.AboutAppFragment"
         android:label="AboutApp" />
+    <activity
+        android:id="@+id/sign_in"
+        android:name="com.techcafe.todone.auth.SignInActivity"
+        android:label="SignIn" />
 </navigation>
