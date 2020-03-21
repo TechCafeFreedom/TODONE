@@ -26,6 +26,7 @@ object Dep {
         val kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${LibsVersion.Kotlin}"
         val safeArgs =
             "androidx.navigation:navigation-safe-args-gradle-plugin:${LibsVersion.Navigation}"
+        val playServices = "com.google.gms:google-services:4.3.3"
         val crashlytics = "com.google.firebase:firebase-crashlytics-gradle:2.0.0-beta01"
     }
 

@@ -1,2 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.techcafe.todone.auth" />
+    package="com.techcafe.todone.auth">
+
+    <application>
+        <activity
+            android:name=".SignInActivity"
+            android:label="@string/title_sign_in" />
+    </application>
+
+</manifest>
