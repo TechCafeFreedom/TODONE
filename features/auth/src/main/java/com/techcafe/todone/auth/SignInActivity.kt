@@ -21,7 +21,7 @@ class SignInActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in)
 
-        if (FirebaseAuth.getInstance() != null) {
+        if (FirebaseAuth.getInstance().currentUser != null) {
             // TODO: MainActivityへ遷移する
         } else {
             val configs = arrayListOf(
