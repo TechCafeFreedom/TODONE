@@ -35,4 +35,8 @@
         android:id="@+id/sign_in"
         android:name="com.techcafe.todone.auth.SignInActivity"
         android:label="SignIn" />
+    <activity
+        android:id="@+id/main"
+        android:name="com.techcafe.todone.MainActivity"
+        android:label="Main" />
 </navigation>
