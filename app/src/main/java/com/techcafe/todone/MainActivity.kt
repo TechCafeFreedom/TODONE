@@ -40,6 +40,5 @@ class MainActivity : AppCompatActivity() {
             drawer_layout.closeDrawer(nav_view)
             true
         }
-
     }
 }
