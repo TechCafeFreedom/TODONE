@@ -72,6 +72,7 @@ dependencies {
     debugImplementation Dep.Hyperion.recorder
     debugImplementation Dep.Hyperion.disk
     debugImplementation Dep.Hyperion.timber
+    debugImplementation Dep.Hyperion.http
 
     testImplementation Dep.Test.junit
     androidTestImplementation Dep.Test.espressoCore

@@ -17,6 +17,7 @@ object Dep {
         val Stetho = "1.5.1"
         val DynamicFutureFragment = "2.3.0-SNAPSHOT"
         val LiveData = "2.2.0"
+        val JitPack = "1.0.0"
     }
 
     object GradlePlugin {
@@ -141,6 +142,9 @@ object Dep {
             "com.willowtreeapps.hyperion:hyperion-build-config:${LibsVersion.Hyperion}"
         val plugin = "com.willowtreeapps.hyperion:hyperion-plugin:${LibsVersion.Hyperion}"
         val timber = "com.willowtreeapps.hyperion:hyperion-timber:${LibsVersion.Hyperion}"
+
+        val http = "com.github.Commit451:Hyperion-Chuck:${LibsVersion.JitPack}"
+
     }
 
     object Koin {
