@@ -1,7 +1,7 @@
 package dependencies
 
 object Dep {
-    private object LibsVersion{
+    private object LibsVersion {
         val Kotlin = "1.3.61"
         val KotlinCoroutines = "1.3.3"
         val Room = "2.2.3"
@@ -22,7 +22,8 @@ object Dep {
     object GradlePlugin {
         val android = "com.android.tools.build:gradle:3.6.1"
         val kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${LibsVersion.Kotlin}"
-        val safeArgs = "androidx.navigation:navigation-safe-args-gradle-plugin:${LibsVersion.Navigation}"
+        val safeArgs =
+            "androidx.navigation:navigation-safe-args-gradle-plugin:${LibsVersion.Navigation}"
         val crashlytics = "com.google.firebase:firebase-crashlytics-gradle:2.0.0-beta01"
     }
 
@@ -55,7 +56,8 @@ object Dep {
         val fragmentKtx = "androidx.fragment:fragment-ktx:1.2.2"
 
         val lifecycleLiveData = "androidx.lifecycle:lifecycle-livedata:${LibsVersion.LiveData}"
-        val liveDataCoreKtx = "androidx.lifecycle:lifecycle-livedata-core-ktx:${LibsVersion.LiveData}"
+        val liveDataCoreKtx =
+            "androidx.lifecycle:lifecycle-livedata-core-ktx:${LibsVersion.LiveData}"
         val liveDataKtx = "androidx.lifecycle:lifecycle-livedata-ktx:${LibsVersion.LiveData}"
 
         object Room {
@@ -66,7 +68,8 @@ object Dep {
 
         object Navigation {
             val runtimeKtx = "androidx.navigation:navigation-runtime-ktx:${LibsVersion.Navigation}"
-            val fragmentKtx = "androidx.navigation:navigation-fragment-ktx:${LibsVersion.Navigation}"
+            val fragmentKtx =
+                "androidx.navigation:navigation-fragment-ktx:${LibsVersion.Navigation}"
             val uiKtx = "androidx.navigation:navigation-ui-ktx:${LibsVersion.Navigation}"
             val dynamicFeaturesFragment =
                 "androidx.navigation:navigation-dynamic-features-fragment:${LibsVersion.DynamicFutureFragment}"
@@ -79,7 +82,8 @@ object Dep {
 
         val stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${LibsVersion.Kotlin}"
 
-        val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${LibsVersion.KotlinCoroutines}"
+        val coroutines =
+            "org.jetbrains.kotlinx:kotlinx-coroutines-core:${LibsVersion.KotlinCoroutines}"
         val androidCoroutinesDispatcher =
             "org.jetbrains.kotlinx:kotlinx-coroutines-android:${LibsVersion.KotlinCoroutines}"
         val coroutinesReactive =
@@ -122,19 +126,21 @@ object Dep {
 
     object Hyperion {
 
-        val hyperionPlugins = listOf(
-            "com.willowtreeapps.hyperion:hyperion-core:${LibsVersion.Hyperion}",
-            "com.willowtreeapps.hyperion:hyperion-attr:${LibsVersion.Hyperion}",
-            "com.willowtreeapps.hyperion:hyperion-measurement:${LibsVersion.Hyperion}",
-            "com.willowtreeapps.hyperion:hyperion-disk:${LibsVersion.Hyperion}",
-            "com.willowtreeapps.hyperion:hyperion-recorder:${LibsVersion.Hyperion}",
-            "com.willowtreeapps.hyperion:hyperion-phoenix:${LibsVersion.Hyperion}",
-            "com.willowtreeapps.hyperion:hyperion-crash:${LibsVersion.Hyperion}",
-            "com.willowtreeapps.hyperion:hyperion-shared-preferences:${LibsVersion.Hyperion}",
-            "com.willowtreeapps.hyperion:hyperion-geiger-counter:${LibsVersion.Hyperion}",
-            "com.willowtreeapps.hyperion:hyperion-build-config:${LibsVersion.Hyperion}",
-            "com.willowtreeapps.hyperion:hyperion-plugin:${LibsVersion.Hyperion}"
-        )
+        val core = "com.willowtreeapps.hyperion:hyperion-core:${LibsVersion.Hyperion}"
+        val attr = "com.willowtreeapps.hyperion:hyperion-attr:${LibsVersion.Hyperion}"
+        val measurement =
+            "com.willowtreeapps.hyperion:hyperion-measurement:${LibsVersion.Hyperion}"
+        val disk = "com.willowtreeapps.hyperion:hyperion-disk:${LibsVersion.Hyperion}"
+        val recorder = "com.willowtreeapps.hyperion:hyperion-recorder:${LibsVersion.Hyperion}"
+        val phoenix = "com.willowtreeapps.hyperion:hyperion-phoenix:${LibsVersion.Hyperion}"
+        val crash = "com.willowtreeapps.hyperion:hyperion-crash:${LibsVersion.Hyperion}"
+        val preferences =
+            "com.willowtreeapps.hyperion:hyperion-shared-preferences:${LibsVersion.Hyperion}"
+        val counter = "com.willowtreeapps.hyperion:hyperion-geiger-counter:${LibsVersion.Hyperion}"
+        val buildConfig =
+            "com.willowtreeapps.hyperion:hyperion-build-config:${LibsVersion.Hyperion}"
+        val plugin = "com.willowtreeapps.hyperion:hyperion-plugin:${LibsVersion.Hyperion}"
+        val timber = "com.willowtreeapps.hyperion:hyperion-timber:${LibsVersion.Hyperion}"
     }
 
     object Koin {

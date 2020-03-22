@@ -60,6 +60,19 @@ dependencies {
     implementation Dep.Koin.koin
     implementation Dep.AndroidX.design
 
+    debugImplementation Dep.Hyperion.core
+    debugImplementation Dep.Hyperion.attr
+    debugImplementation Dep.Hyperion.crash
+    debugImplementation Dep.Hyperion.counter
+    debugImplementation Dep.Hyperion.phoenix
+    debugImplementation Dep.Hyperion.preferences
+    debugImplementation Dep.Hyperion.plugin
+    debugImplementation Dep.Hyperion.buildConfig
+    debugImplementation Dep.Hyperion.measurement
+    debugImplementation Dep.Hyperion.recorder
+    debugImplementation Dep.Hyperion.disk
+    debugImplementation Dep.Hyperion.timber
+
     testImplementation Dep.Test.junit
     androidTestImplementation Dep.Test.espressoCore
     androidTestImplementation Dep.Test.androidJunit4Ktx
