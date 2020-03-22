@@ -14,5 +14,8 @@ interface UserEntityDao {
     fun insertProject(vararg project:ProjectEntity)
     @Transaction
     @Query("SELECT * FROM user_item")
-    fun getAllUser():List<UserWithProject>
+    fun getProjectUserList():List<UserWithProject>
+    @Transaction
+    @Query("SELECT * FROM project_item WHERE author_id = :userId")
+    fun searchProjectList(userId: String): List<ProjectEntity>
 }

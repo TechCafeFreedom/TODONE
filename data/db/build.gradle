@@ -15,4 +15,13 @@ dependencies {
     kapt Dep.AndroidX.Room.compiler
 
     implementation Dep.Koin.koin
+    android {
+        defaultConfig {
+            javaCompileOptions{
+                annotationProcessorOptions{
+                    arguments = ["room.schemaLocation":"$projectDir/schemas".toString()]
+                }
+            }
+        }
+    }
 }

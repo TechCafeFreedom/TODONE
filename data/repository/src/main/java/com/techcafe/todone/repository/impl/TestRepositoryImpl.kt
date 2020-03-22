@@ -27,7 +27,7 @@ class TestRepositoryImpl(
             ProjectEntity(
                 id = UUID.randomUUID().variant(),
                 author = "0",
-                title = "Washing",
+                title = "Brushing",
                 description = "Teeeth",
                 projectUpdatedAt = DateTime("20200320") ,
                 projectCreatedAt = DateTime("20200320")
@@ -45,7 +45,7 @@ class TestRepositoryImpl(
                 createdAt = DateTime("20200320")
             )
         )
-        val data = userDao.getAllUser()
+        val data = userDao.getProjectUserList()
         Log.d("TestForLDB_user", data[0].user.toString())
         Log.d("TestForLDB_user", data[0].projectsAndTodo[0].project.toString())
         Log.d("TestForLDB_user", data[0].projectsAndTodo[0].todoList.toString())
