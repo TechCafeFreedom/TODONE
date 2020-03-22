@@ -1,7 +1,6 @@
 package com.techcafe.todone.db.internal.entity
 
 import androidx.room.ColumnInfo
-import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
@@ -9,9 +8,9 @@ import androidx.room.PrimaryKey
 data class UserEntity(
     @PrimaryKey
     @ColumnInfo(name = "user_id")
-    val id:String,
+    val id: String,
     @ColumnInfo(name = "user_name")
-    val name:String,
+    val name: String,
     @ColumnInfo(name = "user_thumbnail")
-    val thumbnail:String
+    val thumbnail: String
 )

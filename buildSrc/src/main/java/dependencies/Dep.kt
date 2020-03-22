@@ -10,6 +10,7 @@ object Dep {
         val Okhttp = "4.0.1"
         val Retrofit = "2.7.2"
         val Hyperion = "0.9.27"
+        val Ktlint = "0.36.0"
         val Koin = "2.0.1"
         val Epoxy = "3.9.0"
         val Coil = "0.9.5"
@@ -90,7 +91,6 @@ object Dep {
             "org.jetbrains.kotlinx:kotlinx-coroutines-android:${LibsVersion.KotlinCoroutines}"
         val coroutinesReactive =
             "org.jetbrains.kotlinx:kotlinx-coroutines-reactive:${LibsVersion.KotlinCoroutines}"
-
     }
 
     object Firebase {
@@ -112,7 +112,6 @@ object Dep {
         val retrofit = "com.squareup.retrofit2:retrofit:${LibsVersion.Retrofit}"
         val converter = "com.squareup.retrofit2:converter-moshi:${LibsVersion.Retrofit}"
         val coroutine = "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2"
-
     }
 
     val liveEvent = "com.github.hadilq.liveevent:liveevent:1.0.1"
@@ -145,7 +144,10 @@ object Dep {
         val timber = "com.willowtreeapps.hyperion:hyperion-timber:${LibsVersion.Hyperion}"
 
         val http = "com.github.Commit451:Hyperion-Chuck:${LibsVersion.JitPack}"
+    }
 
+    object Ktlint {
+        val ktlint = "com.pinterest:ktlint:${LibsVersion.Ktlint}"
     }
 
     object Koin {
