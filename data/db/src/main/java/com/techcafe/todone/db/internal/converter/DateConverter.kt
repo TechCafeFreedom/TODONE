@@ -5,7 +5,7 @@ import com.techcafe.todone.db.internal.entity.DateTime
 
 class DateConverter {
     @TypeConverter
-    fun ConvertDate(value:String?):DateTime? = value?.let{ DateTime(it) }
+    fun ConvertDate(value: String?): DateTime? = value?.let { DateTime(it) }
     @TypeConverter
-    fun DateConvertTo(date:DateTime?):String? = date?.date
+    fun DateConvertTo(date: DateTime?): String? = date?.date
 }

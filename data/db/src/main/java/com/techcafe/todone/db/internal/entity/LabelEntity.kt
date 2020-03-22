@@ -1,11 +1,11 @@
-//package com.techcafe.todone.db.internal.entity
+// package com.techcafe.todone.db.internal.entity
 //
-//import androidx.room.ColumnInfo
-//import androidx.room.Entity
-//import androidx.room.PrimaryKey
+// import androidx.room.ColumnInfo
+// import androidx.room.Entity
+// import androidx.room.PrimaryKey
 //
-//@Entity(tableName = "label_item")
-//data class LabelEntity(
+// @Entity(tableName = "label_item")
+// data class LabelEntity(
 //    @PrimaryKey(autoGenerate = true)
 //    @ColumnInfo(name = "label_id")
 //    val id: String,
@@ -19,4 +19,4 @@
 //    val createdAt: DateTime,
 //    @ColumnInfo(name = "label_updated")
 //    val updatedAt: DateTime
-//)
+// )
