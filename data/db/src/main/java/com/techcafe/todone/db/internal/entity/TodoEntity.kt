@@ -8,7 +8,7 @@ import androidx.room.*
             entity = ProjectEntity::class,
             parentColumns = arrayOf("project_id"),
             childColumns = arrayOf("parent_project_id"),
-            onDelete = ForeignKey.CASCADE //ユーザーが削除されると子も削除される(話し合う必要有り)
+            onDelete = ForeignKey.CASCADE // ユーザーが削除されると子も削除される(話し合う必要有り)
         )
     )
 )

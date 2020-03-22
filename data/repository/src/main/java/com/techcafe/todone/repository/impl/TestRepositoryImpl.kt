@@ -12,8 +12,8 @@ import java.util.*
 
 // TODO: 削除
 class TestRepositoryImpl(
-    private val userDao:UserEntityDao,
-    private val projDao:ProjectEntityDao
+    private val userDao: UserEntityDao,
+    private val projDao: ProjectEntityDao
 ) : TestRepository {
     override suspend fun test() {
         userDao.insertUser(
@@ -29,7 +29,7 @@ class TestRepositoryImpl(
                 author = "0",
                 title = "Brushing",
                 description = "Teeeth",
-                projectUpdatedAt = DateTime("20200320") ,
+                projectUpdatedAt = DateTime("20200320"),
                 projectCreatedAt = DateTime("20200320")
             )
         )
@@ -41,7 +41,7 @@ class TestRepositoryImpl(
                 content = "Teeeth",
                 deadline = "today",
                 state = "0",
-                updatedAt = DateTime("20200320") ,
+                updatedAt = DateTime("20200320"),
                 createdAt = DateTime("20200320")
             )
         )
