@@ -6,6 +6,6 @@ import com.techcafe.todone.db.internal.middleEntity.UserWithProject
 // TODO: 削除
 interface TestRepository {
     suspend fun test()
-    suspend fun addTestUserData(userName:String,userId:String)
+    suspend fun addTestUserData()
     suspend fun showAllTestData():List<UserWithProject>
 }

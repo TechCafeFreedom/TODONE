@@ -23,8 +23,10 @@ class TestRepositoryImpl(
         Log.d("TestForLDB_user", data[0].projectsAndTodo[0].todoList.toString())
     }
     //表示テストのためのテストデータ登録関数
-    override suspend fun addTestUserData(userName: String,userId:String) {
+    override suspend fun addTestUserData() {
         val projectId:Int = UUID.randomUUID().variant()
+        val userId:String = UUID.randomUUID().toString()
+        val userName = "TestUser$userId"
         userDao.insertUser(
             UserEntity(
                 id = userId,
@@ -45,7 +47,7 @@ class TestRepositoryImpl(
         projDao.insertTodo(
             TodoEntity(
                 id = UUID.randomUUID().variant(),
-                projectId = projectId.toString(),
+                projectId = projectId,
                 title = "Washing",
                 content = "TeeethTodo",
                 deadline = "today",
