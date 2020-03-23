@@ -15,12 +15,10 @@ class ProfileEditorViewModel(
     val userName = "Saito"
     val userId = "1"
 
-    fun TestMessage() {
-        viewModelScope.launch {
-            withContext(Dispatchers.IO){
-                repository.addTestUserData(userName,userId)
-                Log.d("RepositoryTest",repository.showAllTestData().toString())
-            }
+    fun testMessage() {
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.addTestUserData(userName,userId)
+            Log.d("RepositoryTest",repository.showAllTestData().toString())
         }
     }
 }
