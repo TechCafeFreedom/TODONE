@@ -2,9 +2,14 @@
     <string name="app_name">Todone</string>
     <string name="title_home">Home</string>
     <string name="title_now">Now</string>
+    <string name="title_sign_in">SignIn</string>
     <string name="title_notifications">Notifications</string>
     <string name="item_projects">Projects</string>
     <string name="item_settings">Settings</string>
     <string name="item_profile">Profile</string>
     <string name="item_about_app">About TODONE</string>
+
+    <!-- Error Message-->
+    <string name="network_error">ネットワークエラーが発生しました</string>
+    <string name="unknown_error">不明なエラーが発生しました</string>
 </resources>

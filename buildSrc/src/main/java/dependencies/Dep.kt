@@ -26,6 +26,7 @@ object Dep {
         val kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${LibsVersion.Kotlin}"
         val safeArgs =
             "androidx.navigation:navigation-safe-args-gradle-plugin:${LibsVersion.Navigation}"
+        val playServices = "com.google.gms:google-services:4.3.3"
         val crashlytics = "com.google.firebase:firebase-crashlytics-gradle:2.0.0-beta01"
     }
 
@@ -96,6 +97,7 @@ object Dep {
         val core = "com.google.firebase:firebase-core:16.0.4"
         val firestoreKtx = "com.google.firebase:firebase-firestore-ktx:20.2.0"
         val auth = "com.google.firebase:firebase-auth:18.1.0"
+        val ui = "com.firebaseui:firebase-ui-auth:4.3.1"
         val crashlytics = "com.google.firebase:firebase-crashlytics:17.0.0-beta01"
         val analytics = "com.google.firebase:firebase-analytics:17.2.2"
         val messaging = "com.google.firebase:firebase-messaging:20.1.0"
