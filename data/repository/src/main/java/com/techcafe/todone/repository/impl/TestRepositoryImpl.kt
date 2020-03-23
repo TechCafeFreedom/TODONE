@@ -7,6 +7,7 @@ import com.techcafe.todone.db.internal.entity.DateTime
 import com.techcafe.todone.db.internal.entity.ProjectEntity
 import com.techcafe.todone.db.internal.entity.TodoEntity
 import com.techcafe.todone.db.internal.entity.UserEntity
+import com.techcafe.todone.db.internal.middleEntity.UserWithProject
 import com.techcafe.todone.repository.TestRepository
 import java.util.*
 
@@ -16,19 +17,29 @@ class TestRepositoryImpl(
     private val projDao: ProjectEntityDao
 ) : TestRepository {
     override suspend fun test() {
+        val data = userDao.getProjectUserList()
+        Log.d("TestForLDB_user", data[0].user.toString())
+        Log.d("TestForLDB_user", data[0].projectsAndTodo[0].project.toString())
+        Log.d("TestForLDB_user", data[0].projectsAndTodo[0].todoList.toString())
+    }
+    //表示テストのためのテストデータ登録関数
+    override suspend fun addTestUserData() {
+        val projectId:Int = UUID.randomUUID().variant()
+        val userId:String = UUID.randomUUID().toString()
+        val userName = "TestUser$userId"
         userDao.insertUser(
             UserEntity(
-                id = "0",
-                name = "Kinoshita",
+                id = userId,
+                name = userName,
                 thumbnail = "https://images.dog.ceo/breeds/husky/n02110185_11626.jpg"
             )
         )
         userDao.insertProject(
             ProjectEntity(
-                id = UUID.randomUUID().variant(),
-                author = "0",
+                id = projectId,
+                author = userId,
                 title = "Brushing",
-                description = "Teeeth",
+                description = "BrushTeeethProject",
                 projectUpdatedAt = DateTime("20200320"),
                 projectCreatedAt = DateTime("20200320")
             )
@@ -36,18 +47,16 @@ class TestRepositoryImpl(
         projDao.insertTodo(
             TodoEntity(
                 id = UUID.randomUUID().variant(),
-                projectId = "2",
+                projectId = projectId,
                 title = "Washing",
-                content = "Teeeth",
+                content = "TeeethTodo",
                 deadline = "today",
                 state = "0",
                 updatedAt = DateTime("20200320"),
                 createdAt = DateTime("20200320")
             )
         )
-        val data = userDao.getProjectUserList()
-        Log.d("TestForLDB_user", data[0].user.toString())
-        Log.d("TestForLDB_user", data[0].projectsAndTodo[0].project.toString())
-        Log.d("TestForLDB_user", data[0].projectsAndTodo[0].todoList.toString())
     }
+    override suspend fun showAllTestData(): List<UserWithProject> = userDao.getProjectUserList()
 }
+

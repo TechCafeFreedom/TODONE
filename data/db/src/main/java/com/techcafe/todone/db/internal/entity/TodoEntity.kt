@@ -17,7 +17,7 @@ data class TodoEntity(
     @ColumnInfo(name = "todo_id")
     val id: Int,
     @ColumnInfo(name = "parent_project_id")
-    val projectId: String,
+    val projectId: Int,
     @ColumnInfo(name = "todo_title")
     val title: String,
     @ColumnInfo(name = "todo_content")
