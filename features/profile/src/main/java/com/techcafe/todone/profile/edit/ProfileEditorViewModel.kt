@@ -12,12 +12,9 @@ import kotlinx.coroutines.withContext
 class ProfileEditorViewModel(
     private val repository: TestRepository
 ) : ViewModel() {
-    val userName = "Saito"
-    val userId = "1"
-
     fun testMessage() {
         viewModelScope.launch(Dispatchers.IO) {
-            repository.addTestUserData(userName,userId)
+            repository.addTestUserData()
             Log.d("RepositoryTest",repository.showAllTestData().toString())
         }
     }
