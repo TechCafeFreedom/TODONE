@@ -5,7 +5,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.techcafe.todone.repository.TestRepository
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
@@ -16,7 +15,7 @@ class ProfileEditorViewModel(
     val userName = "Saito"
     val userId = "1"
 
-    fun TestMessage(){
+    fun TestMessage() {
         viewModelScope.launch {
             withContext(Dispatchers.IO){
                 repository.addTestUserData(userName,userId)

@@ -13,8 +13,8 @@ import java.util.*
 
 // TODO: 削除
 class TestRepositoryImpl(
-    private val userDao:UserEntityDao,
-    private val projDao:ProjectEntityDao
+    private val userDao: UserEntityDao,
+    private val projDao: ProjectEntityDao
 ) : TestRepository {
     override suspend fun test() {
         val data = userDao.getProjectUserList()
@@ -38,7 +38,7 @@ class TestRepositoryImpl(
                 author = userId,
                 title = "Brushing",
                 description = "BrushTeeethProject",
-                projectUpdatedAt = DateTime("20200320") ,
+                projectUpdatedAt = DateTime("20200320"),
                 projectCreatedAt = DateTime("20200320")
             )
         )
@@ -50,11 +50,11 @@ class TestRepositoryImpl(
                 content = "TeeethTodo",
                 deadline = "today",
                 state = "0",
-                updatedAt = DateTime("20200320") ,
+                updatedAt = DateTime("20200320"),
                 createdAt = DateTime("20200320")
             )
         )
     }
-
     override suspend fun showAllTestData(): List<UserWithProject> = userDao.getProjectUserList()
 }
+

@@ -19,7 +19,7 @@ import com.techcafe.todone.db.internal.entity.UserEntity
     version = 5
 )
 @TypeConverters(DateConverter::class)
-abstract class LocalDataBase: RoomDatabase(){
+abstract class LocalDataBase : RoomDatabase() {
     abstract fun userEntityDao(): UserEntityDao
     abstract fun projectEntityDao(): ProjectEntityDao
 }

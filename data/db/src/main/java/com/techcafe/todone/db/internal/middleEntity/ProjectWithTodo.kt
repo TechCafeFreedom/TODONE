@@ -8,6 +8,6 @@ import com.techcafe.todone.db.internal.entity.TodoEntity
 data class ProjectWithTodo(
     @Embedded
     val project: ProjectEntity,
-    @Relation(parentColumn = "project_id",entityColumn = "parent_project_id")
+    @Relation(parentColumn = "project_id", entityColumn = "parent_project_id")
     val todoList: List<TodoEntity>
 )
