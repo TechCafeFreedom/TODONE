@@ -5,9 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-
 import com.techcafe.todone.home.databinding.FragmentHomeBinding
-import com.techcafe.todone.home.viewmodel.HomeViewModel
 
 /**
  * A simple [Fragment] subclass.
@@ -25,6 +23,5 @@ class HomeFragment : Fragment() {
     ): View? {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
-
     }
 }

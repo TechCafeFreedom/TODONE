@@ -25,4 +25,5 @@ dependencies {
     implementation Dep.AndroidX.lifecycleLiveData
     implementation Dep.AndroidX.liveDataCoreKtx
     implementation Dep.AndroidX.liveDataKtx
+    implementation Dep.AndroidX.design
 }
