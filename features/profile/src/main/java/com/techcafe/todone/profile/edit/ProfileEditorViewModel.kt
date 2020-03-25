@@ -1,5 +1,6 @@
 package com.techcafe.todone.profile.edit
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.techcafe.todone.repository.TestRepository
@@ -11,13 +12,10 @@ import kotlinx.coroutines.withContext
 class ProfileEditorViewModel(
     private val repository: TestRepository
 ) : ViewModel() {
-    val a = "test"
-
-    fun TestMessage() {
-        viewModelScope.launch {
-            withContext(Dispatchers.IO) {
-                repository.test()
-            }
+    fun testMessage() {
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.addTestUserData()
+            Log.d("RepositoryTest",repository.showAllTestData().toString())
         }
     }
 }

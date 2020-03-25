@@ -1,0 +1,17 @@
+import dependencies.Dep
+
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+apply from: rootProject.file('gradle/common.gradle')
+android.dataBinding.enabled = true
+dependencies {
+    implementation project(':corecomponent:androidcomponent')
+
+    implementation Dep.Firebase.ui
+    implementation Dep.Firebase.auth
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+}

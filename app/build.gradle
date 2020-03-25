@@ -46,6 +46,7 @@ dependencies {
     implementation project(':features:projects')
     implementation project(':features:settings')
     implementation project(':features:aboutapp')
+    implementation project(':features:auth')
 
     implementation project(':data:repository')
     implementation project(':data:api')
@@ -80,4 +81,8 @@ dependencies {
     implementation Dep.AndroidX.Navigation.runtimeKtx
     implementation Dep.AndroidX.Navigation.fragmentKtx
     implementation Dep.AndroidX.Navigation.uiKtx
+
+    implementation Dep.Firebase.analytics
 }
+
+apply plugin: 'com.google.gms.google-services'
