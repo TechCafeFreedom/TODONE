@@ -9,4 +9,7 @@ val dbModule = module {
     single { Room.databaseBuilder(androidContext(), LocalDataBase::class.java, "LocalDataBase.db").fallbackToDestructiveMigration().build() }
     factory { get<LocalDataBase>().userEntityDao() }
     factory { get<LocalDataBase>().projectEntityDao() }
+    factory { get<LocalDataBase>().todoLabelEntityDao() }
+    factory { get<LocalDataBase>().labelEntityDao() }
+    factory { get<LocalDataBase>().projectLabelEntityDao() }
 }
