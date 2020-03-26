@@ -4,22 +4,25 @@ import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.techcafe.todone.db.internal.converter.DateConverter
-import com.techcafe.todone.db.internal.dao.ProjectEntityDao
-import com.techcafe.todone.db.internal.dao.UserEntityDao
-import com.techcafe.todone.db.internal.entity.ProjectEntity
-import com.techcafe.todone.db.internal.entity.TodoEntity
-import com.techcafe.todone.db.internal.entity.UserEntity
+import com.techcafe.todone.db.internal.dao.*
+import com.techcafe.todone.db.internal.entity.*
 
 @Database(
     entities = [
         UserEntity::class,
         TodoEntity::class,
-        ProjectEntity::class
+        ProjectEntity::class,
+        LabelEntity::class,
+        TodoWithLabel::class,
+        ProjectWithLabel::class
     ],
-    version = 5
+    version = 1
 )
 @TypeConverters(DateConverter::class)
 abstract class LocalDataBase : RoomDatabase() {
     abstract fun userEntityDao(): UserEntityDao
     abstract fun projectEntityDao(): ProjectEntityDao
+    abstract fun todoLabelEntityDao(): TodoWithLabelDao
+    abstract fun labelEntityDao(): LabelEntityDao
+    abstract fun projectLabelEntityDao(): ProjectWithLabelDao
 }
