@@ -1,7 +1,6 @@
 package com.techcafe.todone.db.internal.converter
 
 import androidx.room.TypeConverter
-import com.techcafe.todone.db.internal.entity.DateTime
 
 class DateConverter {
     @TypeConverter
