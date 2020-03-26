@@ -1,6 +1,7 @@
 package com.techcafe.todone.db.internal.entity
 
 import androidx.room.*
+import com.techcafe.todone.db.internal.converter.DateTime
 
 @Entity(tableName = "project_item",
     foreignKeys = arrayOf(
@@ -21,21 +22,8 @@ data class ProjectEntity(
     val title: String,
     @ColumnInfo(name = "project_desc")
     val description: String,
-//    @Embedded
     @ColumnInfo(name = "project_created")
     val projectCreatedAt: DateTime,
-//    @Embedded
     @ColumnInfo(name = "project_updated")
     val projectUpdatedAt: DateTime
-//    @Relation(
-//        entity = LabelEntity::class,
-//        parentColumn = "project_id",
-//        entityColumn = "label_id",
-//        associateBy = Junction(
-//            value = ProjectWithLabel::class,
-//            parentColumn = "project_withid",
-//            entityColumn = "label_withid"
-//        )
-//    )
-//    val label:List<LabelEntity>
 )

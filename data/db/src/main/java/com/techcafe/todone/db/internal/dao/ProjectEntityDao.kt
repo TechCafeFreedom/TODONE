@@ -8,6 +8,7 @@ import com.techcafe.todone.db.internal.middleEntity.ProjectWithTodo
 interface ProjectEntityDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertTodo(vararg todo: TodoEntity)
+
     @Transaction
     @Query("SELECT * FROM project_item")
     fun getProjectTodoList(): List<ProjectWithTodo>
