@@ -6,7 +6,11 @@
     <fragment
         android:id="@+id/home"
         android:name="com.techcafe.todone.home.HomeFragment"
-        android:label="Home" />
+        android:label="Home" >
+        <action
+            android:id="@+id/action_home_fragment_to_sign_in_graph"
+            app:destination="@id/navigation_sign_in" />
+    </fragment>
     <fragment
         android:id="@+id/now"
         android:name="com.techcafe.todone.now.NowFragment"
@@ -31,12 +35,5 @@
         android:id="@+id/aboutapp"
         android:name="com.techcafe.todone.aboutapp.AboutAppFragment"
         android:label="AboutApp" />
-    <activity
-        android:id="@+id/sign_in"
-        android:name="com.techcafe.todone.auth.SignInActivity"
-        android:label="SignIn" />
-    <activity
-        android:id="@+id/main"
-        android:name="com.techcafe.todone.MainActivity"
-        android:label="Main" />
+    <include app:graph="@navigation/navigation_sign_in" />
 </navigation>
