@@ -19,6 +19,7 @@ object Dep {
         val DynamicFutureFragment = "2.3.0-SNAPSHOT"
         val LiveData = "2.2.0"
         val JitPack = "1.0.0"
+        val Groupie = "2.7.0"
     }
 
     object GradlePlugin {
@@ -175,5 +176,11 @@ object Dep {
         val common = "com.jakewharton.timber:timber-common:${LibsVersion.Timber}"
         val jdk = "com.jakewharton.timber:timber-jdk:${LibsVersion.Timber}"
         val android = "com.jakewharton.timber:timber-android:${LibsVersion.Timber}"
+    }
+
+    object Groupie {
+        val groupie = "com.xwray:groupie:${LibsVersion.Groupie}"
+        val androidExtentions = "com.xwray:groupie-kotlin-android-extensions:${LibsVersion.Groupie}"
+        val databinding = "com.xwray:groupie-databinding:${LibsVersion.Groupie}"
     }
 }
