@@ -1,6 +1,7 @@
 package com.techcafe.todone.settings
 
 import com.airbnb.epoxy.TypedEpoxyController
+import com.techcafe.todone.androidcomponent.largeTitle
 
 class SettingController : TypedEpoxyController<List<Pair<String, String>>>() {
     override fun buildModels(data: List<Pair<String, String>>?) {
