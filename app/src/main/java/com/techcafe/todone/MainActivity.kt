@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.drawer_menu_settings -> navController.navigate(R.id.settings)
                 R.id.drawer_menu_profile -> navController.navigate(R.id.profile)
                 R.id.drawer_menu_about_app -> navController.navigate(R.id.aboutapp)
-                R.id.drawer_menu_sign_in -> navController.navigate(R.id.sign_in)
+                R.id.drawer_menu_sign_in -> navController.navigate(R.id.action_home_fragment_to_sign_in_graph)
             }
             drawer_layout.closeDrawer(nav_view)
             true
