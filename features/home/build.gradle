@@ -26,4 +26,7 @@ dependencies {
     implementation Dep.AndroidX.liveDataCoreKtx
     implementation Dep.AndroidX.liveDataKtx
     implementation Dep.AndroidX.design
+    implementation Dep.Epoxy.epoxy
+    implementation Dep.Epoxy.databindingSupport
+    kapt Dep.Epoxy.processer
 }
