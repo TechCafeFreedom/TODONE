@@ -13,6 +13,7 @@ dependencies {
     implementation Dep.AndroidX.appCompat
     implementation Dep.AndroidX.constraint
     implementation Dep.AndroidX.fragmentKtx
+    implementation Dep.AndroidX.swipeRefresh
     implementation Dep.AndroidX.coreKtx
     implementation Dep.AndroidX.liveDataCoreKtx
     implementation Dep.AndroidX.liveDataKtx
