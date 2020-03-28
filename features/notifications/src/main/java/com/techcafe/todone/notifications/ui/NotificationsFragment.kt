@@ -25,9 +25,8 @@ class NotificationsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_notifications, container, false)
-        binding = FragmentNotificationsBinding.bind(view)
-        return view
+        binding = FragmentNotificationsBinding.inflate(inflater)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
