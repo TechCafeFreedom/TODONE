@@ -1,4 +1,4 @@
-package com.techcafe.todone.notifications
+package com.techcafe.todone.notifications.model
 
 data class Notification(
     val taskName: String,

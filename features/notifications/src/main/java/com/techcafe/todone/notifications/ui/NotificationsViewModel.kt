@@ -1,6 +1,7 @@
-package com.techcafe.todone.notifications
+package com.techcafe.todone.notifications.ui
 
 import androidx.lifecycle.ViewModel
+import com.techcafe.todone.notifications.model.Notification
 
 class NotificationsViewModel : ViewModel() {
     val notificationsList = arrayListOf(

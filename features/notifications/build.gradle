@@ -13,5 +13,6 @@ dependencies {
     implementation Dep.AndroidX.constraint
     implementation Dep.Groupie.groupie
     implementation Dep.Groupie.databinding
-    implementation 'com.squareup.moshi:moshi:1.9.2' // Sample用
+    implementation Dep.Koin.koin
+    implementation Dep.Koin.viewModel
 }

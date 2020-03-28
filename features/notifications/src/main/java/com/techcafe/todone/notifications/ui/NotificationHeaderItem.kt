@@ -1,5 +1,6 @@
-package com.techcafe.todone.notifications
+package com.techcafe.todone.notifications.ui
 
+import com.techcafe.todone.notifications.R
 import com.techcafe.todone.notifications.databinding.NotificationHeaderItemBinding
 import com.xwray.groupie.databinding.BindableItem
 
@@ -10,7 +11,8 @@ class NotificationHeaderItem(private val headerDateText: String) :
         private const val ID = "header"
     }
 
-    override fun getLayout(): Int = R.layout.notification_header_item
+    override fun getLayout(): Int =
+        R.layout.notification_header_item
 
     override fun bind(viewBinding: NotificationHeaderItemBinding, position: Int) {
         viewBinding.headerDateText = headerDateText

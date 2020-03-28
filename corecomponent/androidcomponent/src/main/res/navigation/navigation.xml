@@ -17,7 +17,7 @@
         android:label="Now" />
     <fragment
         android:id="@+id/notifications"
-        android:name="com.techcafe.todone.notifications.NotificationsFragment"
+        android:name="com.techcafe.todone.notifications.ui.NotificationsFragment"
         android:label="Notifications" />
     <fragment
         android:id="@+id/profile"

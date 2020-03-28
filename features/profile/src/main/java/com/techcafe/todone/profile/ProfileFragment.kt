@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.techcafe.todone.profile.edit.ProfileEditorViewModel
-import org.koin.android.ext.android.get
 import org.koin.android.viewmodel.ext.android.getViewModel
 
 /**

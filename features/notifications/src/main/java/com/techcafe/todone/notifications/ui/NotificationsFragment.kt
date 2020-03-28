@@ -1,4 +1,4 @@
-package com.techcafe.todone.notifications
+package com.techcafe.todone.notifications.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,16 +7,16 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.techcafe.todone.notifications.R
 import com.techcafe.todone.notifications.databinding.FragmentNotificationsBinding
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.GroupieViewHolder
+import org.koin.android.viewmodel.ext.android.viewModel
 
 
 class NotificationsFragment : Fragment() {
 
-    private val viewModel: NotificationsViewModel by lazy {
-        ViewModelProvider(this).get(NotificationsViewModel::class.java)
-    }
+    private val viewModel: NotificationsViewModel by viewModel()
     private val notificationsAdapter = GroupAdapter<GroupieViewHolder>()
     private lateinit var binding: FragmentNotificationsBinding
 
