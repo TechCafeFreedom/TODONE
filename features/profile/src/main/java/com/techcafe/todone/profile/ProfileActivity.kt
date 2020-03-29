@@ -5,7 +5,9 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.techcafe.todone.profile.edit.EditProfileActivity
+import kotlinx.android.synthetic.main.activity_edit_profile.*
 import kotlinx.android.synthetic.main.activity_profile.*
+import kotlinx.android.synthetic.main.activity_profile.back_button
 
 class ProfileActivity : AppCompatActivity() {
 
@@ -18,9 +20,7 @@ class ProfileActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
 
-        back_button.setOnClickListener {
-            finish()
-        }
+        back_button.setOnClickListener { finish() }
 
         edit_button.setOnClickListener {
             val intent = EditProfileActivity.createIntent(this)
