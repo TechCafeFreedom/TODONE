@@ -3,11 +3,16 @@ import dependencies.Dep
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 apply from: rootProject.file('gradle/common.gradle')
+android.dataBinding.enabled = true
 dependencies {
     implementation project(':model')
     api Dep.AndroidX.Navigation.fragmentKtx
     api Dep.AndroidX.Navigation.uiKtx
     api Dep.AndroidX.Navigation.runtimeKtx
+
+    implementation Dep.Epoxy.databindingSupport
+    kapt Dep.Epoxy.processer
 }

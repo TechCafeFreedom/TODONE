@@ -1,20 +1,31 @@
 package com.techcafe.todone.settings
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.techcafe.todone.R
+import com.techcafe.todone.settings.databinding.FragmentSettingsBinding
 
-class SettingsFragment : Fragment() {
+class SettingsFragment : Fragment(R.layout.fragment_settings) {
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_settings, container, false)
+    lateinit var binding: FragmentSettingsBinding
+    lateinit var controller: SettingController
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding = FragmentSettingsBinding.bind(view)
+        binding.lifecycleOwner = viewLifecycleOwner
+
+        controller = SettingController()
+
+        binding.recyclerView.also {
+            it.setController(controller)
+        }
+        val list = listOf(
+            "title" to "message",
+            "タイトル" to "メッセージ",
+            "タイトルだよ" to "メッセージだよ",
+            "あいうえお" to "かきくけこ"
+        )
+        controller.setData(list)
     }
 }
