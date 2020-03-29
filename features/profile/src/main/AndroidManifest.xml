@@ -3,7 +3,8 @@
     package="com.techcafe.todone.profile">
 
     <application>
-        <activity android:name=".ProfileActivity"></activity>
+        <activity android:name=".edit.EditProfileActivity"></activity>
+        <activity android:name=".ProfileActivity" />
     </application>
 
 </manifest>

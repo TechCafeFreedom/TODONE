@@ -4,12 +4,14 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.techcafe.todone.profile.edit.EditProfileActivity
 import kotlinx.android.synthetic.main.activity_profile.*
 
 class ProfileActivity : AppCompatActivity() {
 
     companion object {
-        fun createIntent(context: Context): Intent = Intent(context, ProfileActivity::class.java)
+        fun createIntent(context: Context): Intent =
+            Intent(context, ProfileActivity::class.java)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,6 +20,11 @@ class ProfileActivity : AppCompatActivity() {
 
         back_button.setOnClickListener {
             finish()
+        }
+
+        edit_button.setOnClickListener {
+            val intent = EditProfileActivity.createIntent(this)
+            startActivity(intent)
         }
     }
 }
