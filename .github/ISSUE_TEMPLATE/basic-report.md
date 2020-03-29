@@ -1,25 +1,23 @@
 ---
-name: basic report
-about: The base issue template
+name: 通常のissue
+about: 通常のissue templete
 title: ''
 labels: ''
 assignees: ''
 
 ---
 
-## Kind (Required)
+## 種類 (必須)
 
-Choose the suitable template if exists.
+- バグ
+- 提案・議論
+- 機能改善
+- その他
 
-- Bug report (please use the other template)
-- Proposal / Discussion
-- Improvement
-- Other
-
- ## Overview (Required)
+ ## 概要 (必須)
 
 - 
 
- ## Links	
+ ## リンク	
 
 -
