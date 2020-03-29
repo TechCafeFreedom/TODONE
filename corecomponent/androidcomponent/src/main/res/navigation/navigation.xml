@@ -6,7 +6,7 @@
     <fragment
         android:id="@+id/home"
         android:name="com.techcafe.todone.home.HomeFragment"
-        android:label="Home" >
+        android:label="Home">
         <action
             android:id="@+id/action_home_fragment_to_sign_in_graph"
             app:destination="@id/navigation_sign_in" />
@@ -20,20 +20,16 @@
         android:name="com.techcafe.todone.notifications.NotificationsFragment"
         android:label="Notifications" />
     <fragment
-        android:id="@+id/profile"
-        android:name="com.techcafe.todone.profile.ProfileFragment"
-        android:label="Profile" />
-    <fragment
         android:id="@+id/settings"
         android:name="com.techcafe.todone.settings.SettingsFragment"
-        android:label="Profile" />
+        android:label="Settings" />
     <fragment
         android:id="@+id/projects"
         android:name="com.techcafe.todone.projects.ProjectsFragment"
-        android:label="Profile" />
+        android:label="Projects" />
+    <include app:graph="@navigation/navigation_sign_in" />
     <fragment
         android:id="@+id/aboutapp"
         android:name="com.techcafe.todone.aboutapp.AboutAppFragment"
         android:label="AboutApp" />
-    <include app:graph="@navigation/navigation_sign_in" />
 </navigation>

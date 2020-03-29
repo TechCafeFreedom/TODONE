@@ -20,7 +20,7 @@
             android:layout_height="140dp"
             android:background="@drawable/rounded_image"
             android:scaleType="centerCrop"
-            android:src="@drawable/sample" />
+            android:src="@drawable/ic_local_cafe" />
     </androidx.cardview.widget.CardView>
 
 
