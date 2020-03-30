@@ -31,12 +31,12 @@ class MainActivity : AppCompatActivity() {
         drawer_layout.addDrawerListener(actionBarDrawerToggle)
         actionBarDrawerToggle.syncState()
 
-        nav_view.getHeaderView(0).setOnClickListener {
+        binding.navView.getHeaderView(0).setOnClickListener {
             navController.navigate(R.id.profile)
             drawer_layout.closeDrawer(nav_view)
         }
 
-        nav_view.setNavigationItemSelectedListener {
+        binding.navView.setNavigationItemSelectedListener {
             when (it.itemId) {
                 R.id.drawer_menu_projects -> navController.navigate(R.id.projects)
                 R.id.drawer_menu_settings -> navController.navigate(R.id.settings)
