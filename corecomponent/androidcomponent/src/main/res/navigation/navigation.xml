@@ -24,6 +24,18 @@
         android:name="com.techcafe.todone.settings.SettingsFragment"
         android:label="Settings" />
     <fragment
+        android:id="@+id/profile"
+        android:name="com.techcafe.todone.profile.ProfileFragment"
+        android:label="Profile" >
+        <action
+            android:id="@+id/action_profile_fragment_to_edit_profile_fragment"
+            app:destination="@+id/edit_profile" />
+    </fragment>
+    <fragment
+        android:id="@+id/edit_profile"
+        android:name="com.techcafe.todone.profile.edit.EditProfileFragment"
+        android:label="EditProfile" />
+    <fragment
         android:id="@+id/projects"
         android:name="com.techcafe.todone.projects.ProjectsFragment"
         android:label="Projects" />
