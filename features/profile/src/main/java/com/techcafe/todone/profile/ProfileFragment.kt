@@ -21,7 +21,11 @@ class ProfileFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         edit_button.setOnClickListener {
-            findNavController().navigate(R.id.action_profile_fragment_to_edit_profile_fragment)
+            findNavController().navigate(R.id.action_profile_to_edit_profile)
+        }
+
+        back_button.setOnClickListener {
+            findNavController().navigate(R.id.action_profile_to_home)
         }
     }
 
