@@ -2,17 +2,17 @@
 
 - close #issue-number
 
-## Why we need this change? (required)
+## なんでこの変更が必要だった？ (必須)
 
-## What does this change? (required)
+## どんな変更した？ (必須)
 
-## What is the value of this and can you measure success? (required)
+## どうやったらこの変更を確認できる？ (必須)
 
-## How it was implemented
+## どうやって実装した？
 
-## Where struggled
+## 苦労したとこ
 
-## Reference links
+## 参考にした記事
 
 ## Screenshot
 
@@ -22,5 +22,5 @@ Before | After
 
 ## Notes
 
-- If you are OK, please approve this PR.
-- If anyone approve this PR, I'll merge this PR myself.
+- 確認してOKだったらapproveしてね
+- 誰かapproveしてくれたらセルフマージするね
