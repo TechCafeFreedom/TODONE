@@ -3,15 +3,21 @@ package com.techcafe.todone
 import android.os.Bundle
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
+import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI.setupWithNavController
+import com.techcafe.todone.databinding.ActivityMainBinding
 import kotlinx.android.synthetic.main.activity_main.*
+import org.koin.android.ext.android.bind
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
         setSupportActionBar(toolbar)
         val navHostFragment =
@@ -25,12 +31,12 @@ class MainActivity : AppCompatActivity() {
         drawer_layout.addDrawerListener(actionBarDrawerToggle)
         actionBarDrawerToggle.syncState()
 
-        nav_view.getHeaderView(0).setOnClickListener {
-            navController.navigate(R.id.profile, null)
+        binding.navView.getHeaderView(0).setOnClickListener {
+            navController.navigate(R.id.profile)
             drawer_layout.closeDrawer(nav_view)
         }
 
-        nav_view.setNavigationItemSelectedListener {
+        binding.navView.setNavigationItemSelectedListener {
             when (it.itemId) {
                 R.id.drawer_menu_projects -> navController.navigate(R.id.projects)
                 R.id.drawer_menu_settings -> navController.navigate(R.id.settings)
@@ -40,6 +46,19 @@ class MainActivity : AppCompatActivity() {
             }
             drawer_layout.closeDrawer(nav_view)
             true
+        }
+
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            binding.toolbar.isVisible = when (destination.id) {
+                R.id.profile -> false
+                R.id.edit_profile -> false
+                else -> true
+            }
+            binding.bottomNavigationView.isVisible = when (destination.id) {
+                R.id.profile -> false
+                R.id.edit_profile -> false
+                else -> true
+            }
         }
     }
 }

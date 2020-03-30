@@ -5,26 +5,32 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.techcafe.todone.profile.edit.ProfileEditorViewModel
-import org.koin.android.ext.android.get
-import org.koin.android.viewmodel.ext.android.getViewModel
+import androidx.navigation.fragment.findNavController
+import com.techcafe.todone.profile.databinding.FragmentProfileBinding
 
-/**
- * A simple [Fragment] subclass.
- */
 class ProfileFragment : Fragment() {
+
+    private lateinit var binding: FragmentProfileBinding
+
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
+        inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_profile, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val model: ProfileEditorViewModel = getViewModel()
-        model.testMessage()
+
+        binding = FragmentProfileBinding.bind(view)
+
+        binding.editButton.setOnClickListener {
+            findNavController().navigate(R.id.action_profile_to_edit_profile)
+        }
+
+        binding.backButton.setOnClickListener {
+            findNavController().navigate(R.id.action_profile_to_home)
+        }
     }
+
 }
