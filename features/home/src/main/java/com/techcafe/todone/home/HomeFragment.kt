@@ -1,21 +1,31 @@
 package com.techcafe.todone.home
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.techcafe.todone.home.databinding.FragmentHomeBinding
 
-/**
- * A simple [Fragment] subclass.
- */
-class HomeFragment : Fragment() {
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+class HomeFragment : Fragment(R.layout.fragment_home) {
+
+    lateinit var binding: FragmentHomeBinding
+    lateinit var controller: HomeController
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding = FragmentHomeBinding.bind(view)
+        binding.lifecycleOwner = viewLifecycleOwner
+
+        controller = HomeController()
+
+        binding.recyclerView.also {
+            it.setController(controller)
+        }
+        val sample = listOf(
+            "ProjectName" to "Description",
+            "toを初めて知った" to "わーい",
+            "このサンプルをviewModelに持たせる" to "そのうち"
+        )
+
+        controller.setData(sample)
     }
 }
