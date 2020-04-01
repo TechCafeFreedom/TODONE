@@ -20,12 +20,13 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         binding.recyclerView.also {
             it.setController(controller)
         }
-        val sample = listOf(
-            "ProjectName" to "Description",
-            "toを初めて知った" to "わーい",
-            "このサンプルをviewModelに持たせる" to "そのうち"
+
+        val sampleData = listOf(
+            "ProjectName" to "ProjectName",
+            "toを初めて知った" to "toを初めて知った",
+            "データ持ってくる" to "どこからとりあえず取ろう"
         )
 
-        controller.setData(sample)
+        controller.setData(sampleData)
     }
 }
