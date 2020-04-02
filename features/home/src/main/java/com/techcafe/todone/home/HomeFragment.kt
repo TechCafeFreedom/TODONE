@@ -21,11 +21,11 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             it.setController(controller)
         }
 
-        val sampleData = listOf(
-            "ProjectName" to "ProjectName",
-            "toを初めて知った" to "toを初めて知った",
-            "データ持ってくる" to "どこからとりあえず取ろう"
-        )
+        val sampleData: List<Pair<String, String>> = emptyList() //listOf(
+//            "ProjectName" to "ProjectName",
+//            "toを初めて知った" to "toを初めて知った",
+//            "データ持ってくる" to "どこからとりあえず取ろう"
+//        )
 
         controller.setData(sampleData)
     }

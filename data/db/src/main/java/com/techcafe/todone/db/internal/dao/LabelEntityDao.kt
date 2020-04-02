@@ -12,5 +12,5 @@ interface LabelEntityDao {
     fun insertLabel(label: LabelEntity)
 
     @Query("SELECT * FROM label_item")
-    fun getLabelList():List<LabelEntity>
+    fun getLabelList(): List<LabelEntity>
 }

@@ -1,9 +1,9 @@
  package com.techcafe.todone.db.internal.entity
 
  import androidx.room.ColumnInfo
- import androidx.room.Entity
- import androidx.room.PrimaryKey
- import com.techcafe.todone.db.internal.converter.DateTime
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+import com.techcafe.todone.db.internal.converter.DateTime
 
  @Entity(tableName = "label_item")
  data class LabelEntity(

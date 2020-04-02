@@ -9,7 +9,6 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI.setupWithNavController
 import com.techcafe.todone.databinding.ActivityMainBinding
 import kotlinx.android.synthetic.main.activity_main.*
-import org.koin.android.ext.android.bind
 
 class MainActivity : AppCompatActivity() {
 
