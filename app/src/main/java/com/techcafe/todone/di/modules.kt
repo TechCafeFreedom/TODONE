@@ -4,10 +4,12 @@ import com.techcafe.todone.api.di.apiModule
 import com.techcafe.todone.db.di.dbModule
 import com.techcafe.todone.profile.di.profileModule
 import com.techcafe.todone.repository.di.repositoryModule
+import com.techcafe.todone.settings.di.settingsModules
 
 val moduleList = listOf(
     profileModule,
     apiModule,
     dbModule,
-    repositoryModule
+    repositoryModule,
+    settingsModules
 )

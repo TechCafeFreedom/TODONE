@@ -2,15 +2,17 @@ package com.techcafe.todone.settings
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.edit
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.SwitchPreferenceCompat
+import org.koin.android.viewmodel.ext.android.viewModel
 
 class SettingsFragment : PreferenceFragmentCompat() {
+
+    private val viewModel: SettingsViewModel by viewModel()
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         setPreferencesFromResource(R.xml.preferences, rootKey)
@@ -20,7 +22,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
         super.onViewCreated(view, savedInstanceState)
         preferenceManager.findPreference<SwitchPreferenceCompat>(DARK_THEME_KEY).also {
             it?.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, newValue ->
-                Log.d("DARK", "da-kute-ma-$newValue")
+                viewModel.setNightMode(newValue as Boolean)
                 return@OnPreferenceChangeListener true
             }
         }
