@@ -3,6 +3,7 @@ package com.techcafe.todone.api.di
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
+import com.techcafe.todone.api.AddHeaderInterceptor
 import com.techcafe.todone.api.TestService
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -22,6 +23,7 @@ val apiModule = module {
         OkHttpClient.Builder()
             .readTimeout(120, TimeUnit.MILLISECONDS)
             .connectTimeout(120, TimeUnit.MILLISECONDS)
+            .addInterceptor(AddHeaderInterceptor())
             .addInterceptor(HttpLoggingInterceptor().apply {
                 level = HttpLoggingInterceptor.Level.BODY
             })
