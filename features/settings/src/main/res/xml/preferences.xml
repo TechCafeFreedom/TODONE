@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <PreferenceCategory
         android:key="categoryTheme"
-        android:title="@string/theme_label" >
+        android:title="@string/theme_label">
         <SwitchPreferenceCompat
             android:key="darkTheme"
             android:title="@string/dark_theme_label" />
@@ -12,10 +12,10 @@
         android:key="categoryLanguage"
         android:title="@string/language_label">
         <ListPreference
-            android:key="language"
             android:entries="@array/language_labels"
-            app:entryValues="@array/language_values"
+            android:key="language"
             android:title="@string/language_label"
+            app:entryValues="@array/language_values"
             app:useSimpleSummaryProvider="true" />
     </PreferenceCategory>
 </PreferenceScreen>
