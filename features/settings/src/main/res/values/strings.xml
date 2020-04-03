@@ -1,6 +1,5 @@
 <resources>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-
+    <string name="theme_label">Theme</string>
+    <string name="language_label">Language</string>
+    <string name="dark_theme_label">Dark Theme</string>
 </resources>

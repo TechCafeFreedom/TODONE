@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="language_labels">
+        <item>日本語</item>
+        <item>English</item>
+    </array>
+    <array name="language_values">
+        <item>JP</item>
+        <item>EN</item>
+    </array>
+</resources>

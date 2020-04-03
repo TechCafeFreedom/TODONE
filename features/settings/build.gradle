@@ -20,6 +20,7 @@ dependencies {
     implementation Dep.AndroidX.lifecycleLiveData
     implementation Dep.AndroidX.recyclerView
     implementation Dep.AndroidX.design
+    implementation Dep.AndroidX.preference
 
     implementation Dep.Epoxy.epoxy
     implementation Dep.Epoxy.databindingSupport
