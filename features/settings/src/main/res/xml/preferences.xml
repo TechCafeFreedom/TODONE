@@ -5,7 +5,7 @@
         android:key="categoryTheme"
         android:title="@string/theme_label" >
         <SwitchPreferenceCompat
-            android:key="dark_theme"
+            android:key="darkTheme"
             android:title="@string/dark_theme_label" />
     </PreferenceCategory>
     <PreferenceCategory
