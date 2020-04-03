@@ -2,12 +2,13 @@ package com.techcafe.todone.settings
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.edit
-import androidx.preference.ListPreference
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
+import androidx.preference.SwitchPreferenceCompat
 
 class SettingsFragment : PreferenceFragmentCompat() {
 
@@ -17,6 +18,13 @@ class SettingsFragment : PreferenceFragmentCompat() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        preferenceManager.findPreference<SwitchPreferenceCompat>(DARK_THEME_KEY).also {
+            it?.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, newValue ->
+                Log.d("DARK", "da-kute-ma-$newValue")
+                return@OnPreferenceChangeListener true
+            }
+        }
+    }
 
         val sharedPref = activity?.getSharedPreferences(
             context?.getString(R.string.shared_pref_todone_key),
@@ -38,7 +46,6 @@ class SettingsFragment : PreferenceFragmentCompat() {
                 return@OnPreferenceChangeListener true
             }
         }
-    }
 
     companion object {
         private const val DARK_THEME_KEY = "darkTheme"
