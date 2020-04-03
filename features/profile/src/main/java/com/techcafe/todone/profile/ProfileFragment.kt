@@ -13,7 +13,8 @@ class ProfileFragment : Fragment() {
     private lateinit var binding: FragmentProfileBinding
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.fragment_profile, container, false)
@@ -32,5 +33,4 @@ class ProfileFragment : Fragment() {
             findNavController().navigate(R.id.action_profile_to_home)
         }
     }
-
 }

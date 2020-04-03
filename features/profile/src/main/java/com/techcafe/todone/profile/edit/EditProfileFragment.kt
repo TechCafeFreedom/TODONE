@@ -16,7 +16,8 @@ class EditProfileFragment : Fragment() {
     private lateinit var binding: FragmentEditProfileBinding
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.fragment_edit_profile, container, false)
@@ -31,5 +32,4 @@ class EditProfileFragment : Fragment() {
             findNavController().navigate(R.id.action_edit_profile_to_profile)
         }
     }
-
 }

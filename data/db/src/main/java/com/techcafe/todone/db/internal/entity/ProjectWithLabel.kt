@@ -2,7 +2,7 @@ package com.techcafe.todone.db.internal.entity
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
- import androidx.room.ForeignKey
+import androidx.room.ForeignKey
 @Entity(
     tableName = "project_with_label",
     primaryKeys = ["proj_id_with", "label_id_with"],
