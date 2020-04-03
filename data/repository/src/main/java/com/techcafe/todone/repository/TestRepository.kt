@@ -7,14 +7,14 @@ import com.techcafe.todone.db.internal.middleEntity.UserWithProject
 interface TestRepository {
     suspend fun test()
     suspend fun addTestUserData()
-    //データ取得系
-    suspend fun getUserAndProject():List<UserWithProject>
+    // データ取得系
+    suspend fun getUserAndProject(): List<UserWithProject>
     suspend fun getLabelByProjectId(projectId: Int): List<LabelEntity>
     suspend fun getLabelByTodoId(todoId: Int): List<LabelEntity>
-    //ラベルづけ
+    // ラベルづけ
     suspend fun todoBindLabel(todoId: Int, labelId: Int)
     suspend fun projectBindLabel(projectId: Int, labelId: Int)
-    //データ挿入
+    // データ挿入
     suspend fun insertUser(userEntity: UserEntity)
     suspend fun insertProject(projectEntity: ProjectEntity)
     suspend fun insertTodo(todoEntity: TodoEntity)

@@ -25,12 +25,10 @@ class HomeController : TypedEpoxyController<List<Pair<String, String>>>() {
                 projectName(projectName)
                 description(description)
             }
-
         }
     }
-    //後に必要になりそうなViewの更新
+    // 後に必要になりそうなViewの更新
     fun update(newData: List<Pair<String, String>>) {
         requestModelBuild()
     }
-
 }

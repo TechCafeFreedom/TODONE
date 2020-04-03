@@ -22,10 +22,10 @@ class TestRepositoryImpl(
         Log.d("TestForLDB_user", data[0].projectsAndTodo[0].project.toString())
         Log.d("TestForLDB_user", data[0].projectsAndTodo[0].todoList.toString())
     }
-    //表示テストのためのテストデータ登録関数
+    // 表示テストのためのテストデータ登録関数
     override suspend fun addTestUserData() {
-        val projectId:Int = UUID.randomUUID().variant()
-        val userId:String = UUID.randomUUID().toString()
+        val projectId: Int = UUID.randomUUID().variant()
+        val userId: String = UUID.randomUUID().toString()
         val userName = "TestUser$userId"
         val user = UserEntity(
             id = userId,
@@ -66,37 +66,36 @@ class TestRepositoryImpl(
         userDao.insertProject(project)
         projDao.insertTodo(todo)
         labelDao.insertLabel(label)
-        todoLabelDao.bindLabel(TodoWithLabel(2,1))
-        projLabelDao.bindLabel(ProjectWithLabel(3,1))
+        todoLabelDao.bindLabel(TodoWithLabel(2, 1))
+        projLabelDao.bindLabel(ProjectWithLabel(3, 1))
         Log.d("Project", userDao.getProjectUserList().toString())
         Log.d("TodoLabel_Connect_TODO", todoLabelDao.getTodosForLabel(1).toString())
         Log.d("ProjLabel_Connect_PROJ", projLabelDao.getProjectsForLabel(1).toString())
     }
-    override suspend fun getUserAndProject(): List<UserWithProject>
-            = userDao.getProjectUserList()
+    override suspend fun getUserAndProject(): List<UserWithProject> =
+            userDao.getProjectUserList()
 
-    override suspend fun getLabelByProjectId(projectId: Int)
-            = projLabelDao.getLabelsForproject(projectId)
+    override suspend fun getLabelByProjectId(projectId: Int) =
+            projLabelDao.getLabelsForproject(projectId)
 
-    override suspend fun getLabelByTodoId(todoId: Int)
-            = todoLabelDao.getLabelsForTodo(todoId)
+    override suspend fun getLabelByTodoId(todoId: Int) =
+            todoLabelDao.getLabelsForTodo(todoId)
 
-    override suspend fun todoBindLabel(todoId: Int, labelId: Int)
-            = todoLabelDao.bindLabel(TodoWithLabel(todoId, labelId))
+    override suspend fun todoBindLabel(todoId: Int, labelId: Int) =
+            todoLabelDao.bindLabel(TodoWithLabel(todoId, labelId))
 
-    override suspend fun projectBindLabel(projectId: Int, labelId: Int)
-            = projLabelDao.bindLabel(ProjectWithLabel(projectId, labelId))
+    override suspend fun projectBindLabel(projectId: Int, labelId: Int) =
+            projLabelDao.bindLabel(ProjectWithLabel(projectId, labelId))
 
-    override suspend fun insertUser(userEntity: UserEntity)
-            = userDao.insertUser(userEntity)
+    override suspend fun insertUser(userEntity: UserEntity) =
+            userDao.insertUser(userEntity)
 
-    override suspend fun insertProject(projectEntity: ProjectEntity)
-            = userDao.insertProject(projectEntity)
+    override suspend fun insertProject(projectEntity: ProjectEntity) =
+            userDao.insertProject(projectEntity)
 
-    override suspend fun insertTodo(todoEntity: TodoEntity)
-            = projDao.insertTodo(todoEntity)
+    override suspend fun insertTodo(todoEntity: TodoEntity) =
+            projDao.insertTodo(todoEntity)
 
-    override suspend fun insertLabel(labelEntity: LabelEntity)
-            = labelDao.insertLabel(labelEntity)
+    override suspend fun insertLabel(labelEntity: LabelEntity) =
+            labelDao.insertLabel(labelEntity)
 }
-
