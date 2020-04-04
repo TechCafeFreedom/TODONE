@@ -21,8 +21,8 @@ val apiModule = module {
     }
     single {
         OkHttpClient.Builder()
-            .readTimeout(120, TimeUnit.MILLISECONDS)
-            .connectTimeout(120, TimeUnit.MILLISECONDS)
+            .readTimeout(1000, TimeUnit.MILLISECONDS)
+            .connectTimeout(1000, TimeUnit.MILLISECONDS)
             .addInterceptor(AddHeaderInterceptor())
             .addInterceptor(HttpLoggingInterceptor().apply {
                 level = HttpLoggingInterceptor.Level.BODY

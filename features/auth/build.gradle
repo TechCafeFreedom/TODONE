@@ -9,6 +9,9 @@ apply from: rootProject.file('gradle/common.gradle')
 android.dataBinding.enabled = true
 dependencies {
     implementation project(':corecomponent:androidcomponent')
+    // TODO: あとで消す repositoryに依存するようにする
+    implementation project(':data:api')
+    implementation Dep.Retrofit.retrofit
 
     implementation Dep.Firebase.ui
     implementation Dep.Firebase.auth
