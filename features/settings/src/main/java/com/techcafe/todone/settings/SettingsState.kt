@@ -1,11 +1,9 @@
 package com.techcafe.todone.settings
 
 data class SettingsState(
-    val isNightMode: Boolean
+    val nightMode: NightMode
 ) {
     companion object {
-        val INITIAL = SettingsState(
-            isNightMode = false
-        )
+        val INITIAL = SettingsState(nightMode = NightMode.SYSTEM)
     }
 }

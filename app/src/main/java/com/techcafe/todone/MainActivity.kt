@@ -3,6 +3,8 @@ package com.techcafe.todone
 import android.os.Bundle
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.os.BuildCompat
 import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.NavHostFragment
@@ -17,6 +19,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+
+        setupNightMode()
 
         setSupportActionBar(toolbar)
         val navHostFragment =
@@ -58,5 +62,15 @@ class MainActivity : AppCompatActivity() {
                 else -> true
             }
         }
+    }
+
+    // 別にこれ実行しなくても端末の設定に応じてダークモードに切り替わる
+    private fun setupNightMode() {
+        val nightMode = if (BuildCompat.isAtLeastQ()) {
+            AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
+        } else {
+            AppCompatDelegate.MODE_NIGHT_AUTO_BATTERY
+        }
+        AppCompatDelegate.setDefaultNightMode(nightMode)
     }
 }
