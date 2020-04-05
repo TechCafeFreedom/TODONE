@@ -8,6 +8,7 @@ object Dep {
         val Navigation = "2.2.1"
         val Okhttp = "4.0.1"
         val Retrofit = "2.7.2"
+        val Moshi = "1.9.2"
         val Hyperion = "0.9.27"
         val Ktlint = "0.36.0"
         val Koin = "2.0.1"
@@ -114,6 +115,11 @@ object Dep {
         val retrofit = "com.squareup.retrofit2:retrofit:${LibsVersion.Retrofit}"
         val converter = "com.squareup.retrofit2:converter-moshi:${LibsVersion.Retrofit}"
         val coroutine = "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2"
+    }
+
+    object Moshi {
+        val moshi = "com.squareup.moshi:moshi:${LibsVersion.Moshi}"
+        val kotlin = "com.squareup.moshi:moshi-kotlin:${LibsVersion.Moshi}"
     }
 
     val liveEvent = "com.github.hadilq.liveevent:liveevent:1.0.1"
