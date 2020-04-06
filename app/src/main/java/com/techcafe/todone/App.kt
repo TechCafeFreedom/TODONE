@@ -4,6 +4,7 @@ import android.app.Application
 import android.content.Context
 import android.os.Build
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.os.BuildCompat
 import com.techcafe.todone.di.moduleList
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
@@ -21,6 +22,8 @@ class App : Application() {
     }
 
     private fun initializeKoin() {
+        setupNightMode()
+
         startKoin {
             androidContext(this@App)
             modules(modules = moduleList)
@@ -47,6 +50,13 @@ class App : Application() {
             applicationContext.getString(R.string.shared_pref_mode_night_key),
             defaultNightMode
         )
+
+    private fun setupNightMode() {
+        val nightMode = if (BuildCompat.isAtLeastQ()) {
+            AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
+        } else {
+            AppCompatDelegate.MODE_NIGHT_AUTO_BATTERY
+        }
         AppCompatDelegate.setDefaultNightMode(nightMode)
     }
 }
