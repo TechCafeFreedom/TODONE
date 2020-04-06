@@ -20,8 +20,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        setupNightMode()
-
         setSupportActionBar(toolbar)
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
@@ -62,15 +60,5 @@ class MainActivity : AppCompatActivity() {
                 else -> true
             }
         }
-    }
-
-    // 別にこれ実行しなくても端末の設定に応じてダークモードに切り替わる
-    private fun setupNightMode() {
-        val nightMode = if (BuildCompat.isAtLeastQ()) {
-            AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
-        } else {
-            AppCompatDelegate.MODE_NIGHT_AUTO_BATTERY
-        }
-        AppCompatDelegate.setDefaultNightMode(nightMode)
     }
 }
