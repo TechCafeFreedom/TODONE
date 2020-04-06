@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel
 
 class SettingsViewModel : ViewModel() {
 
-    val state = MutableLiveData(SettingsState.INITIAL)
+//    val state = MutableLiveData(SettingsState.INITIAL)
     val nightMode = MutableLiveData(NightMode.SYSTEM)
 
     fun setNightMode(newValue: Boolean) {
