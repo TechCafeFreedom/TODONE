@@ -30,14 +30,14 @@ class SettingsFragment : PreferenceFragmentCompat() {
 
         // 本当はstateを使ってこっちで値の通知受け取りたいけどなぜかこない
 //        viewModel.state.observe(viewLifecycleOwner) {
-////            val nightMode = when (it.nightMode) {
-////                NightMode.YES -> AppCompatDelegate.MODE_NIGHT_YES
-////                NightMode.NO -> AppCompatDelegate.MODE_NIGHT_NO
-////                NightMode.SYSTEM -> AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
-////                NightMode.BATTERY -> AppCompatDelegate.MODE_NIGHT_AUTO_BATTERY
-////            }
+//            val nightMode = when (it.nightMode) {
+//                NightMode.YES -> AppCompatDelegate.MODE_NIGHT_YES
+//                NightMode.NO -> AppCompatDelegate.MODE_NIGHT_NO
+//                NightMode.SYSTEM -> AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
+//                NightMode.BATTERY -> AppCompatDelegate.MODE_NIGHT_AUTO_BATTERY
+//            }
 //            Log.d("TODONENIGHT", "state変更検知！ ${it.nightMode}")
-////            AppCompatDelegate.setDefaultNightMode(nightMode)
+//            AppCompatDelegate.setDefaultNightMode(nightMode)
 //        }
 
         viewModel.nightMode.observe(viewLifecycleOwner) {
