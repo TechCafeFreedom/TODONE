@@ -47,13 +47,5 @@ class App : Application() {
             applicationContext.getString(R.string.shared_pref_mode_night_key),
             defaultNightMode
         )
-
-    private fun setupNightMode() {
-        val nightMode = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-            AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
-        } else {
-            AppCompatDelegate.MODE_NIGHT_AUTO_BATTERY
-        }
-        AppCompatDelegate.setDefaultNightMode(nightMode)
     }
 }
