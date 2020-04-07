@@ -1,14 +1,11 @@
 package com.techcafe.todone.settings
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatDelegate
-import androidx.lifecycle.observe
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.SwitchPreferenceCompat
-import org.koin.android.viewmodel.ext.android.viewModel
 
 class SettingsFragment : PreferenceFragmentCompat() {
 
