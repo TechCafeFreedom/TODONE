@@ -1,7 +1,6 @@
 package com.techcafe.todone.db.internal.dao
 
 import androidx.room.*
-import com.techcafe.todone.db.internal.entity.ProjectEntity
 import com.techcafe.todone.db.internal.entity.UserEntity
 import com.techcafe.todone.db.internal.middleEntity.UserWithProject
 
@@ -9,13 +8,12 @@ import com.techcafe.todone.db.internal.middleEntity.UserWithProject
 interface UserEntityDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertUser(vararg user: UserEntity)
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun insertProject(vararg project: ProjectEntity)
 
     @Transaction
     @Query("SELECT * FROM user_item")
-    suspend fun getProjectUserList(): List<UserWithProject>
+    suspend fun getUserList(): List<UserEntity>
+
     @Transaction
-    @Query("SELECT * FROM project_item WHERE author_id = :userId")
-    suspend fun searchProjectList(userId: String): List<ProjectEntity>
+    @Query("SELECT * FROM user_item WHERE user_id = :userId LIMIT 1")
+    suspend fun getUserById(userId: String): UserEntity?
 }

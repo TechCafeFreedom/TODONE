@@ -5,10 +5,16 @@ import com.techcafe.todone.db.internal.middleEntity.UserWithProject
 
 // TODO: 削除
 interface TestRepository {
-    suspend fun test()
-    suspend fun addTestUserData()
-    // データ取得系
-    suspend fun getUserAndProject(): List<UserWithProject>
+    // データ取得系 List
+    suspend fun getUserList(): List<UserEntity>
+    suspend fun getUserById(userId: String): UserEntity?
+
+    suspend fun getBindProjectList(userId: String): List<ProjectEntity>
+    suspend fun getProjectById(projectId: Int): ProjectEntity?
+
+    suspend fun getBindTodoList(projectId: Int): List<TodoEntity>
+    suspend fun getTodoById(todoId: Int): TodoEntity?
+
     suspend fun getLabelByProjectId(projectId: Int): List<LabelEntity>
     suspend fun getLabelByTodoId(todoId: Int): List<LabelEntity>
     // ラベルづけ

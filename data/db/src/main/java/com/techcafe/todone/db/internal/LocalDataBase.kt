@@ -22,7 +22,9 @@ import com.techcafe.todone.db.internal.entity.*
 abstract class LocalDataBase : RoomDatabase() {
     abstract fun userEntityDao(): UserEntityDao
     abstract fun projectEntityDao(): ProjectEntityDao
-    abstract fun todoLabelEntityDao(): TodoWithLabelDao
+    abstract fun todoEntityDao(): TodoEntityDao
     abstract fun labelEntityDao(): LabelEntityDao
+
+    abstract fun todoLabelEntityDao(): TodoWithLabelDao
     abstract fun projectLabelEntityDao(): ProjectWithLabelDao
 }
