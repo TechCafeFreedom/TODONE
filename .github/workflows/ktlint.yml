@@ -16,7 +16,7 @@ jobs:
     runs-on: [ubuntu-latest]
     name: run ktlintCheck
     steps:
-      - run: ./gradlew ktlintCheck
+      - run: ./gradlew ktlintCheck Main
   
   ktFormat:
     if: ${{startsWith( github.event_name, 'push')}}
