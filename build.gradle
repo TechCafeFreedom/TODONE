@@ -36,6 +36,7 @@ allprojects {
         main = "com.pinterest.ktlint.Main"
         args "src/**/*.kt", "--android", "--color", "--reporter=plain",
                 "--reporter=checkstyle,output=${buildDir}/reports/ktlint-results.xml"
+        ignoreExitValue true
     }
 
     task ktlintFormat(type: JavaExec, group: "formatting") {
