@@ -17,13 +17,19 @@ class SettingsFragment : PreferenceFragmentCompat() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE)
         preferenceManager.findPreference<SwitchPreferenceCompat>(DARK_THEME_KEY).also {
             it?.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, newValue ->
-                if (newValue as Boolean) {
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                val nightMode = if (newValue as Boolean) {
+                    AppCompatDelegate.MODE_NIGHT_YES
                 } else {
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                    AppCompatDelegate.MODE_NIGHT_NO
                 }
+                sharedPref?.edit {
+                    putInt("MODE_NIGHT", nightMode)
+                }
+                AppCompatDelegate.setDefaultNightMode(nightMode)
                 return@OnPreferenceChangeListener true
             }
         }
