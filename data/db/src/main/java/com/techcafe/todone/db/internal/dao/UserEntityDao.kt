@@ -14,6 +14,6 @@ interface UserEntityDao {
     suspend fun getUserList(): List<UserEntity>
 
     @Transaction
-    @Query("SELECT * FROM user_item WHERE user_id = :userId")
-    suspend fun getUserById(userId: String): UserEntity
+    @Query("SELECT * FROM user_item WHERE user_id = :userId LIMIT 1")
+    suspend fun getUserById(userId: String): UserEntity?
 }

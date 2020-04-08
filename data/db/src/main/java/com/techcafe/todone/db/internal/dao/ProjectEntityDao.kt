@@ -14,6 +14,6 @@ interface ProjectEntityDao {
     suspend fun getBindProjectList(userId: String): List<ProjectEntity>
 
     @Transaction
-    @Query("SELECT * FROM project_item　WHERE project_id = :projectId")
-    suspend fun getProjectById(projectId: Int): ProjectEntity
+    @Query("SELECT * FROM project_item WHERE project_id = :projectId LIMIT 1")
+    suspend fun getProjectById(projectId: Int): ProjectEntity?
 }

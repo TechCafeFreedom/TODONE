@@ -13,6 +13,6 @@ interface TodoEntityDao {
     suspend fun getBindTodoById(projectId: Int): List<TodoEntity>
 
     @Transaction
-    @Query("SELECT * FROM todo_item WHERE todo_id = :todoId")
-    suspend fun getTodoById(todoId: Int): TodoEntity
+    @Query("SELECT * FROM todo_item WHERE todo_id = :todoId LIMIT 1")
+    suspend fun getTodoById(todoId: Int): TodoEntity?
 }
