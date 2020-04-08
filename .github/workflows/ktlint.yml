@@ -20,7 +20,7 @@ jobs:
       - run: ./gradlew ktlintMain
   
   ktFormat:
-    if: ${{startsWith( github.event_name, 'push')}}
+    if: ${{startsWith( github.event_name, 'pull_request')}}
     runs-on: [ubuntu-latest]
     name: run ktlintFormat
     steps:
