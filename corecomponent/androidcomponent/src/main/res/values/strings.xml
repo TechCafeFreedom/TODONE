@@ -12,4 +12,8 @@
     <!-- Error Message-->
     <string name="network_error">ネットワークエラーが発生しました</string>
     <string name="unknown_error">不明なエラーが発生しました</string>
+    
+    <!--  Shared Preferences Keys  -->
+    <string name="TODONE_PREF">TODONE_PREF</string>
+    <string name="MODE_NIGHT">MODE_NIGHT</string>
 </resources>

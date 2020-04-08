@@ -4,6 +4,7 @@ import android.app.Application
 import android.content.Context
 import android.os.Build
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.content.edit
 import com.techcafe.todone.di.moduleList
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
@@ -34,15 +35,22 @@ class App : Application() {
     }
 
     private fun setupNightMode() {
-        val sharedPref = applicationContext?.getSharedPreferences("", Context.MODE_PRIVATE)
+        val sharedPref = applicationContext?.getSharedPreferences(
+            applicationContext.getString(R.string.TODONE_PREF),
+            Context.MODE_PRIVATE
+        )
         val nightMode = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
             AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
         } else {
             AppCompatDelegate.MODE_NIGHT_AUTO_BATTERY
         }
-        val defKnightMode = sharedPref?.getInt("MODE_NIGHT", nightMode)
+        val defKnightMode =
+            sharedPref?.getInt(applicationContext.getString(R.string.MODE_NIGHT), nightMode)
         defKnightMode?.let {
             AppCompatDelegate.setDefaultNightMode(defKnightMode)
+            sharedPref.edit {
+                putInt(applicationContext.getString(R.string.MODE_NIGHT), nightMode)
+            }
         }
     }
 }

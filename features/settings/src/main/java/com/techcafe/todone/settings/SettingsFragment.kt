@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.edit
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
+import androidx.preference.PreferenceManager
 import androidx.preference.SwitchPreferenceCompat
 
 class SettingsFragment : PreferenceFragmentCompat() {
@@ -18,7 +19,10 @@ class SettingsFragment : PreferenceFragmentCompat() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE)
+        val sharedPref = activity?.getSharedPreferences(
+            context?.getString(R.string.TODONE_PREF),
+            Context.MODE_PRIVATE
+        )
         preferenceManager.findPreference<SwitchPreferenceCompat>(DARK_THEME_KEY).also {
             it?.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, newValue ->
                 val nightMode = if (newValue as Boolean) {
@@ -27,7 +31,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
                     AppCompatDelegate.MODE_NIGHT_NO
                 }
                 sharedPref?.edit {
-                    putInt("MODE_NIGHT", nightMode)
+                    putInt(context?.getString(R.string.MODE_NIGHT), nightMode)
                 }
                 AppCompatDelegate.setDefaultNightMode(nightMode)
                 return@OnPreferenceChangeListener true
