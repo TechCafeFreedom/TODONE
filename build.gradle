@@ -35,6 +35,7 @@ allprojects {
         classpath = configurations.ktlint
         main = "com.pinterest.ktlint.Main"
         args "src/**/*.kt"
+        ignoreExitValue true
     }
 
     task ktlintFormat(type: JavaExec, group: "formatting") {
