@@ -12,7 +12,6 @@ class ProfileEditorViewModel(
 ) : ViewModel() {
     fun testMessage() {
         viewModelScope.launch(Dispatchers.IO) {
-            repository.addTestUserData()
         }
     }
 }
