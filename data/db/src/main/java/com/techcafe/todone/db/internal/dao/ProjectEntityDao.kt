@@ -1,18 +1,19 @@
 package com.techcafe.todone.db.internal.dao
 
 import androidx.room.*
-import com.techcafe.todone.db.internal.entity.TodoEntity
+import com.techcafe.todone.db.internal.entity.ProjectEntity
 import com.techcafe.todone.db.internal.middleEntity.ProjectWithTodo
 
 @Dao
 interface ProjectEntityDao {
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertTodo(vararg todo: TodoEntity)
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    fun insertProject(vararg project: ProjectEntity)
 
     @Transaction
-    @Query("SELECT * FROM project_item")
-    fun getProjectTodoList(): List<ProjectWithTodo>
+    @Query("SELECT * FROM project_item WHERE author_id = :userId")
+    suspend fun getBindProjectList(userId: String): List<ProjectEntity>
+
     @Transaction
-    @Query("SELECT * FROM todo_item WHERE parent_project_id = :projectId")
-    fun searchTodoList(projectId: String): List<TodoEntity>
+    @Query("SELECT * FROM project_item　WHERE project_id = :projectId")
+    suspend fun getProjectById(projectId: Int): ProjectEntity
 }
