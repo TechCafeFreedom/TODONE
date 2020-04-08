@@ -61,6 +61,3 @@ PLATFORMS
 DEPENDENCIES
   danger
   danger-checkstyle_format
-
-BUNDLED WITH
-   1.17.2
