@@ -19,19 +19,19 @@ class TestRepositoryImpl(
     // 表示テストのためのテストデータ登録関数
     override suspend fun getUserList(): List<UserEntity> =
             userDao.getUserList()
-    override suspend fun getUserById(userId: String): UserEntity =
+    override suspend fun getUserById(userId: String): UserEntity? =
             userDao.getUserById(userId)
 
     override suspend fun getBindProjectList(userId: String): List<ProjectEntity> =
             projDao.getBindProjectList(userId)
 
-    override suspend fun getProjectById(projectId: Int): ProjectEntity =
+    override suspend fun getProjectById(projectId: Int): ProjectEntity? =
             projDao.getProjectById(projectId)
 
     override suspend fun getBindTodoList(projectId: Int): List<TodoEntity> =
             todoDao.getBindTodoById(projectId)
 
-    override suspend fun getTodoById(todoId: Int): TodoEntity =
+    override suspend fun getTodoById(todoId: Int): TodoEntity? =
             todoDao.getTodoById(todoId)
     
     override suspend fun getLabelByProjectId(projectId: Int) =
