@@ -8,6 +8,7 @@ import com.techcafe.todone.db.internal.dao.*
 import com.techcafe.todone.db.internal.entity.*
 import com.techcafe.todone.db.internal.middleEntity.ProjectWithLabel
 import com.techcafe.todone.db.internal.middleEntity.TodoWithLabel
+import com.techcafe.todone.db.internal.middleEntity.UserWithProject
 
 @Database(
     entities = [
@@ -16,7 +17,8 @@ import com.techcafe.todone.db.internal.middleEntity.TodoWithLabel
         ProjectEntity::class,
         LabelEntity::class,
         TodoWithLabel::class,
-        ProjectWithLabel::class
+        ProjectWithLabel::class,
+        UserWithProject::class
     ],
     version = 1
 )
@@ -29,4 +31,5 @@ abstract class LocalDataBase : RoomDatabase() {
 
     abstract fun todoLabelEntityDao(): TodoWithLabelDao
     abstract fun projectLabelEntityDao(): ProjectWithLabelDao
+    abstract fun userProjEntityDao(): UserWithProjectDao
 }
