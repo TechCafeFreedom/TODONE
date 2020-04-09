@@ -6,7 +6,7 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.techcafe.todone.db.internal.entity.LabelEntity
 import com.techcafe.todone.db.internal.entity.TodoEntity
-import com.techcafe.todone.db.internal.entity.TodoWithLabel
+import com.techcafe.todone.db.internal.middleEntity.TodoWithLabel
 
 @Dao
 interface TodoWithLabelDao {

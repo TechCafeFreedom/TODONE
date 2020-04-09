@@ -1,8 +1,10 @@
-package com.techcafe.todone.db.internal.entity
+package com.techcafe.todone.db.internal.middleEntity
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.ForeignKey
+import com.techcafe.todone.db.internal.entity.LabelEntity
+import com.techcafe.todone.db.internal.entity.TodoEntity
 
 @Entity(
     tableName = "todo_with_label",

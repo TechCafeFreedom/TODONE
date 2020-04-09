@@ -6,7 +6,7 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.techcafe.todone.db.internal.entity.LabelEntity
 import com.techcafe.todone.db.internal.entity.ProjectEntity
-import com.techcafe.todone.db.internal.entity.ProjectWithLabel
+import com.techcafe.todone.db.internal.middleEntity.ProjectWithLabel
 
 @Dao
 interface ProjectWithLabelDao {

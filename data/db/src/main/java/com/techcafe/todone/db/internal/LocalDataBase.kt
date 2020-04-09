@@ -6,6 +6,8 @@ import androidx.room.TypeConverters
 import com.techcafe.todone.db.internal.converter.DateConverter
 import com.techcafe.todone.db.internal.dao.*
 import com.techcafe.todone.db.internal.entity.*
+import com.techcafe.todone.db.internal.middleEntity.ProjectWithLabel
+import com.techcafe.todone.db.internal.middleEntity.TodoWithLabel
 
 @Database(
     entities = [

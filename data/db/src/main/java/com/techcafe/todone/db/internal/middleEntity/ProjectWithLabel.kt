@@ -1,8 +1,11 @@
-package com.techcafe.todone.db.internal.entity
+package com.techcafe.todone.db.internal.middleEntity
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.ForeignKey
+import com.techcafe.todone.db.internal.entity.LabelEntity
+import com.techcafe.todone.db.internal.entity.ProjectEntity
+
 @Entity(
     tableName = "project_with_label",
     primaryKeys = ["proj_id_with", "label_id_with"],
