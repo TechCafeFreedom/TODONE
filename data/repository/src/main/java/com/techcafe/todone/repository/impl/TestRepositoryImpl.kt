@@ -13,7 +13,8 @@ class TestRepositoryImpl(
     private val todoDao: TodoEntityDao,
     private val todoLabelDao: TodoWithLabelDao,
     private val labelDao: LabelEntityDao,
-    private val projLabelDao: ProjectWithLabelDao
+    private val projLabelDao: ProjectWithLabelDao,
+    private val userProjDao: UserWithProjectDao
 ) : TestRepository {
     // 表示テストのためのテストデータ登録関数
     override suspend fun getUserList(): List<UserEntity> =
@@ -22,7 +23,7 @@ class TestRepositoryImpl(
             userDao.getUserById(userId)
 
     override suspend fun getBindProjectList(userId: String): List<ProjectEntity> =
-            projDao.getBindProjectList(userId)
+            userProjDao.getBindProjList(userId)
 
     override suspend fun getProjectById(projectId: Int): ProjectEntity? =
             projDao.getProjectById(projectId)
