@@ -37,7 +37,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
                 return@OnPreferenceChangeListener true
             }
         }
-    }
+        }
 
         val sharedPref = activity?.getSharedPreferences(
             context?.getString(R.string.shared_pref_todone_key),
