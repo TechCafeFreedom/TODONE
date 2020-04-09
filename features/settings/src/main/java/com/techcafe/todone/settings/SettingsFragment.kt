@@ -37,7 +37,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
                 return@OnPreferenceChangeListener true
             }
         }
-    }
+        }
 
     companion object {
         private const val DARK_THEME_KEY = "darkTheme"
