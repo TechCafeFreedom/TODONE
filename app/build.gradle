@@ -42,7 +42,6 @@ dependencies {
     implementation project(':features:home')
     implementation project(':features:notifications')
     implementation project(':features:profile')
-    implementation project(':features:projects')
     implementation project(':features:settings')
     implementation project(':features:aboutapp')
     implementation project(':features:auth')
