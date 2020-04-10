@@ -12,10 +12,6 @@
             app:destination="@id/navigation_sign_in" />
     </fragment>
     <fragment
-        android:id="@+id/now"
-        android:name="com.techcafe.todone.now.NowFragment"
-        android:label="Now" />
-    <fragment
         android:id="@+id/notifications"
         android:name="com.techcafe.todone.notifications.NotificationsFragment"
         android:label="Notifications" />

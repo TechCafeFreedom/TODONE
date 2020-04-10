@@ -7,11 +7,6 @@
         android:title="@string/title_home"/>
 
     <item
-        android:id="@+id/now"
-        android:icon="@drawable/ic_play_arrow"
-        android:title="@string/title_now"/>
-
-    <item
         android:id="@+id/notifications"
         android:icon="@drawable/ic_notifications"
         android:title="@string/title_notifications"/>
