@@ -1,21 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <array name="language_labels">
-        <item>日本語</item>
-        <item>English</item>
-    </array>
-    <array name="language_values">
-        <item>JP</item>
-        <item>EN</item>
-    </array>
     <array name="pref_theme_entries">
         <item>@string/pref_theme_entry_light</item>
         <item>@string/pref_theme_entry_dark</item>
-        <item>@string/pref_theme_entry_battery</item>
+        <item>@string/pref_theme_entry_default</item>
     </array>
     <array name="pref_theme_values">
         <item>@string/pref_theme_value_light</item>
         <item>@string/pref_theme_value_dark</item>
-        <item>@string/pref_theme_value_battery</item>
+        <item>@string/pref_theme_value_default</item>
     </array>
 </resources>

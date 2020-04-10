@@ -14,6 +14,6 @@
     <string name="unknown_error">不明なエラーが発生しました</string>
     
     <!--  Shared Preferences Keys  -->
-    <string name="TODONE_PREF">TODONE_PREF</string>
-    <string name="MODE_NIGHT">MODE_NIGHT</string>
+    <string name="shared_pref_todone_key">TODONE_PREF</string>
+    <string name="shared_pref_mode_night_key">MODE_NIGHT</string>
 </resources>
