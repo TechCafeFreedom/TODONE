@@ -3,32 +3,32 @@ package com.techcafe.todone.db.internal.entity
 import androidx.room.*
 import com.techcafe.todone.db.internal.converter.DateTime
 
-@Entity(tableName = "todo_item",
+@Entity(tableName = "card_item",
     foreignKeys = arrayOf(
         ForeignKey(
-            entity = ProjectEntity::class,
-            parentColumns = arrayOf("project_id"),
-            childColumns = arrayOf("parent_project_id"),
+            entity = KanbanEntity::class,
+            parentColumns = arrayOf("kanban_id"),
+            childColumns = arrayOf("parent_kanban_id"),
             onDelete = ForeignKey.CASCADE // ユーザーが削除されると子も削除される(話し合う必要有り)
         )
     )
 )
-data class TodoEntity(
+data class CardEntity(
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "todo_id")
+    @ColumnInfo(name = "card_id")
     val id: Int,
-    @ColumnInfo(name = "parent_project_id")
+    @ColumnInfo(name = "parent_kanban_id")
     val projectId: Int,
-    @ColumnInfo(name = "todo_title")
+    @ColumnInfo(name = "card_title")
     val title: String,
-    @ColumnInfo(name = "todo_content")
+    @ColumnInfo(name = "card_content")
     val content: String,
-    @ColumnInfo(name = "todo_deadline")
+    @ColumnInfo(name = "card_deadline")
     val deadline: String,
-    @ColumnInfo(name = "todo_state")
+    @ColumnInfo(name = "card_state")
     val state: String,
-    @ColumnInfo(name = "todo_createdAt")
+    @ColumnInfo(name = "card_createdAt")
     val createdAt: DateTime,
-    @ColumnInfo(name = "todo_updatedAt")
+    @ColumnInfo(name = "card_updatedAt")
     val updatedAt: DateTime
 )

@@ -5,17 +5,17 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "project_item")
-data class ProjectEntity(
+@Entity(tableName = "board_item")
+data class BoardEntity(
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "project_id")
+    @ColumnInfo(name = "board_id")
     val id: Int,
-    @ColumnInfo(name = "project_title")
+    @ColumnInfo(name = "board_title")
     val title: String,
-    @ColumnInfo(name = "project_desc")
+    @ColumnInfo(name = "board_desc")
     val description: String,
-    @ColumnInfo(name = "project_created")
+    @ColumnInfo(name = "board_created")
     val projectCreatedAt: DateTime,
-    @ColumnInfo(name = "project_updated")
+    @ColumnInfo(name = "board_updated")
     val projectUpdatedAt: DateTime
 )

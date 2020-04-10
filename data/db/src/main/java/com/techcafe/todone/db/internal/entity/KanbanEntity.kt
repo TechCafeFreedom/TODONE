@@ -7,10 +7,10 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "kanban_item")
 data class KanbanEntity (
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "label_id")
+    @ColumnInfo(name = "kanban_id")
     val id: Int,
-    @ColumnInfo(name = "label_title")
+    @ColumnInfo(name = "kanban_title")
     val title: String,
-    @ColumnInfo(name = "label_desc")
+    @ColumnInfo(name = "kanban_desc")
     val description: String
 )
