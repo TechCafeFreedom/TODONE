@@ -18,7 +18,7 @@ data class CardEntity(
     @ColumnInfo(name = "card_id")
     val id: Int,
     @ColumnInfo(name = "parent_kanban_id")
-    val projectId: Int,
+    val kanbanId: Int,
     @ColumnInfo(name = "card_title")
     val title: String,
     @ColumnInfo(name = "card_content")
@@ -26,9 +26,5 @@ data class CardEntity(
     @ColumnInfo(name = "card_deadline")
     val deadline: String,
     @ColumnInfo(name = "card_state")
-    val state: String,
-    @ColumnInfo(name = "card_createdAt")
-    val createdAt: DateTime,
-    @ColumnInfo(name = "card_updatedAt")
-    val updatedAt: DateTime
+    val state: String
 )

@@ -13,9 +13,5 @@ data class BoardEntity(
     @ColumnInfo(name = "board_title")
     val title: String,
     @ColumnInfo(name = "board_desc")
-    val description: String,
-    @ColumnInfo(name = "board_created")
-    val projectCreatedAt: DateTime,
-    @ColumnInfo(name = "board_updated")
-    val projectUpdatedAt: DateTime
+    val description: String
 )
