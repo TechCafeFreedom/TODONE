@@ -1,4 +1,4 @@
-package com.techcafe.todone.home
+package com.techcafe.todone.board
 
 import org.junit.Assert.*
 import org.junit.Test

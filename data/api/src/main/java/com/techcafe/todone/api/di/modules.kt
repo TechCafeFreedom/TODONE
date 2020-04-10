@@ -5,12 +5,12 @@ import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import com.techcafe.todone.api.AddHeaderInterceptor
 import com.techcafe.todone.api.TestService
+import java.util.concurrent.TimeUnit
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
-import java.util.concurrent.TimeUnit
 
 private const val BASE_URL = "https://todone-test-production.herokuapp.com"
 val apiModule = module {

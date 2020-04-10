@@ -1,4 +1,4 @@
-package com.techcafe.todone.home
+package com.techcafe.todone.board
 
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry

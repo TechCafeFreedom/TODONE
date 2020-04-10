@@ -5,7 +5,7 @@
     app:startDestination="@id/home">
     <fragment
         android:id="@+id/home"
-        android:name="com.techcafe.todone.home.HomeFragment"
+        android:name="com.techcafe.todone.board.HomeFragment"
         android:label="Home">
         <action
             android:id="@+id/action_home_fragment_to_sign_in_graph"
