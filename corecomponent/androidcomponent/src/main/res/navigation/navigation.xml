@@ -2,11 +2,11 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/navigation"
-    app:startDestination="@id/home">
+    app:startDestination="@id/board">
     <fragment
-        android:id="@+id/home"
-        android:name="com.techcafe.todone.board.HomeFragment"
-        android:label="Home">
+        android:id="@+id/board"
+        android:name="com.techcafe.todone.board.BoardFragment"
+        android:label="Board">
         <action
             android:id="@+id/action_home_fragment_to_sign_in_graph"
             app:destination="@id/navigation_sign_in" />

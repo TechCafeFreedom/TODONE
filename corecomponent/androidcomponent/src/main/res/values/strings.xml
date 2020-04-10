@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">Todone</string>
-    <string name="title_home">Home</string>
-    <string name="title_now">Now</string>
+    <string name="title_board">Board</string>
     <string name="title_sign_in">SignIn</string>
     <string name="title_notifications">Notifications</string>
     <string name="item_projects">Projects</string>
