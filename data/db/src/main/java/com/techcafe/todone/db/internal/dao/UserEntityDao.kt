@@ -2,7 +2,7 @@ package com.techcafe.todone.db.internal.dao
 
 import androidx.room.*
 import com.techcafe.todone.db.internal.entity.UserEntity
-import com.techcafe.todone.db.internal.middleEntity.UserWithProject
+
 @Dao
 interface UserEntityDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)

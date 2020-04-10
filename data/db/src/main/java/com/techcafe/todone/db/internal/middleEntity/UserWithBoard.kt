@@ -1,19 +1,19 @@
 package com.techcafe.todone.db.internal.middleEntity
 
-import com.techcafe.todone.db.internal.entity.ProjectEntity
-import com.techcafe.todone.db.internal.entity.UserEntity
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.ForeignKey
+import com.techcafe.todone.db.internal.entity.BoardEntity
+import com.techcafe.todone.db.internal.entity.UserEntity
 
 @Entity(
-    tableName = "user_with_project",
-    primaryKeys = ["proj_id_with", "user_id_with"],
+    tableName = "user_with_board",
+    primaryKeys = ["board_id_with", "user_id_with"],
     foreignKeys = [
         ForeignKey(
-            entity = ProjectEntity::class,
-            parentColumns = ["project_id"],
-            childColumns = ["proj_id_with"],
+            entity = BoardEntity::class,
+            parentColumns = ["board_id"],
+            childColumns = ["board_id_with"],
             onDelete = ForeignKey.CASCADE
         ),
         ForeignKey(
@@ -23,11 +23,10 @@ import androidx.room.ForeignKey
             onDelete = ForeignKey.CASCADE
         )
     ]
-
 )
-data class UserWithProject(
-    @ColumnInfo(name = "proj_id_with")
-    val projectId: Int,
+data class UserWithBoard(
+    @ColumnInfo(name = "board_id_with")
+    val boardId: Int,
     @ColumnInfo(name = "user_id_with")
     val userId: String
 )
