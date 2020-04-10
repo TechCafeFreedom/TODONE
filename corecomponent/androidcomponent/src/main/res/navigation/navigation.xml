@@ -38,10 +38,6 @@
             android:id="@+id/action_edit_profile_to_profile"
             app:destination="@id/profile" />
     </fragment>
-    <fragment
-        android:id="@+id/projects"
-        android:name="com.techcafe.todone.projects.ProjectsFragment"
-        android:label="Projects" />
     <include app:graph="@navigation/navigation_sign_in" />
     <fragment
         android:id="@+id/aboutapp"
