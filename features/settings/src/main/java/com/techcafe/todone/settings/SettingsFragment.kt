@@ -29,6 +29,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
                     context?.getString(R.string.pref_theme_value_light) -> AppCompatDelegate.MODE_NIGHT_NO
                     context?.getString(R.string.pref_theme_value_dark) -> AppCompatDelegate.MODE_NIGHT_YES
                     context?.getString(R.string.pref_theme_value_default) -> AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
+                    context?.getString(R.string.pref_theme_value_default) -> AppCompatDelegate.MODE_NIGHT_AUTO_BATTERY
                     else -> throw IllegalArgumentException("should not happen")
                 }
                 sharedPref?.edit {
