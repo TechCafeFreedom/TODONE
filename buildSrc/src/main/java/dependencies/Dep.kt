@@ -20,6 +20,7 @@ object Dep {
         val DynamicFutureFragment = "2.3.0-SNAPSHOT"
         val LiveData = "2.2.0"
         val JitPack = "1.0.0"
+        val Dokka = "0.10.1"
     }
 
     object GradlePlugin {
@@ -29,6 +30,8 @@ object Dep {
             "androidx.navigation:navigation-safe-args-gradle-plugin:${LibsVersion.Navigation}"
         val playServices = "com.google.gms:google-services:4.3.3"
         val crashlytics = "com.google.firebase:firebase-crashlytics-gradle:2.0.0-beta01"
+        val dokka = "org.jetbrains.dokka:dokka-gradle-plugin:${LibsVersion.Dokka}"
+        val dokkaPlugin = "org.jetbrains.dokka"
     }
 
     object Test {

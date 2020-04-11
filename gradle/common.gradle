@@ -1,4 +1,7 @@
 import dependencies.Versions
+import dependencies.Dep
+
+apply plugin: Dep.GradlePlugin.dokkaPlugin
 
 allprojects {
     android {
@@ -30,5 +33,9 @@ allprojects {
         lintOptions {
             abortOnError false
         }
+    }
+    dokka {
+        outputFormat = 'javadoc'
+        outputDirectory = "$buildDir/document"
     }
 }
