@@ -1,9 +1,9 @@
 name: Android CI
 
-on: [push, pull_request]
+on: push
 
 jobs:
-  build:
+  setup:
     runs-on: ubuntu-latest
     steps:
       # usesでplugin的なものが使える
@@ -13,11 +13,6 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 1.8
-      # .gitignoreしているファイルを生成する
-      - name: Generate google-services.json
-        env:
-          GOOGLE_SERVICES_BASE64: ${{ secrets.GOOGLE_SERVICES_BASE64 }}
-        run: echo $GOOGLE_SERVICES_BASE64 | base64 --decode --ignore-garbage > $GITHUB_WORKSPACE/app/google-services.json
       # Gradleの依存関係をキャッシュ/リストアしてビルド時間を短くする
       - name: Gradle Cache
         uses: actions/cache@v1
@@ -26,12 +21,65 @@ jobs:
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
           restore-keys: |
             ${{ runner.os }}-gradle-
+  build:
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      # .gitignoreしているファイルを生成する
+      - name: Generate google-services.json
+        env:
+          GOOGLE_SERVICES_BASE64: ${{ secrets.GOOGLE_SERVICES_BASE64 }}
+        run: echo $GOOGLE_SERVICES_BASE64 | base64 --decode --ignore-garbage > $GITHUB_WORKSPACE/app/google-services.json
       # Build
       - name: Build with Gradle
         run: ./gradlew assembleDebug
       # Unit Test
       - name: Unit Test
         run: ./gradlew testDebugUnitTest
+
+  danger:
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      # .gitignoreしているファイルを生成する
+      - name: Generate google-services.json
+        env:
+          GOOGLE_SERVICES_BASE64: ${{ secrets.GOOGLE_SERVICES_BASE64 }}
+        run: echo $GOOGLE_SERVICES_BASE64 | base64 --decode --ignore-garbage > $GITHUB_WORKSPACE/app/google-services.json
+      - name: Setup ruby
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: '2.6'
+          architecture: 'x64'
+      - name: run ktlintMain
+        run: ./gradlew ktlintMain
+      - name: run andoidLint
+        run: ./gradlew lintDebug
+      - name: Cache Gems
+        uses: actions/cache@v1
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-danger-${{ env.cache-name }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-danger-${{ env.cache-name }}-gems-
+            ${{ runner.os }}-danger-${{ env.cache-name }}-
+            ${{ runner.os }}-danger-
+      - name: run danger
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gem install bundler:1.17.2
+          bundle update
+          bundle install
+          bundle exec danger
+
+  notification:
+    needs: [setup, build, danger]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
       # 失敗したときのSlackへの通知
       - name: Slack Notification Failure
         if: failure()
