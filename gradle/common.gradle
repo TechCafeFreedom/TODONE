@@ -1,4 +1,7 @@
 import dependencies.Versions
+import dependencies.Dep
+
+apply plugin: Dep.Dokka.dokkaPlugin
 
 allprojects {
     android {
@@ -28,4 +31,9 @@ allprojects {
             }
         }
     }
+    dokka {
+        outputFormat = 'javadoc'
+        outputDirectory = "$buildDir/javadoc"
+    }
 }
+buildscript.dependencies.classpath Dep.Dokka.dokka
