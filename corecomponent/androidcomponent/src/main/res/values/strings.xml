@@ -35,4 +35,10 @@
     <string name="pref_theme_entry_battery">When battery saver is on</string>
 
     <string name="pref_theme_default">@string/pref_theme_value_battery</string>
+    <!--  Language value  -->
+    <string name="pref_language_value_jp">jp</string>
+    <string name="pref_language_value_en">en</string>
+    <!--  Language entry  -->
+    <string name="pref_language_entry_jp">日本語</string>
+    <string name="pref_language_entry_en">English</string>
 </resources>

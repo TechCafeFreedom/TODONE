@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <array name="language_labels">
-        <item>日本語</item>
-        <item>English</item>
+    <array name="pref_language_entities">
+        <item>@string/pref_language_entry_jp</item>
+        <item>@string/pref_language_entry_en</item>
     </array>
-    <array name="language_values">
-        <item>JP</item>
-        <item>EN</item>
+    <array name="pref_language_values">
+        <item>@string/pref_language_value_jp</item>
+        <item>@string/pref_language_value_jp</item>
     </array>
     <array name="pref_theme_entries">
         <item>@string/pref_theme_entry_light</item>
