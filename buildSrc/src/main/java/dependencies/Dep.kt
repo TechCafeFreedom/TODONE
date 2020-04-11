@@ -20,6 +20,7 @@ object Dep {
         val DynamicFutureFragment = "2.3.0-SNAPSHOT"
         val LiveData = "2.2.0"
         val JitPack = "1.0.0"
+        val Dokka = "0.10.1"
     }
 
     object GradlePlugin {
@@ -183,5 +184,10 @@ object Dep {
         val common = "com.jakewharton.timber:timber-common:${LibsVersion.Timber}"
         val jdk = "com.jakewharton.timber:timber-jdk:${LibsVersion.Timber}"
         val android = "com.jakewharton.timber:timber-android:${LibsVersion.Timber}"
+    }
+
+    object Dokka {
+        val dokka = "org.jetbrains.dokka:dokka-gradle-plugin:${LibsVersion.Dokka}"
+        val dokkaPlugin = "org.jetbrains.dokka"
     }
 }
