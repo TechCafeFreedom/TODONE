@@ -17,3 +17,10 @@ Dir["*/build/reports/lint-results*.xml"].each do |file|
   android_lint.report_file = file
   android_lint.lint(inline_mode: true)
 end
+
+# fail if base branch has commit
+has_merge_commit = git.commits.any? { |c| c.message =~ /^Merge branch '#{github.branch_for_base}'/ }
+fail "Please rebase because of existence of merge commit" unless has_merge_commit
+
+# LGTM
+lgtm.check_lgtm
