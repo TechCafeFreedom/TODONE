@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import com.techcafe.todone.home.databinding.FragmentHomeBinding
+import timber.log.Timber
 
 class HomeFragment : Fragment(R.layout.fragment_home) {
 
@@ -26,6 +27,9 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 //            "toを初めて知った" to "toを初めて知った",
 //            "データ持ってくる" to "どこからとりあえず取ろう"
 //        )
+
+        // TODO あとで消す
+        Timber.d("$sampleData")
 
         controller.setData(sampleData)
     }

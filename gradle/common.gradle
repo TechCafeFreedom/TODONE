@@ -1,3 +1,4 @@
+import dependencies.Dep
 import dependencies.Versions
 import dependencies.Dep
 
@@ -38,4 +39,7 @@ allprojects {
         outputFormat = 'javadoc'
         outputDirectory = "$buildDir/document"
     }
+}
+dependencies {
+    implementation Dep.Timber.timber
 }
