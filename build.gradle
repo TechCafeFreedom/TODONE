@@ -11,7 +11,7 @@ buildscript {
         classpath Dep.GradlePlugin.android
         classpath Dep.GradlePlugin.kotlin
         classpath Dep.GradlePlugin.playServices
-        classpath Dep.Dokka.dokka
+        classpath Dep.GradlePlugin.dokka
     }
 }
 

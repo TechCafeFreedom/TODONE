@@ -30,6 +30,8 @@ object Dep {
             "androidx.navigation:navigation-safe-args-gradle-plugin:${LibsVersion.Navigation}"
         val playServices = "com.google.gms:google-services:4.3.3"
         val crashlytics = "com.google.firebase:firebase-crashlytics-gradle:2.0.0-beta01"
+        val dokka = "org.jetbrains.dokka:dokka-gradle-plugin:${LibsVersion.Dokka}"
+        val dokkaPlugin = "org.jetbrains.dokka"
     }
 
     object Test {
@@ -184,10 +186,5 @@ object Dep {
         val common = "com.jakewharton.timber:timber-common:${LibsVersion.Timber}"
         val jdk = "com.jakewharton.timber:timber-jdk:${LibsVersion.Timber}"
         val android = "com.jakewharton.timber:timber-android:${LibsVersion.Timber}"
-    }
-
-    object Dokka {
-        val dokka = "org.jetbrains.dokka:dokka-gradle-plugin:${LibsVersion.Dokka}"
-        val dokkaPlugin = "org.jetbrains.dokka"
     }
 }

@@ -1,7 +1,7 @@
 import dependencies.Versions
 import dependencies.Dep
 
-apply plugin: Dep.Dokka.dokkaPlugin
+apply plugin: Dep.GradlePlugin.dokkaPlugin
 
 allprojects {
     android {
