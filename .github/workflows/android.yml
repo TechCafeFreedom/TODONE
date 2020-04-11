@@ -17,23 +17,31 @@ jobs:
         run: echo $GOOGLE_SERVICES_BASE64 | base64 --decode --ignore-garbage > $GITHUB_WORKSPACE/app/google-services.json
       - name: Build with Gradle
         run: ./gradlew assembleDebug
+      - name: Unit Test
+        run: ./gradlew testDebugUnitTest
       - name: Slack Notification Failure
         if: failure()
         uses: rtCamp/action-slack-notify@v2.0.1
         env:
           SLACK_CHANNEL: notify-android
           SLACK_ICON: https://github.com/actions.png?size=48
+          SLACK_COLOR: '#ff0000'
           SLACK_TITLE: ':fire: Build Failure :fire:'
-          SLACK_MESSAGE: 'Build failure! See more detail to check github.'
+          SLACK_MESSAGE: |
+            Build failure!
+            See more detail to check github.
+            commit -> `${{ github.event.head_commit.message }}`
           SLACK_USERNAME: Github Actions
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
       - name: Slack Notification Success
-        if: always()
+        if: success()
         uses: rtCamp/action-slack-notify@v2.0.1
         env:
           SLACK_CHANNEL: notify-android
           SLACK_ICON: https://github.com/actions.png?size=48
           SLACK_TITLE: ':rocket: Build Success :rocket:'
-          SLACK_MESSAGE: 'Build success! yattane!'
+          SLACK_MESSAGE: |
+            Build success! yattane!
+            commit -> `${{ github.event.head_commit.message }}`
           SLACK_USERNAME: Github Actions
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
