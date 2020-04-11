@@ -10,9 +10,28 @@ import com.techcafe.todone.db.internal.middleEntity.BoardWithLabel
 
 @Dao
 interface BoardWithLabelDao {
+    /**
+     * @author felix925
+     * @param BoardWithLabel
+     * @return Unit
+     * @sample bindLabel(boardWithLabel)
+     * @see BoardWithLabel
+     * @throws none
+     * @exception none
+     */
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun bindLabel(boardWithLabel: BoardWithLabel)
 
+    /**
+     * @author felix925
+     * @param boardId
+     * @return ボードに紐づいているラベルのリスト
+     * @sample getLabelsForBoard(board.id)
+     * @see BoardEntity
+     * @see LabelEntity
+     * @throws none
+     * @exception none
+     */
     @Query(
         """
                SELECT * FROM label_item
@@ -21,8 +40,18 @@ interface BoardWithLabelDao {
                WHERE board_with_label.board_id_with=:boardId
                """
     )
-    fun getLabelsForproject(boardId: Int): List<LabelEntity>
+    fun getLabelsForBoard(boardId: Int): List<LabelEntity>
 
+    /**
+     * @author felix925
+     * @param labelId
+     * @return ラベルに紐づいているボードのリスト
+     * @sample getBoardsForLabel(label.id)
+     * @see BoardEntity
+     * @see LabelEntity
+     * @throws none
+     * @exception none
+     */
     @Query(
         """
                SELECT * FROM board_item
@@ -31,5 +60,5 @@ interface BoardWithLabelDao {
                WHERE board_with_label.label_id_with=:labelId
                """
     )
-    fun getProjectsForLabel(labelId: Int): List<BoardEntity>
+    fun getBoardsForLabel(labelId: Int): List<BoardEntity>
 }

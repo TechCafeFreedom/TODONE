@@ -7,9 +7,28 @@ import com.techcafe.todone.db.internal.middleEntity.UserWithBoard
 
 @Dao
 interface UserWithBoardDao {
+    /**
+     * @author felix925
+     * @param userWithBoard
+     * @return Unit
+     * @sample bindProject(userWithBoard)
+     * @see UserWithBoard
+     * @throws none
+     * @exception none
+     */
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun bindProject(userWithBoard: UserWithBoard)
 
+    /**
+     * @author felix925
+     * @param boardId
+     * @return ボードに紐付くユーザーのリスト
+     * @sample getBindUserList(board.id)
+     * @see UserEntity
+     * @see BoardEntity
+     * @throws none
+     * @exception none
+     */
     @Transaction
     @Query(
         """
@@ -21,6 +40,15 @@ interface UserWithBoardDao {
     )
     suspend fun getBindUserList(vararg boardId: String): List<UserEntity>
 
+    /**
+     * @author felix925
+     * @param userId
+     * @return ユーザーに紐づいているボードのリスト
+     * @sample getBindBoardList(user.id)
+     * @see BoardEntity
+     * @throws none
+     * @exception none
+     */
     @Transaction
     @Query(
         """
@@ -30,5 +58,5 @@ interface UserWithBoardDao {
                WHERE user_with_board.user_id_with=:userId
                """
     )
-    suspend fun getBindProjList(vararg userId: String): List<BoardEntity>
+    suspend fun getBindBoardList(vararg userId: String): List<BoardEntity>
 }

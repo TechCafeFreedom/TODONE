@@ -10,9 +10,28 @@ import com.techcafe.todone.db.internal.middleEntity.CardWithLabel
 
 @Dao
 interface CardWithLabelDao {
+    /**
+     * @author felix925
+     * @param CardWithLabel
+     * @return Unit
+     * @sample bindLabel(cardWithLabel)
+     * @see CardWithLabel
+     * @throws none
+     * @exception none
+     */
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun bindLabel(cardWithLabel: CardWithLabel)
 
+    /**
+     * @author felix925
+     * @param cardId
+     * @return カードに紐づいているラベルのリスト
+     * @sample getLabelsForTodo(card.id)
+     * @see LabelEntity
+     * @see CardWithLabel
+     * @throws none
+     * @exception none
+     */
     @Query(
         """
                SELECT * FROM label_item
@@ -23,6 +42,16 @@ interface CardWithLabelDao {
     )
     fun getLabelsForTodo(cardId: Int): List<LabelEntity>
 
+    /**
+     * @author felix925
+     * @param labelId
+     * @return ラベルに紐づいているカードのリスト
+     * @sample getTodosForLabel(label.id)
+     * @see CardEntity
+     * @see CardWithLabel
+     * @throws none
+     * @exception none
+     */
     @Query(
         """
                SELECT * FROM card_item
