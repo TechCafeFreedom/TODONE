@@ -35,9 +35,9 @@ class App : Application() {
 
     private fun setupNightMode() {
         val defaultNightMode = if (Build.VERSION.SDK_INT < Build.VERSION_CODES.Q) {
-            AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
-        } else {
             AppCompatDelegate.MODE_NIGHT_AUTO_BATTERY
+        } else {
+            AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
         }
         val sharedPred = applicationContext.getSharedPreferences(
             applicationContext.getString(R.string.shared_pref_todone_key),
