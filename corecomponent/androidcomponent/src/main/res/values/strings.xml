@@ -16,4 +16,23 @@
     <!--  Shared Preferences Keys  -->
     <string name="shared_pref_todone_key">TODONE_PREF</string>
     <string name="shared_pref_mode_night_key">MODE_NIGHT</string>
+
+    <!--  For SettingsFragment  -->
+    <string name="theme_label">Theme</string>
+    <string name="language_label">Language</string>
+    <string name="dark_theme_label">Dark Theme</string>
+    <string name="theme_key">darkTheme</string>
+    <string name="language_key">language</string>
+    <!--  Dark theme value  -->
+    <string name="pref_theme_value_light">light</string>
+    <string name="pref_theme_value_dark">dark</string>
+    <string name="pref_theme_value_default">default</string>
+    <string name="pref_theme_value_battery">battery</string>
+    <!--  Dark theme entry  -->
+    <string name="pref_theme_entry_light">Light</string>
+    <string name="pref_theme_entry_dark">Dark</string>
+    <string name="pref_theme_entry_default">System Default</string>
+    <string name="pref_theme_entry_battery">When battery saver is on</string>
+
+    <string name="pref_theme_default">@string/pref_theme_value_battery</string>
 </resources>
