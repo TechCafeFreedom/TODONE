@@ -23,7 +23,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
             Context.MODE_PRIVATE
         )
 
-        preferenceManager?.findPreference<ListPreference>(PREF_DARK_THEME_KEY)?.also {
+        preferenceManager?.findPreference<ListPreference>(DARK_THEME_KEY)?.also {
             it.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, newValue ->
                 val nightMode = when (newValue as String) {
                     context?.getString(R.string.pref_theme_value_light) -> AppCompatDelegate.MODE_NIGHT_NO
@@ -40,29 +40,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
         }
     }
 
-        val sharedPref = activity?.getSharedPreferences(
-            context?.getString(R.string.shared_pref_todone_key),
-            Context.MODE_PRIVATE
-        )
-
-        preferenceManager?.findPreference<ListPreference>(DARK_THEME_KEY)?.also {
-            it.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, newValue ->
-                val nightMode = when (newValue as String) {
-                    context?.getString(R.string.pref_theme_value_light) -> AppCompatDelegate.MODE_NIGHT_NO
-                    context?.getString(R.string.pref_theme_value_dark) -> AppCompatDelegate.MODE_NIGHT_YES
-                    context?.getString(R.string.pref_theme_value_default) -> AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
-                    else -> throw IllegalArgumentException("should not happen")
-                }
-                sharedPref?.edit {
-                    putInt(context?.getString(R.string.shared_pref_mode_night_key), nightMode)
-                }
-                AppCompatDelegate.setDefaultNightMode(nightMode)
-                return@OnPreferenceChangeListener true
-            }
-        }
-
     companion object {
-        private const val PREF_DARK_THEME_KEY = "darkTheme"
-        private const val PREF_LANGUAGE_KEY = "language"
+        private const val DARK_THEME_KEY = "darkTheme"
     }
 }
