@@ -36,4 +36,3 @@ allprojects {
         outputDirectory = "$buildDir/document"
     }
 }
-buildscript.dependencies.classpath Dep.Dokka.dokka
