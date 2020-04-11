@@ -2,7 +2,6 @@ package com.techcafe.todone.db.internal.dao
 
 import androidx.room.*
 import com.techcafe.todone.db.internal.entity.ProjectEntity
-import com.techcafe.todone.db.internal.middleEntity.ProjectWithTodo
 
 @Dao
 interface ProjectEntityDao {
