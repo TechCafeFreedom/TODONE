@@ -4,42 +4,12 @@
     <PreferenceCategory
         android:key="categoryTheme"
         android:title="@string/theme_label">
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> update darktheme to ListPreference from Switch
         <ListPreference
             android:defaultValue="@string/pref_theme_default"
             android:entries="@array/pref_theme_entries"
             android:key="@string/theme_key"
             android:title="@string/dark_theme_label"
             app:entryValues="@array/pref_theme_values"
-            app:useSimpleSummaryProvider="true" />
-<<<<<<< HEAD
-=======
-        <SwitchPreferenceCompat
-            android:key="darkTheme"
-            android:title="@string/dark_theme_label" />
->>>>>>> can get dark theme changed
-=======
->>>>>>> update darktheme to ListPreference from Switch
-    </PreferenceCategory>
-    <PreferenceCategory
-        android:key="categoryLanguage"
-        android:title="@string/language_label">
-        <ListPreference
-            android:entries="@array/language_labels"
-<<<<<<< HEAD
-<<<<<<< HEAD
-            android:key="@string/language_key"
-=======
-            android:key="language"
->>>>>>> can get dark theme changed
-=======
-            android:key="@string/language_key"
->>>>>>> update darktheme to ListPreference from Switch
-            android:title="@string/language_label"
-            app:entryValues="@array/language_values"
             app:useSimpleSummaryProvider="true" />
     </PreferenceCategory>
 </PreferenceScreen>

@@ -23,7 +23,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
             Context.MODE_PRIVATE
         )
 
-        preferenceManager?.findPreference<ListPreference>(DARK_THEME_KEY)?.also {
+        preferenceManager?.findPreference<ListPreference>(PREF_DARK_THEME_KEY)?.also {
             it.onPreferenceChangeListener = Preference.OnPreferenceChangeListener { _, newValue ->
                 val nightMode = when (newValue as String) {
                     context?.getString(R.string.pref_theme_value_light) -> AppCompatDelegate.MODE_NIGHT_NO
@@ -62,6 +62,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
         }
 
     companion object {
-        private const val DARK_THEME_KEY = "darkTheme"
+        private const val PREF_DARK_THEME_KEY = "darkTheme"
+        private const val PREF_LANGUAGE_KEY = "language"
     }
 }
