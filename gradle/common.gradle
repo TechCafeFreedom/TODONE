@@ -33,7 +33,7 @@ allprojects {
     }
     dokka {
         outputFormat = 'javadoc'
-        outputDirectory = "$buildDir/javadoc"
+        outputDirectory = "$buildDir/document"
     }
 }
 buildscript.dependencies.classpath Dep.Dokka.dokka
