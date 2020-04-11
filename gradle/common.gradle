@@ -1,3 +1,4 @@
+import dependencies.Dep
 import dependencies.Versions
 
 allprojects {
@@ -28,4 +29,7 @@ allprojects {
             }
         }
     }
+}
+dependencies {
+    implementation Dep.Timber.timber
 }

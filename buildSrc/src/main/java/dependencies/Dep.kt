@@ -15,7 +15,7 @@ object Dep {
         val Epoxy = "3.9.0"
         val Coil = "0.9.5"
         val MockK = "1.9.3"
-        val Timber = "5.0.0-SNAPSHOT"
+        val Timber = "4.7.1"
         val Stetho = "1.5.1"
         val DynamicFutureFragment = "2.3.0-SNAPSHOT"
         val LiveData = "2.2.0"
@@ -180,8 +180,6 @@ object Dep {
     }
 
     object Timber {
-        val common = "com.jakewharton.timber:timber-common:${LibsVersion.Timber}"
-        val jdk = "com.jakewharton.timber:timber-jdk:${LibsVersion.Timber}"
-        val android = "com.jakewharton.timber:timber-android:${LibsVersion.Timber}"
+        val timber = "com.jakewharton.timber:timber:${LibsVersion.Timber}"
     }
 }
