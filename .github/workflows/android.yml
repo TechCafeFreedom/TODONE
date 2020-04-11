@@ -4,7 +4,6 @@ on: [push, pull_request]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -12,9 +11,29 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 1.8
-      - name: generate google-services.json
+      - name: Generate google-services.json
         env:
           GOOGLE_SERVICES_BASE64: ${{ secrets.GOOGLE_SERVICES_BASE64 }}
         run: echo $GOOGLE_SERVICES_BASE64 | base64 --decode --ignore-garbage > $GITHUB_WORKSPACE/app/google-services.json
       - name: Build with Gradle
-        run: ./gradlew build
+        run: ./gradlew assembleDebug
+      - name: Slack Notification Failure
+        if: failure()
+        uses: rtCamp/action-slack-notify@v2.0.1
+        env:
+          SLACK_CHANNEL: notify-android
+          SLACK_ICON: https://github.com/actions.png?size=48
+          SLACK_TITLE: ':fire: Build Failure :fire:'
+          SLACK_MESSAGE: 'Build failure! See more detail to check github.'
+          SLACK_USERNAME: Github Actions
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+      - name: Slack Notification Success
+        if: always()
+        uses: rtCamp/action-slack-notify@v2.0.1
+        env:
+          SLACK_CHANNEL: notify-android
+          SLACK_ICON: https://github.com/actions.png?size=48
+          SLACK_TITLE: ':rocket: Build Success :rocket:'
+          SLACK_MESSAGE: 'Build success! yattane!'
+          SLACK_USERNAME: Github Actions
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
