@@ -1,7 +1,6 @@
 package com.techcafe.todone.repository
 
 import com.techcafe.todone.db.internal.entity.*
-import com.techcafe.todone.db.internal.middleEntity.UserWithProject
 
 // TODO: 削除
 interface TestRepository {

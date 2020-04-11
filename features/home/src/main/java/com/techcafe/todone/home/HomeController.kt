@@ -27,8 +27,8 @@ class HomeController : TypedEpoxyController<List<Pair<String, String>>>() {
             }
         }
     }
-    // 後に必要になりそうなViewの更新
-    fun update(newData: List<Pair<String, String>>) {
-        requestModelBuild()
-    }
+//    // 後に必要になりそうなViewの更新
+//    fun update(newData: List<Pair<String, String>>) {
+//        requestModelBuild()
+//    }
 }

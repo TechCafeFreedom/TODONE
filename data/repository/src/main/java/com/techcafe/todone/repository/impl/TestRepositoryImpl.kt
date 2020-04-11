@@ -1,9 +1,7 @@
 package com.techcafe.todone.repository.impl
 
-import android.util.Log
 import com.techcafe.todone.db.internal.dao.*
 import com.techcafe.todone.db.internal.entity.*
-import com.techcafe.todone.db.internal.middleEntity.UserWithProject
 import com.techcafe.todone.repository.TestRepository
 import java.util.*
 
@@ -33,14 +31,14 @@ class TestRepositoryImpl(
 
     override suspend fun getTodoById(todoId: Int): TodoEntity? =
             todoDao.getTodoById(todoId)
-    
+
     override suspend fun getLabelByProjectId(projectId: Int) =
             projLabelDao.getLabelsForproject(projectId)
 
     override suspend fun getLabelByTodoId(todoId: Int) =
             todoLabelDao.getLabelsForTodo(todoId)
 
-    //ラベル付け系
+    // ラベル付け系
     override suspend fun todoBindLabel(todoId: Int, labelId: Int) =
             todoLabelDao.bindLabel(TodoWithLabel(todoId, labelId))
 
