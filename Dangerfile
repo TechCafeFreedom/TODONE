@@ -1,5 +1,5 @@
 # Ignore inline messages which lay outside a diff's range of PR
-github.dismiss_out_of_range_messages
+# github.dismiss_out_of_range_messages
 
 # Make it more obvious that a PR is a work in progress and shouldn't be merged yet
 failure("PR is classed as Work in Progress") if github.pr_title.include? "[WIP]"
@@ -23,4 +23,8 @@ has_merge_commit = git.commits.any? { |c| c.message =~ /^Merge branch '#{github.
 fail "Please rebase because of existence of merge commit" unless has_merge_commit
 
 # LGTM
+if status_report[:errors].length.zero? && status_report[:warnings].length.zero?
+    markdown("OK")
+end
+
 lgtm.check_lgtm
