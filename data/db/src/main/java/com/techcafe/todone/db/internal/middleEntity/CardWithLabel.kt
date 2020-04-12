@@ -1,17 +1,19 @@
-package com.techcafe.todone.db.internal.entity
+package com.techcafe.todone.db.internal.middleEntity
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.ForeignKey
+import com.techcafe.todone.db.internal.entity.CardEntity
+import com.techcafe.todone.db.internal.entity.LabelEntity
 
 @Entity(
-    tableName = "todo_with_label",
-    primaryKeys = ["todo_id_with", "label_id_with"],
+    tableName = "card_with_label",
+    primaryKeys = ["card_id_with", "label_id_with"],
     foreignKeys = [
         ForeignKey(
-            entity = TodoEntity::class,
-            parentColumns = ["todo_id"],
-            childColumns = ["todo_id_with"],
+            entity = CardEntity::class,
+            parentColumns = ["card_id"],
+            childColumns = ["card_id_with"],
             onDelete = ForeignKey.CASCADE
         ),
         ForeignKey(
@@ -22,9 +24,9 @@ import androidx.room.ForeignKey
         )
     ]
 )
-data class TodoWithLabel(
-    @ColumnInfo(name = "todo_id_with")
-    val todoId: Int,
+data class CardWithLabel(
+    @ColumnInfo(name = "card_id_with")
+    val cardId: Int,
     @ColumnInfo(name = "label_id_with")
     val labelId: Int
 )

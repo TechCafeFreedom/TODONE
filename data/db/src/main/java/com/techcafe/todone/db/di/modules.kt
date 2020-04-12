@@ -13,4 +13,5 @@ val dbModule = module {
     factory { get<LocalDataBase>().labelEntityDao() }
     factory { get<LocalDataBase>().projectLabelEntityDao() }
     factory { get<LocalDataBase>().todoEntityDao() }
+    factory { get<LocalDataBase>().userProjEntityDao() }
 }

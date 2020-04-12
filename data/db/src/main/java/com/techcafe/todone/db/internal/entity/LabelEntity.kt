@@ -15,9 +15,5 @@ data class LabelEntity(
     @ColumnInfo(name = "label_desc")
     val description: String,
     @ColumnInfo(name = "label_color")
-    val color: String,
-    @ColumnInfo(name = "label_created")
-    val createdAt: DateTime,
-    @ColumnInfo(name = "label_updated")
-    val updatedAt: DateTime
+    val color: String
 )
