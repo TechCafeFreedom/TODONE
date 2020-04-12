@@ -29,16 +29,16 @@ class TestRepositoryImpl(
             projDao.getBoardById(projectId)
 
     override suspend fun getBindTodoList(projectId: Int): List<CardEntity> =
-            cardDao.getBindTodoById(projectId)
+            cardDao.getBindCardById(projectId)
 
     override suspend fun getTodoById(todoId: Int): CardEntity? =
-            cardDao.getTodoById(todoId)
+            cardDao.getCardById(todoId)
 
     override suspend fun getLabelByProjectId(projectId: Int) =
             projLabelDao.getLabelsForBoard(projectId)
 
     override suspend fun getLabelByTodoId(todoId: Int) =
-            cardLabelDao.getLabelsForTodo(todoId)
+            cardLabelDao.getLabelsForCard(todoId)
 
     // ラベル付け系
     override suspend fun todoBindLabel(todoId: Int, labelId: Int) =
@@ -62,7 +62,7 @@ class TestRepositoryImpl(
             userDao.insertUser(userEntity)
 
     override suspend fun insertProject(boardEntity: BoardEntity) =
-            projDao.insertProject(boardEntity)
+            projDao.insertBoard(boardEntity)
 
     override suspend fun insertTodo(cardEntity: CardEntity) =
             cardDao.insertCard(cardEntity)
