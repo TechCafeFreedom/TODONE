@@ -5,29 +5,26 @@ import com.techcafe.todone.db.internal.entity.BoardEntity
 import com.techcafe.todone.db.internal.entity.UserEntity
 import com.techcafe.todone.db.internal.middleEntity.UserWithBoard
 
+/**
+ * ユーザーとボードに跨るデータのDao
+ */
 @Dao
 interface UserWithBoardDao {
     /**
-     * @author felix925
-     * @param userWithBoard
-     * @return Unit
-     * @sample bindProject(userWithBoard)
+     * ユーザーとプロジェクトを紐づける関数
+     *
+     * @param [userWithBoard] 登録したいユーザーとボードのidを持つuserWithBoard
      * @see UserWithBoard
-     * @throws none
-     * @exception none
      */
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun bindProject(userWithBoard: UserWithBoard)
+    fun bindBoard(userWithBoard: UserWithBoard)
 
     /**
-     * @author felix925
-     * @param boardId
-     * @return ボードに紐付くユーザーのリスト
-     * @sample getBindUserList(board.id)
+     * ボードに紐づいているユーザーを出力する関数
+     *
+     * @param [boardId] 紐づいているユーザーを取得したいボードのid
      * @see UserEntity
      * @see BoardEntity
-     * @throws none
-     * @exception none
      */
     @Transaction
     @Query(
@@ -41,13 +38,10 @@ interface UserWithBoardDao {
     suspend fun getBindUserList(vararg boardId: String): List<UserEntity>
 
     /**
-     * @author felix925
-     * @param userId
-     * @return ユーザーに紐づいているボードのリスト
-     * @sample getBindBoardList(user.id)
+     * ユーザーに紐づいているボードを取得する関数
+     *
+     * @param [userId] 紐づいているボードを取得したいユーザーのid
      * @see BoardEntity
-     * @throws none
-     * @exception none
      */
     @Transaction
     @Query(

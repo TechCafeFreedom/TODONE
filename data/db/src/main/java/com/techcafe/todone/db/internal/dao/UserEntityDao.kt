@@ -3,41 +3,34 @@ package com.techcafe.todone.db.internal.dao
 import androidx.room.*
 import com.techcafe.todone.db.internal.entity.UserEntity
 
+/**
+ * ユーザーに関するDao
+ */
 @Dao
 interface UserEntityDao {
     /**
-     * @author felix925
-     * @param user
-     * @return Unit
-     * @sample insertUser(user)
+     * ユーザーを作成する関数
+     *
+     * @param [user] 登録したいユーザーのインスタンス
      * @see UserEntity
-     * @throws none
-     * @exception none
      */
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertUser(vararg user: UserEntity)
 
     /**
-     * @author felix925
-     * @param
-     * @return 登録されているユーザーのリスト
-     * @sample getUserList()
+     * 登録されているユーザーのリストを返すリスト
+     *
      * @see UserEntity
-     * @throws none
-     * @exception none
      */
     @Transaction
     @Query("SELECT * FROM user_item")
     suspend fun getUserList(): List<UserEntity>
 
     /**
-     * @author felix925
-     * @param userId
-     * @return userIdと同じidを持つUser or null
-     * @sample getUserById(user.id)
+     * 引数のidを持つユーザーを取得する関数
+     *
+     * @param [userId] 取得したいユーザーが持つid
      * @see UserEntity
-     * @throws none
-     * @exception none
      */
     @Transaction
     @Query("SELECT * FROM user_item WHERE user_id = :userId LIMIT 1")

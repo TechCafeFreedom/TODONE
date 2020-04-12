@@ -8,29 +8,26 @@ import com.techcafe.todone.db.internal.entity.BoardEntity
 import com.techcafe.todone.db.internal.entity.LabelEntity
 import com.techcafe.todone.db.internal.middleEntity.BoardWithLabel
 
+/**
+ * ボードとラベルに跨るデータのDao
+ */
 @Dao
 interface BoardWithLabelDao {
     /**
-     * @author felix925
-     * @param BoardWithLabel
-     * @return Unit
-     * @sample bindLabel(boardWithLabel)
+     * ボードとラベルを結びつける関数
+     *
+     * @param [BoardWithLabel] 登録したいボードとラベルのidを持つBoardWithLabelEntity
      * @see BoardWithLabel
-     * @throws none
-     * @exception none
      */
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun bindLabel(boardWithLabel: BoardWithLabel)
 
     /**
-     * @author felix925
-     * @param boardId
-     * @return ボードに紐づいているラベルのリスト
-     * @sample getLabelsForBoard(board.id)
-     * @see BoardEntity
-     * @see LabelEntity
-     * @throws none
-     * @exception none
+     * ボードに紐づいているラベルのリストを取得する関数
+     *
+     * @param [boardId] ラベル一覧を取得したいボードのid
+     * @see [BoardEntity]
+     * @see [LabelEntity]
      */
     @Query(
         """
@@ -43,14 +40,11 @@ interface BoardWithLabelDao {
     fun getLabelsForBoard(boardId: Int): List<LabelEntity>
 
     /**
-     * @author felix925
-     * @param labelId
-     * @return ラベルに紐づいているボードのリスト
-     * @sample getBoardsForLabel(label.id)
-     * @see BoardEntity
-     * @see LabelEntity
-     * @throws none
-     * @exception none
+     * ラベルに紐づいているボードを出力する関数
+     *
+     * @param [labelId] ボード一覧を取得したいラベルのid
+     * @see [BoardEntity]
+     * @see [LabelEntity]
      */
     @Query(
         """
