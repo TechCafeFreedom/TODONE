@@ -18,7 +18,7 @@ interface UserEntityDao {
     fun insertUser(vararg user: UserEntity)
 
     /**
-     * 登録されているユーザーのリストを返すリスト
+     * 登録されているユーザーのリストを返す関数
      *
      * @see UserEntity
      */
