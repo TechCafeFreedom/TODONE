@@ -8,29 +8,26 @@ import com.techcafe.todone.db.internal.entity.CardEntity
 import com.techcafe.todone.db.internal.entity.LabelEntity
 import com.techcafe.todone.db.internal.middleEntity.CardWithLabel
 
+/**
+ * カードとラベルに跨るデータのDao
+ */
 @Dao
 interface CardWithLabelDao {
     /**
-     * @author felix925
-     * @param CardWithLabel
-     * @return Unit
-     * @sample bindLabel(cardWithLabel)
+     * カードとラベルを紐づける関数
+     *
+     * @param [CardWithLabel] 登録したいカードとラベルのidを持つCardWithLabelインスタンス
      * @see CardWithLabel
-     * @throws none
-     * @exception none
      */
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun bindLabel(cardWithLabel: CardWithLabel)
 
     /**
-     * @author felix925
-     * @param cardId
-     * @return カードに紐づいているラベルのリスト
-     * @sample getLabelsForTodo(card.id)
+     * カードに紐づいているラベルを取得する関数
+     *
+     * @param [cardId] 紐付くラベル一覧を取得したいカードのid
      * @see LabelEntity
      * @see CardWithLabel
-     * @throws none
-     * @exception none
      */
     @Query(
         """
@@ -40,17 +37,14 @@ interface CardWithLabelDao {
                WHERE card_with_label.card_id_with=:cardId
                """
     )
-    fun getLabelsForTodo(cardId: Int): List<LabelEntity>
+    fun getLabelsForCard(cardId: Int): List<LabelEntity>
 
     /**
-     * @author felix925
-     * @param labelId
-     * @return ラベルに紐づいているカードのリスト
-     * @sample getTodosForLabel(label.id)
+     * ラベルに紐付くカードのリストを取得する関数
+     *
+     * @param [labelId] 紐付くカード一覧を取得したいラベルのid
      * @see CardEntity
      * @see CardWithLabel
-     * @throws none
-     * @exception none
      */
     @Query(
         """
@@ -60,5 +54,5 @@ interface CardWithLabelDao {
                WHERE card_with_label.label_id_with=:labelId
                """
     )
-    fun getTodosForLabel(labelId: Int): List<CardEntity>
+    fun getCardsForLabel(labelId: Int): List<CardEntity>
 }

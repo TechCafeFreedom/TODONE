@@ -3,28 +3,25 @@ package com.techcafe.todone.db.internal.dao
 import androidx.room.*
 import com.techcafe.todone.db.internal.entity.BoardEntity
 
+/**
+ * Boardに関するDao
+ */
 @Dao
 interface BoardEntityDao {
     /**
-     * @author felix925
-     * @param BoardEntity
-     * @return Unit
-     * @sample insertProject(board)
+     * プロジェクトを挿入する関数
+     *
+     * @param [BoardEntity] 登録したいBordEntityインスタンス
      * @see BoardEntity
-     * @throws none
-     * @exception none
      */
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun insertProject(vararg board: BoardEntity)
+    fun insertBoard(vararg board: BoardEntity)
 
     /**
-     * @author felix925
-     * @param ボードのid
-     * @return BoardEntity?
-     * @sample getBoardById(board.id)
+     * 引数のidに該当するボードを返す関数
+     *
+     * @param [boardId] 取得したいボードのid
      * @see BoardEntity
-     * @throws none
-     * @exception none
      */
     @Transaction
     @Query("SELECT * FROM board_item WHERE board_id = :boardId LIMIT 1")

@@ -3,43 +3,37 @@ package com.techcafe.todone.db.internal.dao
 import androidx.room.*
 import com.techcafe.todone.db.internal.entity.CardEntity
 
+/**
+ * カードに関するDao
+ */
 @Dao
 interface CardEntityDao {
     /**
-     * @author felix925
-     * @param card
-     * @return Unit
-     * @sample insertCard(card)
+     * カードを登録する関数
+     *
+     * @param [card] 登録したいカードインスタンス
      * @see CardEntity
-     * @throws none
-     * @exception none
      */
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertCard(vararg card: CardEntity)
 
     /**
-     * @author felix925
-     * @param kanbanId
-     * @return 看板に紐づくカードのリスト or EmptyList
-     * @sample getBindTodoById(kanbanId)
+     * 看板に紐づいているカードのリストを返す関数
+     *
+     * @param [kanbanId] 紐づいているカードのリストを取得したい看板のid
      * @see CardEntity
-     * @throws none
-     * @exception none
      */
     @Transaction
     @Query("SELECT * FROM card_item WHERE parent_kanban_id = :kanbanId")
-    suspend fun getBindTodoById(kanbanId: Int): List<CardEntity>
+    suspend fun getBindCardById(kanbanId: Int): List<CardEntity>
 
     /**
-     * @author felix925
-     * @param cardId
-     * @return 引数と同じidかnull
-     * @sample getTodoById(cardId)
+     * 引数のカードidと同じカードを返す関数
+     *
+     * @param [cardId] 同じidを持つデータを取得したい際のid
      * @see CardEntity
-     * @throws none
-     * @exception none
      */
     @Transaction
     @Query("SELECT * FROM card_item WHERE card_id = :cardId LIMIT 1")
-    suspend fun getTodoById(cardId: Int): CardEntity?
+    suspend fun getCardById(cardId: Int): CardEntity?
 }
