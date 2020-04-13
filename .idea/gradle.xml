@@ -24,7 +24,6 @@
             <option value="$PROJECT_DIR$/features/board" />
             <option value="$PROJECT_DIR$/features/notifications" />
             <option value="$PROJECT_DIR$/features/profile" />
-            <option value="$PROJECT_DIR$/features/projects" />
             <option value="$PROJECT_DIR$/features/settings" />
             <option value="$PROJECT_DIR$/model" />
           </set>

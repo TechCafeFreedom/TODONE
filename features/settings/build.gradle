@@ -11,18 +11,13 @@ dependencies {
     implementation project(':corecomponent:androidcomponent')
 
     implementation Dep.AndroidX.appCompat
-    implementation Dep.AndroidX.constraint
     implementation Dep.AndroidX.fragmentKtx
-    implementation Dep.AndroidX.swipeRefresh
     implementation Dep.AndroidX.coreKtx
     implementation Dep.AndroidX.liveDataCoreKtx
     implementation Dep.AndroidX.liveDataKtx
     implementation Dep.AndroidX.lifecycleLiveData
-    implementation Dep.AndroidX.recyclerView
-    implementation Dep.AndroidX.design
     implementation Dep.AndroidX.preference
 
-    implementation Dep.Epoxy.epoxy
-    implementation Dep.Epoxy.databindingSupport
-    kapt Dep.Epoxy.processer
+    implementation Dep.Koin.koin
+    implementation Dep.Koin.viewModel
 }

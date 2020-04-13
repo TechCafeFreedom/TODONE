@@ -15,12 +15,13 @@ object Dep {
         val Epoxy = "3.9.0"
         val Coil = "0.9.5"
         val MockK = "1.9.3"
-        val Timber = "5.0.0-SNAPSHOT"
+        val Timber = "4.7.1"
         val Stetho = "1.5.1"
         val DynamicFutureFragment = "2.3.0-SNAPSHOT"
         val LiveData = "2.2.0"
         val JitPack = "1.0.0"
         val ViewPager2 = "1.0.0"
+        val Dokka = "0.10.1"
     }
 
     object GradlePlugin {
@@ -30,6 +31,8 @@ object Dep {
             "androidx.navigation:navigation-safe-args-gradle-plugin:${LibsVersion.Navigation}"
         val playServices = "com.google.gms:google-services:4.3.3"
         val crashlytics = "com.google.firebase:firebase-crashlytics-gradle:2.0.0-beta01"
+        val dokka = "org.jetbrains.dokka:dokka-gradle-plugin:${LibsVersion.Dokka}"
+        val dokkaPlugin = "org.jetbrains.dokka"
     }
 
     object Test {
@@ -183,8 +186,6 @@ object Dep {
     }
 
     object Timber {
-        val common = "com.jakewharton.timber:timber-common:${LibsVersion.Timber}"
-        val jdk = "com.jakewharton.timber:timber-jdk:${LibsVersion.Timber}"
-        val android = "com.jakewharton.timber:timber-android:${LibsVersion.Timber}"
+        val timber = "com.jakewharton.timber:timber:${LibsVersion.Timber}"
     }
 }

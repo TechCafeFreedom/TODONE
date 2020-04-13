@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="DrawerTheme" parent="Theme.AppCompat.Light.DarkActionBar">
 
+    <style name="Theme.Todone.DayNight" parent="Theme.MaterialComponents.DayNight">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
 
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/light_blue_300</item>
+        <item name="colorPrimaryDark">@color/indigo_900</item>
+        <item name="colorAccent">@color/gray</item>
     </style>
 </resources>

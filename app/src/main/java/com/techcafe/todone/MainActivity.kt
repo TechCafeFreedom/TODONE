@@ -37,7 +37,6 @@ class MainActivity : AppCompatActivity() {
 
         binding.navView.setNavigationItemSelectedListener {
             when (it.itemId) {
-                R.id.drawer_menu_projects -> navController.navigate(R.id.projects)
                 R.id.drawer_menu_settings -> navController.navigate(R.id.settings)
                 R.id.drawer_menu_profile -> navController.navigate(R.id.profile)
                 R.id.drawer_menu_about_app -> navController.navigate(R.id.aboutapp)

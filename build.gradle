@@ -1,5 +1,4 @@
 import dependencies.Dep
-
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 apply from: rootProject.file('gradle/projectDependencyGraph.gradle')
@@ -12,6 +11,7 @@ buildscript {
         classpath Dep.GradlePlugin.android
         classpath Dep.GradlePlugin.kotlin
         classpath Dep.GradlePlugin.playServices
+        classpath Dep.GradlePlugin.dokka
     }
 }
 
@@ -34,7 +34,9 @@ allprojects {
         description = "Check Kotlin code style."
         classpath = configurations.ktlint
         main = "com.pinterest.ktlint.Main"
-        args "src/**/*.kt"
+        args "src/**/*.kt", "--android", "--color", "--reporter=plain",
+                "--reporter=checkstyle,output=${buildDir}/reports/ktlint-results.xml"
+        ignoreExitValue true
     }
 
     task ktlintFormat(type: JavaExec, group: "formatting") {

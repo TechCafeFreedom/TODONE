@@ -12,6 +12,7 @@ dependencies {
     api Dep.AndroidX.Navigation.fragmentKtx
     api Dep.AndroidX.Navigation.uiKtx
     api Dep.AndroidX.Navigation.runtimeKtx
+    implementation Dep.AndroidX.design
 
     api Dep.Koin.koin
     api Dep.Koin.viewModel

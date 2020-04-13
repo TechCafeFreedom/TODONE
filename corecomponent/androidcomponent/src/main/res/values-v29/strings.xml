@@ -1,0 +1,3 @@
+<resources>
+    <string name="pref_theme_default">@string/pref_theme_value_default</string>
+</resources>

@@ -1,4 +1,8 @@
+import dependencies.Dep
 import dependencies.Versions
+import dependencies.Dep
+
+apply plugin: Dep.GradlePlugin.dokkaPlugin
 
 allprojects {
     android {
@@ -27,5 +31,15 @@ allprojects {
                 jvmTarget = "1.8"
             }
         }
+        lintOptions {
+            abortOnError false
+        }
     }
+    dokka {
+        outputFormat = 'javadoc'
+        outputDirectory = "$buildDir/document"
+    }
+}
+dependencies {
+    implementation Dep.Timber.timber
 }
