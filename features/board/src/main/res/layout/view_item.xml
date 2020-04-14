@@ -5,19 +5,19 @@
 
     <data>
         <variable
-            name="model_sample"
+            name="model"
             type="com.techcafe.todone.board.SampleModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="602dp">
+        android:layout_height="match_parent">
 
         <TextView
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{model_sample.title}"
+            android:text="@{model.title}"
             android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -29,7 +29,7 @@
             android:id="@+id/description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{model_sample.description}"
+            android:text="@{model.description}"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
