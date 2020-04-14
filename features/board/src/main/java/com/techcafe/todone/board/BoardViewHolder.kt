@@ -25,5 +25,4 @@ internal class BoardViewHolder(itemView: View, private val binding: ViewItemBind
             executePendingBindings()
         }
     }
-
 }

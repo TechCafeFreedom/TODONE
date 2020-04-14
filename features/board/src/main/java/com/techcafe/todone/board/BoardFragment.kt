@@ -37,6 +37,5 @@ class BoardFragment : Fragment(R.layout.fragment_board) {
             binding.viewpager.adapter = adapter
             adapter.setItem(sampleItem)
         }
-
     }
 }
