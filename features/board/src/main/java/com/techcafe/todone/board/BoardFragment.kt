@@ -13,6 +13,10 @@ class BoardFragment : Fragment(R.layout.fragment_board) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val binding = FragmentBoardBinding.bind(view)
+
+        val adapter = BoardAdapter()
+
         val sampleItem = listOf(
             SampleModel(
                 title = "Hogeeeee",
@@ -32,13 +36,9 @@ class BoardFragment : Fragment(R.layout.fragment_board) {
             )
         )
 
-        val binding = FragmentBoardBinding.bind(view)
-
-        val adapter = BoardAdapter()
-
         binding.viewpager.setPageTransformer(ZoomOutPageTransformer())
 
-        binding.apply {
+        binding.viewpager.apply {
             binding.viewpager.adapter = adapter
             adapter.setItem(sampleItem)
         }
