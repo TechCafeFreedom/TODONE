@@ -1,4 +1,4 @@
-package com.techcafe.todone.board
+package com.techcafe.todone.board.model
 
 data class SampleModel(
     val title: String?,
