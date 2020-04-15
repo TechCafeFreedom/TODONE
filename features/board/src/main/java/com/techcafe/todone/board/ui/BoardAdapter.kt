@@ -6,12 +6,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.techcafe.todone.board.databinding.ViewItemBinding
 import com.techcafe.todone.board.model.SampleModel
 
-internal class BoardAdapter : RecyclerView.Adapter<BoardViewHolder>() { //型で怒られる
+internal class BoardAdapter : RecyclerView.Adapter<BoardViewHolder>() {
     private var list: List<SampleModel> = listOf()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BoardViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val binding = ViewItemBinding.inflate(inflater, parent, false)
-        return BoardViewHolder(binding) //ここ弄る場青ViewModel側も変更が必要
+        return BoardViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: BoardViewHolder, position: Int) {
