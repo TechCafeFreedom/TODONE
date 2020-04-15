@@ -20,6 +20,7 @@ object Dep {
         val DynamicFutureFragment = "2.3.0-SNAPSHOT"
         val LiveData = "2.2.0"
         val JitPack = "1.0.0"
+        val ViewPager2 = "1.0.0"
         val Dokka = "0.10.1"
     }
 
@@ -67,6 +68,8 @@ object Dep {
         val liveDataCoreKtx =
             "androidx.lifecycle:lifecycle-livedata-core-ktx:${LibsVersion.LiveData}"
         val liveDataKtx = "androidx.lifecycle:lifecycle-livedata-ktx:${LibsVersion.LiveData}"
+
+        val viewPager2 = "androidx.viewpager2:viewpager2:${LibsVersion.ViewPager2}"
 
         object Room {
             val compiler = "androidx.room:room-compiler:${LibsVersion.Room}"

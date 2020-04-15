@@ -9,7 +9,7 @@ apply plugin: 'kotlin-kapt'
 apply from: rootProject.file("gradle/common.gradle")
 android.dataBinding.enabled = true
 dependencies {
-    implementation project(':features:home')
+    implementation project(':features:board')
     implementation project(':features:notifications')
     implementation project(':features:profile')
     implementation project(':features:settings')
