@@ -39,7 +39,7 @@ class BoardFragment : Fragment(R.layout.fragment_board) {
         binding.viewpager.setPageTransformer(ZoomOutPageTransformer())
 
         binding.viewpager.apply {
-            binding.viewpager.adapter = adapter
+            this.adapter = adapter
             adapter.setItem(sampleItem)
         }
     }
