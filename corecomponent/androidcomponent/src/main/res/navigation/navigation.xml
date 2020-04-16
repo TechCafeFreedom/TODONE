@@ -10,6 +10,17 @@
         <action
             android:id="@+id/action_home_fragment_to_sign_in_graph"
             app:destination="@id/navigation_sign_in" />
+        <action
+            android:id="@+id/action_board_to_create_board"
+            app:destination="@id/create_board"/>
+    </fragment>
+    <fragment
+        android:id="@+id/create_board"
+        android:name="com.techcafe.todone.board.CreateBoardFragment"
+        android:label="CreateBoard">
+        <action
+            android:id="@+id/action_create_board_to_board"
+            app:destination="@id/board"/>
     </fragment>
     <fragment
         android:id="@+id/notifications"
