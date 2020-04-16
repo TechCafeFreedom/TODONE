@@ -19,6 +19,7 @@ dependencies {
     implementation Dep.AndroidX.coreKtx
     implementation Dep.AndroidX.lifecycleLiveData
     implementation Dep.AndroidX.recyclerView
+    implementation Dep.AndroidX.viewPager2
     implementation Dep.Epoxy.epoxy
     implementation Dep.Epoxy.databindingSupport
     kapt Dep.Epoxy.processer
