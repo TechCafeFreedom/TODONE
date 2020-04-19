@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation_auth"
+    app:startDestination="@id/sign_up">
+
+    <fragment
+        android:id="@+id/sign_up"
+        android:name="com.techcafe.todone.auth.signup.SignUpFragment"
+        android:label="SignUp" />
+
+</navigation>

@@ -7,7 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@android:color/holo_red_dark"
-        tools:context=".SignInActivity">
+        tools:context=".AuthActivity">
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/nav_host_fragment"
@@ -19,7 +19,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:navGraph="@navigation/navigation_sign_in" />
+            app:navGraph="@navigation/navigation_auth" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
