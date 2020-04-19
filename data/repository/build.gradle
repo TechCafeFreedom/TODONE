@@ -1,5 +1,4 @@
 import dependencies.Dep
-import dependencies.Versions
 
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
@@ -11,5 +10,8 @@ dependencies {
     implementation project(':data:api')
     implementation project(':data:db')
 
+    implementation Dep.Firebase.auth
+    implementation Dep.Firebase.core
+    implementation Dep.Kotlin.playServices
     implementation Dep.Koin.koin
 }
