@@ -11,6 +11,8 @@ android.dataBinding.enabled = true
 
 dependencies {
     implementation project(':corecomponent:androidcomponent')
+    implementation project(':model')
+    implementation project(':data:repository')
 
     implementation Dep.AndroidX.appCompat
     implementation Dep.AndroidX.constraint
