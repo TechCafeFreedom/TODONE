@@ -13,9 +13,6 @@ dependencies {
     implementation Dep.AndroidX.appCompat
     implementation Dep.AndroidX.fragmentKtx
     implementation Dep.AndroidX.coreKtx
-    implementation Dep.AndroidX.liveDataCoreKtx
-    implementation Dep.AndroidX.liveDataKtx
-    implementation Dep.AndroidX.lifecycleLiveData
     implementation Dep.AndroidX.preference
 
     implementation Dep.Koin.koin

@@ -16,7 +16,5 @@ dependencies {
     implementation Dep.Moshi.moshi
     implementation Dep.Moshi.kotlin
 
-    implementation Dep.Kotlin.stdlib
-    implementation Dep.Kotlin.coroutines
     implementation Dep.Koin.koin
 }

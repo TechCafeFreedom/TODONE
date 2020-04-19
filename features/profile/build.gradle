@@ -18,11 +18,8 @@ dependencies {
     implementation Dep.AndroidX.appCompat
     implementation Dep.AndroidX.recyclerView
     implementation Dep.AndroidX.design
-    implementation Dep.AndroidX.liveDataKtx
     implementation Dep.AndroidX.fragmentKtx
-    implementation Dep.AndroidX.lifecycleLiveData
     implementation Dep.AndroidX.activityKtx
-    implementation Dep.AndroidX.liveDataCoreKtx
     // DI
     implementation Dep.Koin.koin
     implementation Dep.Koin.viewModel

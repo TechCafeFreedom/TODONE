@@ -90,15 +90,11 @@ object Dep {
     }
 
     object Kotlin {
-
         val stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${LibsVersion.Kotlin}"
-
         val coroutines =
             "org.jetbrains.kotlinx:kotlinx-coroutines-core:${LibsVersion.KotlinCoroutines}"
         val androidCoroutinesDispatcher =
             "org.jetbrains.kotlinx:kotlinx-coroutines-android:${LibsVersion.KotlinCoroutines}"
-        val coroutinesReactive =
-            "org.jetbrains.kotlinx:kotlinx-coroutines-reactive:${LibsVersion.KotlinCoroutines}"
     }
 
     object Firebase {
