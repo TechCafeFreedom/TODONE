@@ -3,4 +3,7 @@
     <!-- TODO: Remove or change this placeholder text -->
 
     <string name="description">description</string>
+    <string name="create_board_image">createboard_image</string>
+    <string name="board_title_hint">ボードのタイトル</string>
+    <string name="board_desc_hint">ボードの説明</string>
 </resources>
