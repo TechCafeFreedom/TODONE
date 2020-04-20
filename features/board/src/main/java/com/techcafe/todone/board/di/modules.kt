@@ -5,5 +5,5 @@ import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 val boardModule = module {
-    viewModel { BoardCreateViewModel(get()) }
+    viewModel { BoardCreateViewModel() }
 }
