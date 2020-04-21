@@ -6,8 +6,9 @@ import android.content.DialogInterface
 import android.os.Bundle
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.viewModels
-import com.techcafe.todone.board.viewModel.BoardCreateViewModel
+import androidx.lifecycle.observe
 import com.techcafe.todone.board.databinding.FragmentCreateBinding
+import com.techcafe.todone.board.viewModel.BoardCreateViewModel
 
 class CreateBoardFragment : DialogFragment() {
     private lateinit var dialog: AlertDialog
@@ -15,10 +16,13 @@ class CreateBoardFragment : DialogFragment() {
     private val viewmodel: BoardCreateViewModel by viewModels()
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+        val inflater = requireActivity().layoutInflater
+        binding = FragmentCreateBinding.inflate(inflater)
+        binding.viewModel = viewmodel
+        binding.lifecycleOwner = this
+
         dialog = activity?.let {
             val builder = AlertDialog.Builder(it)
-            val inflater = requireActivity().layoutInflater
-            binding = FragmentCreateBinding.bind(inflater.inflate(R.layout.fragment_create, null))
             builder.setView(binding.root)
                 .setPositiveButton("作成", null)
                 .setNegativeButton("キャンセル",
@@ -29,12 +33,14 @@ class CreateBoardFragment : DialogFragment() {
         } ?: throw IllegalStateException("Activity must not be null")
 
         dialog.show()
-        binding.viewModel = viewmodel
-//        binding.lifecycleOwner = this
 
         dialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener {
             viewmodel.createBoard()
         }
+
+        viewmodel.errorTitle.observe(this) {}
+        viewmodel.errorDesc.observe(this) {}
+
         return dialog
     }
 }
