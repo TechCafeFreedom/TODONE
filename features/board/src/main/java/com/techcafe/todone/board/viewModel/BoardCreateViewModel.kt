@@ -25,11 +25,11 @@ class BoardCreateViewModel(
         _errorDesc.value = null
     }
 
-    //TODO ココをRepository実装後処理差し替える repository.createBoard
+    // TODO ココをRepository実装後処理差し替える repository.createBoard
     fun createBoard() {
         _errorTitle.value = null
         _errorDesc.value = null
-        //Repositoryの関数呼び出し
+        // Repositoryの関数呼び出し
         if (validateInput()) {
             Timber.d("SUCCESS")
         } else {
