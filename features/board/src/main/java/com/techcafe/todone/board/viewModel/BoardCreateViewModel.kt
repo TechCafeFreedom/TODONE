@@ -7,12 +7,14 @@ import timber.log.Timber
 class BoardCreateViewModel(
 //    private val repository: TestRepository
 ) : ViewModel() {
-    var boardTitle: String = ""
-    var boardDesc: String = ""
+    var boardTitle = MutableLiveData<String>()
+    var boardDesc = MutableLiveData<String>()
     val errorTitle = MutableLiveData<String?>()
     val errorDesc = MutableLiveData<String?>()
 
     init {
+        boardTitle.value = ""
+        boardDesc.value = ""
         errorTitle.value = null
         errorDesc.value = null
     }
@@ -32,11 +34,11 @@ class BoardCreateViewModel(
     private fun validateInput(): Boolean {
         var flag = true
 
-        if (boardTitle.isEmpty()) {
+        if (boardTitle.value.isNullOrEmpty()) {
             errorTitle.value = "タイトルを入力してください。"
             flag = false
         }
-        if(boardDesc.isEmpty()){
+        if(boardDesc.value.isNullOrEmpty()){
             errorDesc.value = "説明を入力してください。"
             flag = false
         }
