@@ -4,10 +4,10 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.google.firebase.auth.FirebaseAuth
 import com.techcafe.todone.repository.AuthRepository
+import java.util.*
 import kotlinx.coroutines.tasks.await
 import techcafe.todone.Results
 import techcafe.todone.User
-import java.util.*
 
 class AuthRepositoryImpl : AuthRepository {
     private val auth = FirebaseAuth.getInstance()
