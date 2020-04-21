@@ -12,7 +12,7 @@ import java.util.*
 class AuthRepositoryImpl : AuthRepository {
     private val auth = FirebaseAuth.getInstance()
 
-    private val _isLogin = MutableLiveData(false)
+    private val _isLogin = MutableLiveData(auth.currentUser != null)
     override val isLogin: LiveData<Boolean> get() = _isLogin
 
     override suspend fun signUpWithMail(email: String, pass: String): Results<User> {
