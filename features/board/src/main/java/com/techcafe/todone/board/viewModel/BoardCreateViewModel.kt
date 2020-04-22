@@ -8,22 +8,15 @@ import timber.log.Timber
 class BoardCreateViewModel(
 //    private val repository: TestRepository
 ) : ViewModel() {
-    val boardTitle = MutableLiveData<String>()
-    val boardDesc = MutableLiveData<String>()
-    private val _errorTitle = MutableLiveData<String?>()
-    private val _errorDesc = MutableLiveData<String?>()
+    val boardTitle = MutableLiveData("")
+    val boardDesc = MutableLiveData("")
+    private val _errorTitle = MutableLiveData<String?>(null)
+    private val _errorDesc = MutableLiveData<String?>(null)
 
     val errorTitle: LiveData<String?>
         get() = _errorTitle
     val errorDesc: LiveData<String?>
         get() = _errorDesc
-
-    init {
-        boardTitle.value = ""
-        boardDesc.value = ""
-        _errorTitle.value = null
-        _errorDesc.value = null
-    }
 
     // TODO ココをRepository実装後処理差し替える repository.createBoard
     fun createBoard() {
