@@ -36,6 +36,7 @@ class BoardFragment : Fragment(R.layout.fragment_board) {
             )
         )
 
+        binding.viewpager.offscreenPageLimit = 2
         binding.viewpager.setPageTransformer(ZoomOutPageTransformer())
 
         binding.viewpager.apply {
