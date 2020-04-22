@@ -1,6 +1,5 @@
 package com.techcafe.todone.board
 
-
 import android.app.AlertDialog
 import android.app.Dialog
 import android.content.DialogInterface
