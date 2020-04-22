@@ -42,5 +42,10 @@ class BoardFragment : Fragment(R.layout.fragment_board) {
             this.adapter = adapter
             adapter.setItem(sampleItem)
         }
+
+        binding.fab.setOnClickListener {
+            val dialog = CreateBoardFragment()
+            dialog.show(parentFragmentManager,"CreateBoardFragment")
+        }
     }
 }
