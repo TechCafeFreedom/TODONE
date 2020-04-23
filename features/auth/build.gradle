@@ -11,7 +11,6 @@ dependencies {
     implementation project(':corecomponent:androidcomponent')
     implementation project(':data:repository')
 
-    implementation Dep.Firebase.ui
     implementation Dep.Firebase.auth
     implementation Dep.liveEvent
     implementation Dep.AndroidX.appCompat
