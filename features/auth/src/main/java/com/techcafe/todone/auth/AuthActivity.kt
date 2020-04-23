@@ -16,6 +16,9 @@ class AuthActivity : AppCompatActivity(R.layout.activity_auth) {
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_auth)
 
+        setSupportActionBar(binding.toolbar)
+
+
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         val navController = navHostFragment.navController
         setupActionBarWithNavController(navController, null)

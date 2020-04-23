@@ -8,8 +8,8 @@
         android:name="com.techcafe.todone.board.BoardFragment"
         android:label="Board">
         <action
-            android:id="@+id/action_home_fragment_to_auth_graph"
-            app:destination="@id/navigation_auth" />
+            android:id="@+id/action_board_fragment_to_auth"
+            app:destination="@id/auth" />
     </fragment>
     <fragment
         android:id="@+id/notifications"
@@ -22,7 +22,7 @@
     <fragment
         android:id="@+id/profile"
         android:name="com.techcafe.todone.profile.ProfileFragment"
-        android:label="Profile" >
+        android:label="Profile">
         <action
             android:id="@+id/action_profile_to_edit_profile"
             app:destination="@+id/edit_profile" />
@@ -33,14 +33,18 @@
     <fragment
         android:id="@+id/edit_profile"
         android:name="com.techcafe.todone.profile.edit.EditProfileFragment"
-        android:label="EditProfile" >
+        android:label="EditProfile">
         <action
             android:id="@+id/action_edit_profile_to_profile"
             app:destination="@id/profile" />
     </fragment>
-    <include app:graph="@navigation/navigation_auth" />
+<!--    <include app:graph="@navigation/navigation_auth" />-->
     <fragment
         android:id="@+id/aboutapp"
         android:name="com.techcafe.todone.aboutapp.AboutAppFragment"
         android:label="AboutApp" />
+    <activity
+        android:id="@+id/auth"
+        android:name="com.techcafe.todone.auth.AuthActivity"
+        android:label="Auth" />
 </navigation>

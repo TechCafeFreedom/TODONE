@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.drawer_menu_settings -> navController.navigate(R.id.settings)
                 R.id.drawer_menu_profile -> navController.navigate(R.id.profile)
                 R.id.drawer_menu_about_app -> navController.navigate(R.id.aboutapp)
-                R.id.drawer_menu_auth -> navController.navigate(R.id.action_home_fragment_to_auth_graph)
+                R.id.drawer_menu_auth -> navController.navigate(R.id.auth)
             }
             drawer_layout.closeDrawer(nav_view)
             true
