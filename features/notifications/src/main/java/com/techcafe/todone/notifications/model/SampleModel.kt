@@ -1,4 +1,7 @@
 package com.techcafe.todone.notifications.model
 
-class SampleModel {
-}
+data class SampleModel(
+    val title: String?,
+    val description: String?,
+    val date: String?
+)
