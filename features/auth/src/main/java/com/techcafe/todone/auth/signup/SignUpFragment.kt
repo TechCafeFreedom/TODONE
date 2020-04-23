@@ -33,7 +33,7 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
         }
 
         viewModel.isLogin.observe(viewLifecycleOwner) {
-            if (it) findNavController().navigate(R.id.action_auth_to_board)
+            if (it) activity?.finish()
         }
     }
 }
