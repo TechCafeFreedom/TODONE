@@ -5,15 +5,15 @@ import android.app.Dialog
 import android.content.DialogInterface
 import android.os.Bundle
 import androidx.fragment.app.DialogFragment
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.observe
 import com.techcafe.todone.board.databinding.FragmentCreateBinding
 import com.techcafe.todone.board.viewModel.BoardCreateViewModel
+import org.koin.android.ext.android.inject
 
 class CreateBoardFragment : DialogFragment() {
     private lateinit var dialog: AlertDialog
     private lateinit var binding: FragmentCreateBinding
-    private val viewmodel: BoardCreateViewModel by viewModels()
+    private val viewmodel: BoardCreateViewModel by inject()
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val inflater = requireActivity().layoutInflater

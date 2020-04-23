@@ -45,7 +45,7 @@ class BoardFragment : Fragment(R.layout.fragment_board) {
 
         binding.fab.setOnClickListener {
             val dialog = CreateBoardFragment()
-            dialog.show(parentFragmentManager,"CreateBoardFragment")
+            dialog.show(parentFragmentManager, "CreateBoardFragment")
         }
     }
 }
