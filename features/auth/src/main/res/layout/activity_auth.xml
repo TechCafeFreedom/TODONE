@@ -6,7 +6,6 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/holo_red_dark"
         tools:context=".AuthActivity">
 
         <com.google.android.material.appbar.MaterialToolbar

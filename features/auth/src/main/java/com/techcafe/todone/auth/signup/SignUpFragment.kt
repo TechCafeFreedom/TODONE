@@ -6,12 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.observe
-import androidx.navigation.fragment.findNavController
-import com.techcafe.todone.auth.R
 import com.techcafe.todone.auth.databinding.FragmentSignUpBinding
 import org.koin.android.viewmodel.ext.android.viewModel
 
-class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
+class SignUpFragment : Fragment() {
 
     private lateinit var binding: FragmentSignUpBinding
     private val viewModel: SignUpViewModel by viewModel()

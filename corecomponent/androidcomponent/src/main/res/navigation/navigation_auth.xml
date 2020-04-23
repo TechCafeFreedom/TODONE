@@ -7,10 +7,5 @@
     <fragment
         android:id="@+id/sign_up"
         android:name="com.techcafe.todone.auth.signup.SignUpFragment"
-        android:label="SignUp">
-        <action
-            android:id="@+id/action_auth_to_board"
-            app:destination="@id/board" />
-    </fragment>
-
+        android:label="SignUp"/>
 </navigation>
