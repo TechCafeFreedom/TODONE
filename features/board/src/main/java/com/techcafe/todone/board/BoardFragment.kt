@@ -3,7 +3,6 @@ package com.techcafe.todone.board
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.lifecycleScope
 import com.techcafe.todone.board.animation.ZoomOutPageTransformer
 import com.techcafe.todone.board.databinding.FragmentBoardBinding
 import com.techcafe.todone.board.model.SampleModel
