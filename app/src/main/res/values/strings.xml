@@ -2,4 +2,5 @@
     <string name="app_name">Todone</string>
     <string name="settings">Settings</string>
     <string name="dark_theme">ダークテーマ</string>
+    <string name="title_testdynamicfeature">Test Module Title</string>
 </resources>
