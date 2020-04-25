@@ -11,10 +11,10 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI.setupWithNavController
 import com.google.android.play.core.splitcompat.SplitCompat
 import com.google.android.play.core.splitinstall.SplitInstallManager
-import com.google.android.play.core.splitinstall.SplitInstallManagerFactory
 import com.google.android.play.core.splitinstall.SplitInstallRequest
 import com.google.android.play.core.splitinstall.SplitInstallStateUpdatedListener
 import com.google.android.play.core.splitinstall.model.SplitInstallSessionStatus
+import com.google.android.play.core.splitinstall.testing.FakeSplitInstallManagerFactory
 import com.techcafe.todone.databinding.ActivityMainBinding
 import kotlinx.android.synthetic.main.activity_main.*
 import timber.log.Timber
@@ -22,9 +22,7 @@ import timber.log.Timber
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private val manager: SplitInstallManager by lazy {
-        SplitInstallManagerFactory.create(this)
-    }
+    private lateinit var manager: SplitInstallManager
 
     private val listener = SplitInstallStateUpdatedListener { state ->
         when (state.status()) {
@@ -62,6 +60,15 @@ class MainActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
         setSupportActionBar(toolbar)
+
+        manager = FakeSplitInstallManagerFactory.create(this, this.getExternalFilesDir(null))
+
+//        if (BuildConfig.DEBUG) {
+//            FakeSplitInstallManagerFactory.create(this, this.getExternalFilesDir(null))
+//        } else {
+//            SplitInstallManagerFactory.create(this)
+//        }
+
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         val navController = navHostFragment.navController

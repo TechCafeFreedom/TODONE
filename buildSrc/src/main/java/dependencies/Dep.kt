@@ -186,6 +186,6 @@ object Dep {
     }
 
     object Play {
-        val playCore = "com.google.android.play:core:1.6.4"
+        val playCore = "com.google.android.play:core:1.6.5"
     }
 }
