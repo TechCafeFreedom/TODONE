@@ -95,6 +95,7 @@ object Dep {
             "org.jetbrains.kotlinx:kotlinx-coroutines-core:${LibsVersion.KotlinCoroutines}"
         val androidCoroutinesDispatcher =
             "org.jetbrains.kotlinx:kotlinx-coroutines-android:${LibsVersion.KotlinCoroutines}"
+        val playServices = "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:${LibsVersion.KotlinCoroutines}"
     }
 
     object Firebase {
