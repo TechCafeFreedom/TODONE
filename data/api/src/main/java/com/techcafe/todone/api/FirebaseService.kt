@@ -1,6 +1,5 @@
 package com.techcafe.todone.api
 
-import com.google.firebase.auth.GetTokenResult
 import com.techcafe.todone.api.model.UserResponse
 import kotlinx.coroutines.flow.Flow
 

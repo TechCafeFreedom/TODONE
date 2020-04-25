@@ -8,8 +8,8 @@ import com.techcafe.todone.api.AddHeaderInterceptor
 import com.techcafe.todone.api.FirebaseService
 import com.techcafe.todone.api.FirebaseServiceImpl
 import com.techcafe.todone.api.TestService
-import kotlinx.coroutines.ExperimentalCoroutinesApi
 import java.util.concurrent.TimeUnit
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.dsl.module

@@ -2,11 +2,11 @@ package com.techcafe.todone.api
 
 import com.google.firebase.auth.FirebaseAuth
 import com.techcafe.todone.api.model.UserResponse
+import java.util.*
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.callbackFlow
 import kotlinx.coroutines.tasks.await
-import java.util.*
 
 @ExperimentalCoroutinesApi
 class FirebaseServiceImpl(
