@@ -11,6 +11,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI.setupWithNavController
 import com.google.android.play.core.splitcompat.SplitCompat
 import com.google.android.play.core.splitinstall.SplitInstallManager
+import com.google.android.play.core.splitinstall.SplitInstallManagerFactory
 import com.google.android.play.core.splitinstall.SplitInstallRequest
 import com.google.android.play.core.splitinstall.SplitInstallStateUpdatedListener
 import com.google.android.play.core.splitinstall.model.SplitInstallSessionStatus
@@ -61,13 +62,11 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(toolbar)
 
-        manager = FakeSplitInstallManagerFactory.create(this, this.getExternalFilesDir(null))
-
-//        if (BuildConfig.DEBUG) {
-//            FakeSplitInstallManagerFactory.create(this, this.getExternalFilesDir(null))
-//        } else {
-//            SplitInstallManagerFactory.create(this)
-//        }
+        manager = if (BuildConfig.DEBUG) {
+            FakeSplitInstallManagerFactory.create(this, this.getExternalFilesDir(null))
+        } else {
+            SplitInstallManagerFactory.create(this)
+        }
 
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
@@ -121,6 +120,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun loadModule(navController: NavController) {
+
+        if (BuildConfig.DEBUG) navController.navigate(R.id.settings)
+
         if (manager.installedModules.contains(":features:settings")) {
             // 既にインストール済みのとき
             Timber.d("すでにインストール済みだよ")
