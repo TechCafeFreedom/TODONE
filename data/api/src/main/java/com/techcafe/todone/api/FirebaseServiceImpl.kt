@@ -33,8 +33,8 @@ class FirebaseServiceImpl(
     }
 
     override suspend fun signInWithEmail(email: String, pass: String): UserResponse {
-        val authResult = auth.signInWithEmailAndPassword(email, pass).await()
-        val authUser = authResult.user
+        val authResult = auth.signInWithEmailAndPassword(email, pass)
+        val authUser = authResult.await().user
         return UserResponse(
             id = UUID.randomUUID().toString(),
             name = authUser.displayName ?: "",
@@ -42,6 +42,5 @@ class FirebaseServiceImpl(
         )
     }
 
-    override suspend fun getToken(): String? =
-        auth.currentUser?.getIdToken(true)?.await()?.token
+    override suspend fun getToken(): String? = auth.currentUser?.getIdToken(true)?.await()?.token
 }
