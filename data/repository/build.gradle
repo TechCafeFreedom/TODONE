@@ -10,7 +10,5 @@ dependencies {
     implementation project(':data:api')
     implementation project(':data:db')
 
-    implementation Dep.Firebase.auth
-    implementation Dep.Kotlin.playServices
     implementation Dep.Koin.koin
 }
