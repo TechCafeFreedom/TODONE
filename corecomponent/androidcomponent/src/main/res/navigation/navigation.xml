@@ -38,7 +38,6 @@
             android:id="@+id/action_edit_profile_to_profile"
             app:destination="@id/profile" />
     </fragment>
-<!--    <include app:graph="@navigation/navigation_auth" />-->
     <fragment
         android:id="@+id/aboutapp"
         android:name="com.techcafe.todone.aboutapp.AboutAppFragment"
