@@ -1,2 +1,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.techcafe.todone.settings" />
+    xmlns:dist="http://schemas.android.com/apk/distribution"
+    package="com.techcafe.todone.settings">
+    <dist:module
+        dist:instant="false"
+        dist:title="Settings Module">
+        <dist:delivery>
+            <dist:on-demand />
+        </dist:delivery>
+        <dist:fusion dist:include="true" />
+    </dist:module>
+</manifest>

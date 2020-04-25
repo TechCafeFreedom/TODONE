@@ -1,6 +1,6 @@
 import dependencies.Dep
 
-apply plugin: 'com.android.library'
+apply plugin: 'com.android.dynamic-feature'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
@@ -9,6 +9,7 @@ apply from: rootProject.file('gradle/common.gradle')
 android.dataBinding.enabled = true
 dependencies {
     implementation project(':corecomponent:androidcomponent')
+    implementation project(':app')
 
     implementation Dep.AndroidX.appCompat
     implementation Dep.AndroidX.fragmentKtx
