@@ -1,6 +1,5 @@
 package com.techcafe.todone.db.internal.entity
 
-import com.techcafe.todone.db.internal.converter.DateTime
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey

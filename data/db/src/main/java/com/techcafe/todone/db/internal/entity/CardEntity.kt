@@ -1,7 +1,6 @@
 package com.techcafe.todone.db.internal.entity
 
 import androidx.room.*
-import com.techcafe.todone.db.internal.converter.DateTime
 
 @Entity(tableName = "card_item",
     foreignKeys = arrayOf(

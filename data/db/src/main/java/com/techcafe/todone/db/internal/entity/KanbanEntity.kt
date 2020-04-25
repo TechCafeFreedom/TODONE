@@ -15,12 +15,12 @@ import androidx.room.PrimaryKey
         )
     )
 )
-data class KanbanEntity (
+data class KanbanEntity(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "kanban_id")
     val id: Int,
     @ColumnInfo(name = "parent_board_id")
-    val projectId:Int,
+    val projectId: Int,
     @ColumnInfo(name = "kanban_title")
     val title: String,
     @ColumnInfo(name = "kanban_desc")
