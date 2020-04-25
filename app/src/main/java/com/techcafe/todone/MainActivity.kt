@@ -10,14 +10,47 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI.setupWithNavController
 import com.google.android.play.core.splitcompat.SplitCompat
+import com.google.android.play.core.splitinstall.SplitInstallManager
 import com.google.android.play.core.splitinstall.SplitInstallManagerFactory
 import com.google.android.play.core.splitinstall.SplitInstallRequest
+import com.google.android.play.core.splitinstall.SplitInstallStateUpdatedListener
+import com.google.android.play.core.splitinstall.model.SplitInstallSessionStatus
 import com.techcafe.todone.databinding.ActivityMainBinding
 import kotlinx.android.synthetic.main.activity_main.*
+import timber.log.Timber
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private val manager: SplitInstallManager by lazy {
+        SplitInstallManagerFactory.create(this)
+    }
+
+    private val listener = SplitInstallStateUpdatedListener { state ->
+        when (state.status()) {
+            SplitInstallSessionStatus.DOWNLOADING -> {
+                // ダウンロード中
+                Timber.d("ダウンロード中")
+                val total = state.totalBytesToDownload()
+                val downloaded = state.bytesDownloaded()
+            }
+            SplitInstallSessionStatus.INSTALLING -> {
+                // インストール中
+                Timber.d("インストール中")
+            }
+            SplitInstallSessionStatus.INSTALLED -> {
+                // インストール終了
+                val navHostFragment =
+                    supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+                val navController = navHostFragment.navController
+                navController.navigate(R.id.settings)
+            }
+            SplitInstallSessionStatus.FAILED -> {
+                // 失敗
+                Timber.d("失敗")
+            }
+        }
+    }
 
     override fun attachBaseContext(newBase: Context?) {
         super.attachBaseContext(newBase)
@@ -70,11 +103,20 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun loadModule(navController: NavController) {
-        val manager = SplitInstallManagerFactory.create(this)
+    override fun onStart() {
+        super.onStart()
+        manager.registerListener(listener)
+    }
 
+    override fun onStop() {
+        super.onStop()
+        manager.unregisterListener(listener)
+    }
+
+    private fun loadModule(navController: NavController) {
         if (manager.installedModules.contains(":features:settings")) {
             // 既にインストール済みのとき
+            Timber.d("すでにインストール済みだよ")
             navController.navigate(R.id.settings)
             return
         }
@@ -82,7 +124,7 @@ class MainActivity : AppCompatActivity() {
         val request = SplitInstallRequest.newBuilder()
             .addModule(":features:settings")
             .build()
-
+        Timber.d("インストールStartした")
         manager.startInstall(request)
             .addOnSuccessListener { /* インストールリクエストが成功したとき */ }
             .addOnFailureListener { /* インストールリクエストが失敗したとき */ }

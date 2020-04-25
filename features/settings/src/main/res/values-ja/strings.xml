@@ -1,0 +1,11 @@
+<resources>
+    <!--  For SettingsFragment  -->
+    <string name="theme_label">テーマ</string>
+    <string name="dark_theme_label">ダークテーマ</string>
+
+    <!--  Dark theme entry  -->
+    <string name="pref_theme_entry_light">ライト</string>
+    <string name="pref_theme_entry_dark">ダーク</string>
+    <string name="pref_theme_entry_default">システムデフォルト</string>
+    <string name="pref_theme_entry_battery">バッテリーセーバー起動時</string>
+</resources>
