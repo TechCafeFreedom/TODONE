@@ -12,8 +12,6 @@ data class LabelEntity(
     val id: Int,
     @ColumnInfo(name = "label_title")
     val title: String,
-    @ColumnInfo(name = "label_desc")
-    val description: String,
     @ColumnInfo(name = "label_color")
     val color: String
 )
