@@ -54,6 +54,8 @@ dependencies {
     implementation Dep.AndroidX.Navigation.uiKtx
 
     implementation Dep.Firebase.analytics
+
+    implementation Dep.Play.playCore
 }
 
 apply plugin: 'com.google.gms.google-services'

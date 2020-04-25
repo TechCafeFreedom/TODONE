@@ -184,4 +184,8 @@ object Dep {
     object Timber {
         val timber = "com.jakewharton.timber:timber:${LibsVersion.Timber}"
     }
+
+    object Play {
+        val playCore = "com.google.android.play:core:1.6.4"
+    }
 }
