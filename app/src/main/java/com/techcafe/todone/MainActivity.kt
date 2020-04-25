@@ -1,18 +1,28 @@
 package com.techcafe.todone
 
+import android.content.Context
 import android.os.Bundle
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI.setupWithNavController
+import com.google.android.play.core.splitcompat.SplitCompat
+import com.google.android.play.core.splitinstall.SplitInstallManagerFactory
+import com.google.android.play.core.splitinstall.SplitInstallRequest
 import com.techcafe.todone.databinding.ActivityMainBinding
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+
+    override fun attachBaseContext(newBase: Context?) {
+        super.attachBaseContext(newBase)
+        SplitCompat.installActivity(this)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,7 +47,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.navView.setNavigationItemSelectedListener {
             when (it.itemId) {
-                R.id.drawer_menu_settings -> navController.navigate(R.id.settings)
+                R.id.drawer_menu_settings -> loadModule(navController)
                 R.id.drawer_menu_profile -> navController.navigate(R.id.profile)
                 R.id.drawer_menu_about_app -> navController.navigate(R.id.aboutapp)
                 R.id.drawer_menu_sign_in -> navController.navigate(R.id.action_home_fragment_to_sign_in_graph)
@@ -58,5 +68,23 @@ class MainActivity : AppCompatActivity() {
                 else -> true
             }
         }
+    }
+
+    private fun loadModule(navController: NavController) {
+        val manager = SplitInstallManagerFactory.create(this)
+
+        if (manager.installedModules.contains(":features:settings")) {
+            // 既にインストール済みのとき
+            navController.navigate(R.id.settings)
+            return
+        }
+
+        val request = SplitInstallRequest.newBuilder()
+            .addModule(":features:settings")
+            .build()
+
+        manager.startInstall(request)
+            .addOnSuccessListener { /* インストールリクエストが成功したとき */ }
+            .addOnFailureListener { /* インストールリクエストが失敗したとき */ }
     }
 }

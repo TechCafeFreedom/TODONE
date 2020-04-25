@@ -53,6 +53,8 @@ dependencies {
     implementation Dep.AndroidX.Navigation.uiKtx
 
     implementation Dep.Firebase.analytics
+
+    api Dep.Play.playCore
 }
 
 android {
