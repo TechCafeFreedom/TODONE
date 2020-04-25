@@ -25,8 +25,6 @@ data class CardEntity(
     val description: String,
     @ColumnInfo(name = "card_deadline")
     val deadline: String,
-    @ColumnInfo(name = "card_state")
-    val state: String,
     @ColumnInfo(name = "card_archive")
     val isArchive: Boolean
 )
