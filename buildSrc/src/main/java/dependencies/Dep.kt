@@ -20,6 +20,7 @@ object Dep {
         val DynamicFutureFragment = "2.3.0-SNAPSHOT"
         val LiveData = "2.2.0"
         val JitPack = "1.0.0"
+        val ViewPager2 = "1.0.0"
         val Dokka = "0.10.1"
     }
 
@@ -68,6 +69,8 @@ object Dep {
             "androidx.lifecycle:lifecycle-livedata-core-ktx:${LibsVersion.LiveData}"
         val liveDataKtx = "androidx.lifecycle:lifecycle-livedata-ktx:${LibsVersion.LiveData}"
 
+        val viewPager2 = "androidx.viewpager2:viewpager2:${LibsVersion.ViewPager2}"
+
         object Room {
             val compiler = "androidx.room:room-compiler:${LibsVersion.Room}"
             val runtime = "androidx.room:room-runtime:${LibsVersion.Room}"
@@ -87,15 +90,12 @@ object Dep {
     }
 
     object Kotlin {
-
         val stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${LibsVersion.Kotlin}"
-
         val coroutines =
             "org.jetbrains.kotlinx:kotlinx-coroutines-core:${LibsVersion.KotlinCoroutines}"
         val androidCoroutinesDispatcher =
             "org.jetbrains.kotlinx:kotlinx-coroutines-android:${LibsVersion.KotlinCoroutines}"
-        val coroutinesReactive =
-            "org.jetbrains.kotlinx:kotlinx-coroutines-reactive:${LibsVersion.KotlinCoroutines}"
+        val playServices = "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:${LibsVersion.KotlinCoroutines}"
     }
 
     object Firebase {

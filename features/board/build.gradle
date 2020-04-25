@@ -1,0 +1,25 @@
+import dependencies.Dep
+
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+apply from: rootProject.file('gradle/common.gradle')
+
+android.dataBinding.enabled = true
+
+dependencies {
+    implementation project(':corecomponent:androidcomponent')
+
+    implementation Dep.AndroidX.appCompat
+    implementation Dep.AndroidX.constraint
+    implementation Dep.AndroidX.design
+    implementation Dep.AndroidX.fragmentKtx
+    implementation Dep.AndroidX.coreKtx
+    implementation Dep.AndroidX.recyclerView
+    implementation Dep.Epoxy.epoxy
+    implementation Dep.Epoxy.databindingSupport
+    kapt Dep.Epoxy.processer
+
+}

@@ -1,0 +1,25 @@
+<resources>
+    <string name="title_home">ホーム</string>
+    <string name="title_now">ナウ</string>
+    <string name="title_sign_in">サインイン</string>
+    <string name="title_Auth">認証</string>
+    <string name="title_notifications">通知</string>
+    <string name="item_projects">プロジェクト</string>
+    <string name="item_settings">設定</string>
+    <string name="item_profile">プロフィール</string>
+    <string name="item_about_app">TODONEについて</string>
+
+    <!-- Error Message-->
+    <string name="network_error">ネットワークエラーが発生しました</string>
+    <string name="unknown_error">不明なエラーが発生しました</string>
+
+    <!--  For SettingsFragment  -->
+    <string name="theme_label">テーマ</string>
+    <string name="dark_theme_label">ダークテーマ</string>
+
+    <!--  Dark theme entry  -->
+    <string name="pref_theme_entry_light">ライト</string>
+    <string name="pref_theme_entry_dark">ダーク</string>
+    <string name="pref_theme_entry_default">システムデフォルト</string>
+    <string name="pref_theme_entry_battery">バッテリーセーバー起動時</string>
+</resources>

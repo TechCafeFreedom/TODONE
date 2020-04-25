@@ -12,14 +12,4 @@
             app:entryValues="@array/pref_theme_values"
             app:useSimpleSummaryProvider="true" />
     </PreferenceCategory>
-    <PreferenceCategory
-        android:key="categoryLanguage"
-        android:title="@string/language_label">
-        <ListPreference
-            android:entries="@array/language_labels"
-            android:key="@string/language_key"
-            android:title="@string/language_label"
-            app:entryValues="@array/language_values"
-            app:useSimpleSummaryProvider="true" />
-    </PreferenceCategory>
 </PreferenceScreen>

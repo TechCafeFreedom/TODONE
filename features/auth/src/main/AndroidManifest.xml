@@ -4,8 +4,8 @@
 
     <application>
         <activity
-            android:name=".SignInActivity"
-            android:label="@string/title_sign_in" />
+            android:name=".AuthActivity"
+            android:label="@string/title_Auth" />
     </application>
 
 </manifest>
