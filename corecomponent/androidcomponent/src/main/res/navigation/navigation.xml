@@ -27,8 +27,8 @@
             android:id="@+id/action_profile_to_edit_profile"
             app:destination="@+id/edit_profile" />
         <action
-            android:id="@+id/action_profile_to_home"
-            app:destination="@id/home" />
+            android:id="@+id/action_profile_to_board"
+            app:destination="@id/board" />
     </fragment>
     <fragment
         android:id="@+id/edit_profile"
