@@ -25,10 +25,9 @@ class FirebaseServiceImpl(
     override suspend fun signUpWithMail(email: String, pass: String): UserResponse {
         val authResult = auth.createUserWithEmailAndPassword(email, pass).await()
         val authUser = authResult.user
-        val info = authResult.additionalUserInfo
         return UserResponse(
             id = UUID.randomUUID().toString(),
-            name = info.username ?: "",
+            name = authUser.displayName ?: "",
             thumbnail = authUser.photoUrl?.toString() ?: ""
         )
     }
@@ -43,8 +42,6 @@ class FirebaseServiceImpl(
         )
     }
 
-    override suspend fun getToken(): String? {
-        val result = auth.currentUser?.getIdToken(true)?.await() ?: return null
-        return result.token
-    }
+    override suspend fun getToken(): String? =
+        auth.currentUser?.getIdToken(true)?.await()?.token
 }
