@@ -13,5 +13,7 @@ data class BoardEntity(
     @ColumnInfo(name = "board_title")
     val title: String,
     @ColumnInfo(name = "board_desc")
-    val description: String
+    val description: String,
+    @ColumnInfo(name = "board_archive")
+    val isArchive: Boolean
 )
