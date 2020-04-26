@@ -121,7 +121,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun loadModule(navController: NavController) {
 
-        if (BuildConfig.DEBUG) navController.navigate(R.id.settings)
+        navController.navigate(R.id.settings)
 
         if (manager.installedModules.contains(":features:settings")) {
             // 既にインストール済みのとき
