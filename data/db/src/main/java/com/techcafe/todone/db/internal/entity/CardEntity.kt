@@ -20,10 +20,10 @@ data class CardEntity(
     val kanbanId: Int,
     @ColumnInfo(name = "card_title")
     val title: String,
-    @ColumnInfo(name = "card_content")
-    val content: String,
+    @ColumnInfo(name = "card_desc")
+    val description: String,
     @ColumnInfo(name = "card_deadline")
     val deadline: String,
-    @ColumnInfo(name = "card_state")
-    val state: String
+    @ColumnInfo(name = "card_archive")
+    val isArchive: Boolean
 )

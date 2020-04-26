@@ -24,5 +24,7 @@ data class KanbanEntity(
     @ColumnInfo(name = "kanban_title")
     val title: String,
     @ColumnInfo(name = "kanban_desc")
-    val description: String
+    val description: String,
+    @ColumnInfo(name = "kanban_archive")
+    val isArchive: Boolean
 )
