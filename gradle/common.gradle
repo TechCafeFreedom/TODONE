@@ -1,6 +1,5 @@
 import dependencies.Dep
 import dependencies.Versions
-import dependencies.Dep
 
 apply plugin: Dep.GradlePlugin.dokkaPlugin
 
