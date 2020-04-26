@@ -4,6 +4,7 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
+import techcafe.todone.LabelColor
 
 @Entity(tableName = "label_item",
     foreignKeys = arrayOf(
@@ -24,5 +25,5 @@ data class LabelEntity(
     @ColumnInfo(name = "label_title")
     val title: String,
     @ColumnInfo(name = "label_color")
-    val color: Int
+    val color: LabelColor
 )
