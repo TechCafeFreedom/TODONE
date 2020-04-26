@@ -25,6 +25,9 @@ dependencies {
     implementation Dep.Epoxy.epoxy
     implementation Dep.Epoxy.databindingSupport
     kapt Dep.Epoxy.processer
+    testImplementation Dep.Test.junit
+    testImplementation Dep.Test.kotlinTestAssertions
+    testImplementation Dep.Test.assertJ
     //DI
     implementation Dep.Koin.koin
     implementation Dep.Koin.viewModel

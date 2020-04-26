@@ -45,6 +45,7 @@ object Dep {
         val archCore = "androidx.arch.core:core-testing:2.1.0"
         val liveDataTestingKtx = "com.jraska.livedata:testing-ktx:1.1.0"
         val espressoCore = "androidx.test.espresso:espresso-core:3.3.0-alpha02"
+        val assertJ = "org.assertj:assertj-core:3.12.2"
         val coroutinesTest =
             "org.jetbrains.kotlinx:kotlinx-coroutines-test:${LibsVersion.KotlinCoroutines}"
         val kotlinTestAssertions = "io.kotlintest:kotlintest-assertions:3.1.10"
