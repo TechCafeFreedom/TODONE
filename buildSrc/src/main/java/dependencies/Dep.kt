@@ -17,7 +17,7 @@ object Dep {
         val MockK = "1.9.3"
         val Timber = "4.7.1"
         val Stetho = "1.5.1"
-        val DynamicFutureFragment = "2.3.0-SNAPSHOT"
+        val DynamicFutureFragment = "2.3.0-alpha05"
         val LiveData = "2.2.0"
         val JitPack = "1.0.0"
         val ViewPager2 = "1.0.0"

@@ -18,7 +18,8 @@
     <fragment
         android:id="@+id/settings"
         android:name="com.techcafe.todone.settings.SettingsFragment"
-        android:label="Settings" />
+        android:label="Settings"
+        app:moduleName="settings"/>
     <fragment
         android:id="@+id/profile"
         android:name="com.techcafe.todone.profile.ProfileFragment"
