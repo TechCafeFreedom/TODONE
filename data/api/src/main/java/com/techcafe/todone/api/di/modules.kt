@@ -4,15 +4,23 @@ import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterF
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import com.techcafe.todone.api.AddHeaderInterceptor
+import com.techcafe.todone.api.GithubService
 import com.techcafe.todone.api.TestService
-import java.util.concurrent.TimeUnit
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import org.koin.core.qualifier.named
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
+import java.util.concurrent.TimeUnit
 
-private const val BASE_URL = "https://todone-test-production.herokuapp.com"
+private const val QUALIFIER_TEST = "QUALIFIER_TEST"
+private const val QUALIFIER_GITHUB = "QUALIFIER_GITHUB"
+
+private const val BASE_URL_TEST = "https://todone-test-production.herokuapp.com"
+private const val BASE_URL_GITHUB = "https://api.github.com/"
+
+
 val apiModule = module {
     single {
         Moshi.Builder()
@@ -29,15 +37,24 @@ val apiModule = module {
             })
             .build()
     }
-    single {
-        Retrofit.Builder()
-            .baseUrl(BASE_URL)
-            .client(get<OkHttpClient>())
-            .addConverterFactory(MoshiConverterFactory.create(get<Moshi>()))
-            .addCallAdapterFactory(CoroutineCallAdapterFactory())
-            .build()
+    single(qualifier = named(QUALIFIER_TEST)) {
+        buildRetrofit(BASE_URL_TEST, get(), get())
+    }
+    single(qualifier = named(QUALIFIER_GITHUB)) {
+        buildRetrofit(BASE_URL_GITHUB, get(), get())
     }
     single {
         get<Retrofit>().create(TestService::class.java)
     }
+    single {
+        get<Retrofit>().create(GithubService::class.java)
+    }
 }
+
+private fun buildRetrofit(baseUrl: String, okHttp: OkHttpClient, moshi: Moshi) =
+    Retrofit.Builder()
+        .baseUrl(baseUrl)
+        .client(okHttp)
+        .addConverterFactory(MoshiConverterFactory.create(moshi))
+        .addCallAdapterFactory(CoroutineCallAdapterFactory())
+        .build()
