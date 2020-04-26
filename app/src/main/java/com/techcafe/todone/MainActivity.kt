@@ -123,7 +123,7 @@ class MainActivity : AppCompatActivity() {
 
         navController.navigate(R.id.settings)
 
-        if (manager.installedModules.contains(":features:settings")) {
+        if (manager.installedModules.contains("settings")) {
             // 既にインストール済みのとき
             Timber.d("すでにインストール済みだよ")
             navController.navigate(R.id.settings)
@@ -131,7 +131,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         val request = SplitInstallRequest.newBuilder()
-            .addModule(":features:settings")
+            .addModule("settings")
             .build()
         Timber.d("インストールStartした")
         manager.startInstall(request)
