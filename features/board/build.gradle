@@ -8,6 +8,10 @@ apply plugin: 'kotlin-kapt'
 apply from: rootProject.file('gradle/common.gradle')
 
 android.dataBinding.enabled = true
+android.testOptions.unitTests{
+    returnDefaultValues = true
+    includeAndroidResources = true
+}
 
 dependencies {
     implementation project(':corecomponent:androidcomponent')
@@ -28,6 +32,9 @@ dependencies {
     testImplementation Dep.Test.junit
     testImplementation Dep.Test.kotlinTestAssertions
     testImplementation Dep.Test.assertJ
+    testImplementation Dep.Test.mockito
+    testImplementation Dep.Test.testRunner
+    testImplementation Dep.Test.liveDataTestingKtx
     //DI
     implementation Dep.Koin.koin
     implementation Dep.Koin.viewModel
