@@ -1,6 +1,6 @@
 package com.techcafe.todone.api.model
 
-data class OrganizationsResponse(
+data class ContributorsResponse(
     val id: Int,
     val url: String,
     val members_url: String,
