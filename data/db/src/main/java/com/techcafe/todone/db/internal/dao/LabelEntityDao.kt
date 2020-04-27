@@ -1,5 +1,6 @@
 package com.techcafe.todone.db.internal.dao
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
@@ -26,5 +27,5 @@ interface LabelEntityDao {
      * @see LabelEntity
      */
     @Query("SELECT * FROM label_item")
-    fun getLabelList(): List<LabelEntity>
+    fun getLabelList(): LiveData<List<LabelEntity>>
 }
