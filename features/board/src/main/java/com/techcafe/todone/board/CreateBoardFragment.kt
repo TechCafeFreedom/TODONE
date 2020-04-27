@@ -37,8 +37,8 @@ class CreateBoardFragment(private val lifecycleOwner: LifecycleOwner) : DialogFr
             viewModel.createBoard()
         }
 
-        viewModel.errorTitle.observe(lifecycleOwner) {}
-        viewModel.errorDesc.observe(lifecycleOwner) {}
+        viewModel.errorTitleFlag.observe(lifecycleOwner) {}
+        viewModel.errorDescFlag.observe(lifecycleOwner) {}
 
         return dialog
     }
