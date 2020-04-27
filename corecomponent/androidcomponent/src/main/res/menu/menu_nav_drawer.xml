@@ -22,8 +22,8 @@
         android:id="@+id/play_ground"
         android:checkableBehavior="single">
         <item
-            android:id="@+id/drawer_menu_sign_in"
+            android:id="@+id/drawer_menu_auth"
             android:icon="@drawable/ic_play_ground"
-            android:title="@string/title_sign_in" />
+            android:title="@string/title_Auth" />
     </group>
 </menu>
