@@ -2,6 +2,11 @@ package com.techcafe.todone.db.internal.dao
 
 import androidx.room.*
 import com.techcafe.todone.db.internal.entity.CardEntity
+import androidx.lifecycle.LiveData
+import androidx.room.Dao
+import androidx.room.Insert
+import androidx.room.OnConflictStrategy
+import androidx.room.Query
 import com.techcafe.todone.db.internal.entity.LabelEntity
 import com.techcafe.todone.db.internal.middleEntity.CardWithLabel
 
@@ -34,7 +39,7 @@ interface LabelEntityDao {
      * @see LabelEntity
      */
     @Query("SELECT * FROM label_item")
-    fun getLabelList(): List<LabelEntity>
+    fun getLabelList(): LiveData<List<LabelEntity>>
 
     /**
      * ラベルに紐付くカードのリストを取得する関数

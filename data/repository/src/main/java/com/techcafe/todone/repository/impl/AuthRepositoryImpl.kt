@@ -3,8 +3,7 @@ package com.techcafe.todone.repository.impl
 import androidx.lifecycle.asLiveData
 import com.techcafe.todone.api.FirebaseService
 import com.techcafe.todone.repository.AuthRepository
-import com.techcafe.todone.repository.mapper.toModel
-import java.util.*
+import com.techcafe.todone.repository.mapper.response.toModel
 import techcafe.todone.Results
 import techcafe.todone.User
 
