@@ -13,6 +13,8 @@
     <!-- Error Message-->
     <string name="network_error">ネットワークエラーが発生しました</string>
     <string name="unknown_error">不明なエラーが発生しました</string>
+    <string name="title_input_error">Please Input Title</string>
+    <string name="desc_input_error">Please Input Description</string>
     
     <!--  Shared Preferences Keys  -->
     <string name="shared_pref_todone_key" translatable="false">TODONE_PREF</string>

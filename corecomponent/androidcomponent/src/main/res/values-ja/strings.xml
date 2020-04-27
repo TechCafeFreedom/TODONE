@@ -12,6 +12,8 @@
     <!-- Error Message-->
     <string name="network_error">ネットワークエラーが発生しました</string>
     <string name="unknown_error">不明なエラーが発生しました</string>
+    <string name="title_input_error">タイトルを入力してください</string>
+    <string name="desc_input_error">説明を入力してください</string>
 
     <!--  For SettingsFragment  -->
     <string name="theme_label">テーマ</string>
