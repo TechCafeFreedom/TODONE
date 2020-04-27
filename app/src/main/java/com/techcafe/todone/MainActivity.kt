@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
                 val navController = navHostFragment.navController
                 navController.navigate(R.id.settings)
             }
-            SplitInstallSessionStatus.FAILED -> {
+            else -> {
                 // 失敗
                 Timber.d("失敗")
             }
