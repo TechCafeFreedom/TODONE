@@ -13,9 +13,7 @@ class TestRepositoryImpl(
     private val userDao: UserEntityDao,
     private val boardDao: BoardEntityDao,
     private val cardDao: CardEntityDao,
-    private val cardLabelDao: CardWithLabelDao,
-    private val labelDao: LabelEntityDao,
-    private val userboardDao: UserWithBoardDao
+    private val labelDao: LabelEntityDao
 ) : TestRepository {
     // 表示テストのためのテストデータ登録関数
     override suspend fun getUserList(): List<UserEntity> =
@@ -25,7 +23,7 @@ class TestRepositoryImpl(
         userDao.getUserById(userId)
 
     override suspend fun getBindBoardList(userId: String): List<BoardEntity> =
-        userboardDao.getBindBoardList(userId)
+        boardDao.getBindBoardList(userId)
 
     override suspend fun getBoardById(boardId: Int): BoardEntity? =
         boardDao.getBoardById(boardId)
@@ -37,11 +35,11 @@ class TestRepositoryImpl(
         cardDao.getCardById(cardId)
 
     override suspend fun getLabelByCardId(cardId: Int) =
-        cardLabelDao.getLabelsForCard(cardId)
+        cardDao.getLabelsForCard(cardId)
 
     // ラベル付け系
     override suspend fun cardBindLabel(cardId: Int, labelId: Int) =
-        cardLabelDao.bindLabel(
+        cardDao.bindLabel(
             CardWithLabel(
                 cardId,
                 labelId
