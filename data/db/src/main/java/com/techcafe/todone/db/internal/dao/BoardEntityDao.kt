@@ -74,16 +74,15 @@ interface BoardEntityDao {
     suspend fun getBindUserList(vararg boardId: String): List<UserEntity>
 
     /**
-     * ユーザーに紐づいているボードを取得する関数
+     * ボードを全て削除する関数
      *
-     * @param [userId] 紐づいているボードを取得したいユーザーのid
      * @see BoardEntity
      */
     @Query("DELETE FROM board_item")
     fun deleteAll()
 
     /**
-     * 引数のidに該当するボードを削除する関数
+     * 引数と同じidをもつboardを削除する関数
      *
      * @param [boardId] 削除したいボードのid
      * @see BoardEntity

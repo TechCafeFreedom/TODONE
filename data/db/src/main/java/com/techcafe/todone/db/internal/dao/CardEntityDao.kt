@@ -1,6 +1,7 @@
 package com.techcafe.todone.db.internal.dao
 
 import androidx.room.*
+import com.techcafe.todone.db.internal.entity.BoardEntity
 import com.techcafe.todone.db.internal.entity.CardEntity
 import com.techcafe.todone.db.internal.entity.LabelEntity
 import com.techcafe.todone.db.internal.middleEntity.CardWithLabel
@@ -64,4 +65,31 @@ interface CardEntityDao {
                """
     )
     fun getLabelsForCard(cardId: Int): List<LabelEntity>
+
+    /**
+     * カードを全て削除する関数
+     *
+     * @param [kanbanId] 紐づいているカードを削除したいボードのid
+     * @see BoardEntity
+     */
+    @Query("DELETE FROM card_item")
+    fun deleteAll()
+
+    /**
+     * 引数のカンバンに紐づくカードを全て削除する関数
+     *
+     * @param [kanbanId] 紐づいているカードを削除したいカンバンのid
+     * @see KanbanEntity
+     */
+    @Query("DELETE FROM card_item WHERE parent_kanban_id = :kanbanId")
+    fun deleteAllById(kanbanId: Int)
+
+    /**
+     * ユーザーに紐づいているボードを取得する関数
+     *
+     * @param [kanbanId] 紐づいているカードを削除したいボードのid
+     * @see BoardEntity
+     */
+    @Query("DELETE FROM board_item WHERE board_id = :boardId")
+    fun deleteBoard(boardId: Int)
 }

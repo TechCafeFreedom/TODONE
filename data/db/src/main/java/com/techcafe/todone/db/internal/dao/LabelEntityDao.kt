@@ -4,6 +4,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import com.techcafe.todone.db.internal.entity.BoardEntity
 import com.techcafe.todone.db.internal.entity.CardEntity
 import com.techcafe.todone.db.internal.entity.LabelEntity
 import com.techcafe.todone.db.internal.middleEntity.CardWithLabel
@@ -29,7 +30,7 @@ interface LabelEntityDao {
      */
     @Query("SELECT * FROM label_item")
     fun getLabelList(): List<LabelEntity>
-    
+
     /**
      * ラベルに紐付くカードのリストを取得する関数
      *
@@ -46,4 +47,21 @@ interface LabelEntityDao {
                """
     )
     fun getCardsForLabel(labelId: Int): List<CardEntity>
+
+    /**
+     * ラベルを全部削除する関数
+     *
+     * @see LabelEntity
+     */
+    @Query("DELETE FROM label_item")
+    fun deleteAll()
+
+    /**
+     * 引数のidと一致するラベルを削除
+     *
+     * @param [labelId] 紐づいているカードを削除したいラベルのid
+     * @see LabelEntity
+     */
+    @Query("DELETE FROM label_item WHERE label_id = :labelId")
+    fun deleteAllById(labelId: Int)
 }
