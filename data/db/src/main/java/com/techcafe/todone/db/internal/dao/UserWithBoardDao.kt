@@ -36,21 +36,4 @@ interface UserWithBoardDao {
                """
     )
     suspend fun getBindUserList(vararg boardId: String): List<UserEntity>
-
-    /**
-     * ユーザーに紐づいているボードを取得する関数
-     *
-     * @param [userId] 紐づいているボードを取得したいユーザーのid
-     * @see BoardEntity
-     */
-    @Transaction
-    @Query(
-        """
-               SELECT * FROM board_item
-               INNER JOIN user_with_board
-               ON board_item.board_id=user_with_board.board_id_with
-               WHERE user_with_board.user_id_with=:userId
-               """
-    )
-    suspend fun getBindBoardList(vararg userId: String): List<BoardEntity>
 }
