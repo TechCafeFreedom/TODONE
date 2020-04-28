@@ -1,6 +1,7 @@
 package com.techcafe.todone.db.internal.dao
 
 import androidx.room.*
+import com.techcafe.todone.db.internal.entity.BoardEntity
 import com.techcafe.todone.db.internal.entity.LabelEntity
 import com.techcafe.todone.db.internal.entity.UserEntity
 
@@ -17,6 +18,15 @@ interface UserEntityDao {
      */
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertUser(vararg user: UserEntity)
+
+    /**
+     * ユーザーを更新する関数
+     *
+     * @param [UserEntity] 更新したいUserEntityインスタンス
+     * @see UserEntity
+     */
+    @Update
+    fun updateUser(vararg user: UserEntity)
 
     /**
      * 登録されているユーザーのリストを返す関数

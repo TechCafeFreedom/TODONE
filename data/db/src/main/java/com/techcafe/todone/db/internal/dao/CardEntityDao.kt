@@ -21,6 +21,15 @@ interface CardEntityDao {
     fun insertCard(vararg card: CardEntity)
 
     /**
+     * カードを更新する関数
+     *
+     * @param [CardEntity] 更新したいCardEntityインスタンス
+     * @see CardEntity
+     */
+    @Update
+    fun updateCard(vararg card: CardEntity)
+
+    /**
      * カードとラベルを紐づける関数
      *
      * @param [CardWithLabel] 登録したいカードとラベルのidを持つCardWithLabelインスタンス

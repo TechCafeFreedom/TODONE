@@ -11,7 +11,7 @@ import com.techcafe.todone.db.internal.middleEntity.UserWithBoard
 @Dao
 interface BoardEntityDao {
     /**
-     * プロジェクトを挿入する関数
+     * ボードを挿入する関数
      *
      * @param [BoardEntity] 登録したいBordEntityインスタンス
      * @see BoardEntity
@@ -20,7 +20,16 @@ interface BoardEntityDao {
     fun insertBoard(vararg board: BoardEntity)
 
     /**
-     * ユーザーとプロジェクトを紐づける関数
+     * ボードを更新する関数
+     *
+     * @param [BoardEntity] 更新したいBordEntityインスタンス
+     * @see BoardEntity
+     */
+    @Update
+    fun updateBoard(vararg board: BoardEntity)
+
+    /**
+     * ユーザーとボードを紐づける関数
      *
      * @param [userWithBoard] 登録したいユーザーとボードのidを持つuserWithBoard
      * @see UserWithBoard

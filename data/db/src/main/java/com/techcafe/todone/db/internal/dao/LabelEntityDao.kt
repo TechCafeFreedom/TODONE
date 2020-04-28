@@ -1,9 +1,6 @@
 package com.techcafe.todone.db.internal.dao
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 import com.techcafe.todone.db.internal.entity.BoardEntity
 import com.techcafe.todone.db.internal.entity.CardEntity
 import com.techcafe.todone.db.internal.entity.LabelEntity
@@ -22,6 +19,15 @@ interface LabelEntityDao {
      */
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertLabel(label: LabelEntity)
+
+    /**
+     * ラベルを更新する関数
+     *
+     * @param [LabelEntity] 更新したいLabelEntityインスタンス
+     * @see LabelEntity
+     */
+    @Update
+    fun updateLabel(vararg label: LabelEntity)
 
     /**
      * ラベルのリストを取得する関数
