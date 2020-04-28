@@ -27,7 +27,4 @@ abstract class LocalDataBase : RoomDatabase() {
     abstract fun boardEntityDao(): BoardEntityDao
     abstract fun cardEntityDao(): CardEntityDao
     abstract fun labelEntityDao(): LabelEntityDao
-
-    abstract fun cardLabelEntityDao(): CardWithLabelDao
-    abstract fun userBoardEntityDao(): UserWithBoardDao
 }
