@@ -13,7 +13,8 @@ class TestRepositoryImpl(
     private val userDao: UserEntityDao,
     private val boardDao: BoardEntityDao,
     private val cardDao: CardEntityDao,
-    private val labelDao: LabelEntityDao
+    private val labelDao: LabelEntityDao,
+    private val kanbanDao: KanbanEntityDao
 ) : TestRepository {
     // 表示テストのためのテストデータ登録関数
     override suspend fun getUserList(): List<UserEntity> =
