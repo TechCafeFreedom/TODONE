@@ -19,7 +19,7 @@ class CreateBoardFragment(private val lifecycleOwner: LifecycleOwner) : DialogFr
         val inflater = requireActivity().layoutInflater
         binding = FragmentCreateBinding.inflate(inflater)
         binding.viewModel = viewModel
-        binding.lifecycleOwner = this
+        binding.lifecycleOwner = lifecycleOwner
 
         dialog = activity?.let {
             val builder = AlertDialog.Builder(it)
