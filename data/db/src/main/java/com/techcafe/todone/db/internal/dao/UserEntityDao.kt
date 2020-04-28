@@ -1,8 +1,6 @@
 package com.techcafe.todone.db.internal.dao
 
 import androidx.room.*
-import com.techcafe.todone.db.internal.entity.BoardEntity
-import com.techcafe.todone.db.internal.entity.LabelEntity
 import com.techcafe.todone.db.internal.entity.UserEntity
 
 /**
