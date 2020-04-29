@@ -33,7 +33,7 @@ class BoardCreateViewModel(
 
     private fun validateInput(): Boolean {
         var flag = true
-        val title = boardTitle.value ?:return false
+        val title = boardTitle.value ?: return false
         val desc = boardDesc.value ?: return false
 
         if (title.isEmpty()) {
