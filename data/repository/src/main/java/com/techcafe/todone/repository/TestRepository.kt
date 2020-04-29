@@ -1,6 +1,9 @@
 package com.techcafe.todone.repository
 
-import com.techcafe.todone.db.internal.entity.*
+import com.techcafe.todone.db.internal.entity.BoardEntity
+import com.techcafe.todone.db.internal.entity.CardEntity
+import com.techcafe.todone.db.internal.entity.LabelEntity
+import com.techcafe.todone.db.internal.entity.UserEntity
 
 // TODO: 削除
 interface TestRepository {
@@ -8,20 +11,20 @@ interface TestRepository {
     suspend fun getUserList(): List<UserEntity>
     suspend fun getUserById(userId: String): UserEntity?
 
-    suspend fun getBindProjectList(userId: String): List<BoardEntity>
-    suspend fun getProjectById(projectId: Int): BoardEntity?
+    suspend fun getBindBoardList(userId: String): List<BoardEntity>
+    suspend fun getBoardById(projectId: Int): BoardEntity?
 
-    suspend fun getBindTodoList(projectId: Int): List<CardEntity>
-    suspend fun getTodoById(todoId: Int): CardEntity?
+    suspend fun getCardListByBoardId(boardId: Int): List<CardEntity>
+    suspend fun getCardById(cardId: Int): CardEntity?
 
-    suspend fun getLabelByProjectId(projectId: Int): List<LabelEntity>
-    suspend fun getLabelByTodoId(todoId: Int): List<LabelEntity>
+    suspend fun getLabelByCardId(cardId: Int): List<LabelEntity>
+
     // ラベルづけ
-    suspend fun todoBindLabel(todoId: Int, labelId: Int)
-    suspend fun projectBindLabel(projectId: Int, labelId: Int)
+    suspend fun cardBindLabel(cardId: Int, labelId: Int)
+
     // データ挿入
     suspend fun insertUser(userEntity: UserEntity)
-    suspend fun insertProject(boardEntity: BoardEntity)
-    suspend fun insertTodo(cardEntity: CardEntity)
+    suspend fun insertBoard(boardEntity: BoardEntity)
+    suspend fun insertCard(cardEntity: CardEntity)
     suspend fun insertLabel(labelEntity: LabelEntity)
 }

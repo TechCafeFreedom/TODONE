@@ -1,72 +1,62 @@
 package com.techcafe.todone.repository.impl
 
 import com.techcafe.todone.db.internal.dao.*
-import com.techcafe.todone.db.internal.entity.*
-import com.techcafe.todone.db.internal.middleEntity.BoardWithLabel
+import com.techcafe.todone.db.internal.entity.BoardEntity
+import com.techcafe.todone.db.internal.entity.CardEntity
+import com.techcafe.todone.db.internal.entity.LabelEntity
+import com.techcafe.todone.db.internal.entity.UserEntity
 import com.techcafe.todone.db.internal.middleEntity.CardWithLabel
 import com.techcafe.todone.repository.TestRepository
 
 // TODO: 削除
 class TestRepositoryImpl(
     private val userDao: UserEntityDao,
-    private val projDao: BoardEntityDao,
+    private val boardDao: BoardEntityDao,
     private val cardDao: CardEntityDao,
-    private val cardLabelDao: CardWithLabelDao,
     private val labelDao: LabelEntityDao,
-    private val projLabelDao: BoardWithLabelDao,
-    private val userProjDao: UserWithBoardDao
+    private val kanbanDao: KanbanEntityDao
 ) : TestRepository {
     // 表示テストのためのテストデータ登録関数
     override suspend fun getUserList(): List<UserEntity> =
-            userDao.getUserList()
+        userDao.getUserList()
+
     override suspend fun getUserById(userId: String): UserEntity? =
-            userDao.getUserById(userId)
+        userDao.getUserById(userId)
 
-    override suspend fun getBindProjectList(userId: String): List<BoardEntity> =
-            userProjDao.getBindBoardList(userId)
+    override suspend fun getBindBoardList(userId: String): List<BoardEntity> =
+        boardDao.getBindBoardList(userId)
 
-    override suspend fun getProjectById(projectId: Int): BoardEntity? =
-            projDao.getBoardById(projectId)
+    override suspend fun getBoardById(boardId: Int): BoardEntity? =
+        boardDao.getBoardById(boardId)
 
-    override suspend fun getBindTodoList(projectId: Int): List<CardEntity> =
-            cardDao.getBindCardById(projectId)
+    override suspend fun getCardListByBoardId(boardId: Int): List<CardEntity> =
+        cardDao.getBindCardById(boardId)
 
-    override suspend fun getTodoById(todoId: Int): CardEntity? =
-            cardDao.getCardById(todoId)
+    override suspend fun getCardById(cardId: Int): CardEntity? =
+        cardDao.getCardById(cardId)
 
-    override suspend fun getLabelByProjectId(projectId: Int) =
-            projLabelDao.getLabelsForBoard(projectId)
-
-    override suspend fun getLabelByTodoId(todoId: Int) =
-            cardLabelDao.getLabelsForCard(todoId)
+    override suspend fun getLabelByCardId(cardId: Int) =
+        cardDao.getLabelsForCard(cardId)
 
     // ラベル付け系
-    override suspend fun todoBindLabel(todoId: Int, labelId: Int) =
-            cardLabelDao.bindLabel(
-                CardWithLabel(
-                    todoId,
-                    labelId
-                )
+    override suspend fun cardBindLabel(cardId: Int, labelId: Int) =
+        cardDao.bindLabel(
+            CardWithLabel(
+                cardId,
+                labelId
             )
-
-    override suspend fun projectBindLabel(projectId: Int, labelId: Int) =
-            projLabelDao.bindLabel(
-                BoardWithLabel(
-                    projectId,
-                    labelId
-                )
-            )
+        )
 
     // Insert系
     override suspend fun insertUser(userEntity: UserEntity) =
-            userDao.insertUser(userEntity)
+        userDao.insertUser(userEntity)
 
-    override suspend fun insertProject(boardEntity: BoardEntity) =
-            projDao.insertBoard(boardEntity)
+    override suspend fun insertBoard(boardEntity: BoardEntity) =
+        boardDao.insertBoard(boardEntity)
 
-    override suspend fun insertTodo(cardEntity: CardEntity) =
-            cardDao.insertCard(cardEntity)
+    override suspend fun insertCard(cardEntity: CardEntity) =
+        cardDao.insertCard(cardEntity)
 
     override suspend fun insertLabel(labelEntity: LabelEntity) =
-            labelDao.insertLabel(labelEntity)
+        labelDao.insertLabel(labelEntity)
 }

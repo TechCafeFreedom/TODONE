@@ -12,10 +12,8 @@ val dbModule = module {
             .build()
     }
     factory { get<LocalDataBase>().userEntityDao() }
-    factory { get<LocalDataBase>().projectEntityDao() }
-    factory { get<LocalDataBase>().todoLabelEntityDao() }
+    factory { get<LocalDataBase>().boardEntityDao() }
     factory { get<LocalDataBase>().labelEntityDao() }
-    factory { get<LocalDataBase>().projectLabelEntityDao() }
-    factory { get<LocalDataBase>().todoEntityDao() }
-    factory { get<LocalDataBase>().userProjEntityDao() }
+    factory { get<LocalDataBase>().cardEntityDao() }
+    factory { get<LocalDataBase>().kanbanEntityDao() }
 }

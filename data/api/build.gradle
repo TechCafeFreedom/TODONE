@@ -1,4 +1,3 @@
-import dependencies.Versions
 import dependencies.Dep
 
 apply plugin: 'com.android.library'
@@ -16,7 +15,8 @@ dependencies {
     implementation Dep.Moshi.moshi
     implementation Dep.Moshi.kotlin
 
-    implementation Dep.Kotlin.stdlib
-    implementation Dep.Kotlin.coroutines
+    implementation Dep.Firebase.auth
+    implementation Dep.Kotlin.playServices
+
     implementation Dep.Koin.koin
 }

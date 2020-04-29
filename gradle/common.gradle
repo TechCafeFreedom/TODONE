@@ -1,6 +1,5 @@
 import dependencies.Dep
 import dependencies.Versions
-import dependencies.Dep
 
 apply plugin: Dep.GradlePlugin.dokkaPlugin
 
@@ -42,4 +41,9 @@ allprojects {
 }
 dependencies {
     implementation Dep.Timber.timber
+    implementation Dep.Kotlin.coroutines
+    implementation Dep.Kotlin.stdlib
+    implementation Dep.AndroidX.liveDataKtx
+    implementation Dep.AndroidX.liveDataCoreKtx
+    implementation Dep.AndroidX.lifecycleLiveData
 }
