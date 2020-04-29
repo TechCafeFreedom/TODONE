@@ -6,20 +6,19 @@ import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import com.techcafe.todone.api.AddHeaderInterceptor
 import com.techcafe.todone.api.GithubService
 import com.techcafe.todone.api.TestService
+import java.util.concurrent.TimeUnit
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.core.qualifier.named
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
-import java.util.concurrent.TimeUnit
 
 private const val QUALIFIER_TEST = "QUALIFIER_TEST"
 private const val QUALIFIER_GITHUB = "QUALIFIER_GITHUB"
 
 private const val BASE_URL_TEST = "https://todone-test-production.herokuapp.com"
 private const val BASE_URL_GITHUB = "https://api.github.com/"
-
 
 val apiModule = module {
     single {

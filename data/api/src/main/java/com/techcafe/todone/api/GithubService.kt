@@ -10,5 +10,4 @@ interface GithubService {
 
     @GET("orgs/{teamName}/members")
     suspend fun getContributorsMember(@Path("teamName") teamName: String, @Query("access_token") token: String): Response<ContributorsResponse>
-
 }
