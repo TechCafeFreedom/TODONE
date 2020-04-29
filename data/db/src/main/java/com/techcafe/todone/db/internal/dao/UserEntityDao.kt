@@ -18,6 +18,15 @@ interface UserEntityDao {
     fun insertUser(vararg user: UserEntity)
 
     /**
+     * ユーザーを更新する関数
+     *
+     * @param [UserEntity] 更新したいUserEntityインスタンス
+     * @see UserEntity
+     */
+    @Update
+    fun updateUser(vararg user: UserEntity)
+
+    /**
      * 登録されているユーザーのリストを返す関数
      *
      * @see UserEntity
@@ -35,4 +44,21 @@ interface UserEntityDao {
     @Transaction
     @Query("SELECT * FROM user_item WHERE user_id = :userId LIMIT 1")
     suspend fun getUserById(userId: String): UserEntity?
+
+    /**
+     * ユーザーを全部削除する関数
+     *
+     * @see UserEntity
+     */
+    @Query("DELETE FROM user_item")
+    fun deleteAll()
+
+    /**
+     * 引数のidと一致するユーザーを削除
+     *
+     * @param [userId] 紐づいているカードを削除したいユーザーのid
+     * @see UserEntity
+     */
+    @Query("DELETE FROM user_item WHERE user_id = :userId")
+    fun deleteAllById(userId: Int)
 }
