@@ -1,50 +1,26 @@
 package com.techcafe.todone.repository.impl
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import com.google.firebase.auth.FirebaseAuth
+import androidx.lifecycle.asLiveData
+import com.techcafe.todone.api.FirebaseService
 import com.techcafe.todone.repository.AuthRepository
+import com.techcafe.todone.repository.mapper.toModel
 import java.util.*
-import kotlinx.coroutines.tasks.await
 import techcafe.todone.Results
 import techcafe.todone.User
 
-class AuthRepositoryImpl : AuthRepository {
-    private val auth = FirebaseAuth.getInstance()
+class AuthRepositoryImpl(
+    private val service: FirebaseService
+) : AuthRepository {
 
-    private val _isLogin = MutableLiveData(auth.currentUser != null)
-    override val isLogin: LiveData<Boolean> get() = _isLogin
+    override val isLogin = service.isLogin.asLiveData()
 
-    override suspend fun signUpWithMail(email: String, pass: String): Results<User> {
-        return try {
-            val authResult = auth.createUserWithEmailAndPassword(email, pass)
-                .await()
-            val authUser = authResult.user
-            val info = authResult.additionalUserInfo
-            val user = User(
-                id = UUID.randomUUID().toString(),
-                name = info.username ?: "",
-                thumbnail = authUser.photoUrl?.toString() ?: ""
-            )
-            _isLogin.value = true
-            Results.Success(user)
-        } catch (e: Throwable) {
-            Results.Failure(e)
-        }
+    override suspend fun signUpWithMail(email: String, pass: String): Results<User> = Results {
+        service.signUpWithMail(email, pass).toModel()
     }
 
     override suspend fun signInWithEmail(email: String, pass: String): Results<User> {
         return try {
-            val authResult = auth.signInWithEmailAndPassword(email, pass)
-                .await()
-            val authUser = authResult.user
-            val info = authResult.additionalUserInfo
-            val user = User(
-                id = UUID.randomUUID().toString(),
-                name = info.username,
-                thumbnail = authUser.photoUrl.toString()
-            )
-            _isLogin.value = true
+            val user = service.signUpWithMail(email, pass).toModel()
             Results.Success(user)
         } catch (e: Throwable) {
             Results.Failure(e)

@@ -12,6 +12,8 @@
     <!-- Error Message-->
     <string name="network_error">ネットワークエラーが発生しました</string>
     <string name="unknown_error">不明なエラーが発生しました</string>
+    <string name="input_title_error">タイトルを入力してください</string>
+    <string name="input_desc_error">説明を入力してください</string>
 
     <!--  For SettingsFragment  -->
     <string name="theme_label">テーマ</string>
@@ -22,4 +24,8 @@
     <string name="pref_theme_entry_dark">ダーク</string>
     <string name="pref_theme_entry_default">システムデフォルト</string>
     <string name="pref_theme_entry_battery">バッテリーセーバー起動時</string>
+
+    <!--　Input Hint Text　-->
+    <string name="input_title_hint">タイトル</string>
+    <string name="input_desc_hint">説明</string>
 </resources>
