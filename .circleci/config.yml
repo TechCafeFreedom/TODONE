@@ -1,0 +1,62 @@
+version: 2.1
+
+#orbs:
+#  codecov: codecov/codecov@1.0.3
+
+executors:
+  android:
+    working_directory: ~/TODONE
+    docker:
+      - image: circleci/android:api-29
+    environment:
+      JAVA_OPTS: "-Xmx1024m"
+      GRADLE_OPTS: '-Dorg.gradle.jvmargs="-Xmx2048m -XX:MaxPermSize=512m -XX:+HeapDumpOnOutOfMemoryError" -Dorg.gradle.daemon=false -Dorg.gradle.parallel=false -Dkotlin.incremental=false'
+      JUNIT_TEST_RESULT_DIR: test-results/junit
+      JUNIT_TEST_REPORT_DIR: test-reports/
+      KTLINT_REPORT_DIR: ktlint-repots/
+      CODE_COV_TOKEN: $CODE_COV_TOKEN
+      TZ: "Asia/Tokyo"
+
+commands:
+  restore_and_save_gradle_cache:
+    description: Restore, install, and save a cache of gradle
+    parameters:
+      version:
+        type: string
+        default: v1
+    steps:
+      - run: chmod 755 .circleci/android/create-cache-key.bash
+      - run: .circleci/android/create-cache-key.bash > ~/android.md5
+      - restore_cache:
+          keys:
+            - &key_restore_gradle_cache gradle-cache-<< parameters.version >>-{{ checksum "~/android.md5" }}
+            - gradle-cache-<< parameters.version >>-
+      - save_cache:
+          paths: ['~/.android', '~/.gradle/caches', '.gradle', '~/.m2/repository']
+          key: *key_restore_gradle_cache
+
+jobs:
+  build:
+    executor: android
+    steps:
+      - checkout
+      - restore_and_save_gradle_cache
+      - run: ./gradlew ktlintMain
+      - run: ./gradlew lintDebug
+      - run:
+          no_output_timeout: 10m
+          command: ./gradlew testDebugUnitTest --continue --no-daemon
+      #      - run: bash <(curl -s https://codecov.io/bash) jacocoDevelopmentDebugReport
+      - run: ./gradlew assembleDebug
+      - run: |
+          gem install bundler:1.17.2
+          bundle update
+          bundle install
+          bundle exec danger
+
+workflows:
+  build:
+    jobs:
+      - build
+
+
