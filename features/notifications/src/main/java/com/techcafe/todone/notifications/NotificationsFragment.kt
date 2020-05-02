@@ -1,22 +1,38 @@
 package com.techcafe.todone.notifications
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.techcafe.todone.notifications.controller.NotificationController
+import com.techcafe.todone.notifications.databinding.FragmentNotificationsBinding
+import com.techcafe.todone.notifications.model.SampleModel
 
-/**
- * A simple [Fragment] subclass.
- */
-class NotificationsFragment : Fragment() {
+class NotificationsFragment : Fragment(R.layout.fragment_notifications) {
+    lateinit var binding: FragmentNotificationsBinding
+    lateinit var controller: NotificationController
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_notifications, container, false)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding = FragmentNotificationsBinding.bind(view)
+        binding.lifecycleOwner = viewLifecycleOwner
+
+        controller = NotificationController()
+
+        binding.recyclerView.also {
+            it.setController(controller)
+        }
+
+        val sampleData = listOf<SampleModel>(
+            SampleModel(
+                title = "通知１",
+                description = "通知１だよー"
+            ),
+            SampleModel(
+                title = "通知2",
+                description = "通知2だよー"
+            )
+        )
+
+        controller.setData(sampleData)
     }
 }
