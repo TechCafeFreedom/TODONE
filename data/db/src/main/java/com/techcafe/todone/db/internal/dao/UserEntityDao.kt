@@ -44,8 +44,6 @@ interface UserEntityDao {
     @Transaction
     @Query("SELECT * FROM user_item WHERE user_id = :userId LIMIT 1")
     suspend fun getUserById(userId: String): UserEntity?
-<<<<<<< HEAD
-=======
 
     /**
      * ユーザーを全部削除する関数
@@ -63,5 +61,4 @@ interface UserEntityDao {
      */
     @Query("DELETE FROM user_item WHERE user_id = :userId")
     fun deleteAllById(userId: Int)
->>>>>>> e638e7cc2d39bdabffcfef4f05f7782bc21206d5
 }

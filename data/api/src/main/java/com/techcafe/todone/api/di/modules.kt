@@ -5,9 +5,9 @@ import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterF
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import com.techcafe.todone.api.AddHeaderInterceptor
-import com.techcafe.todone.api.GithubService
 import com.techcafe.todone.api.FirebaseService
 import com.techcafe.todone.api.FirebaseServiceImpl
+import com.techcafe.todone.api.GithubService
 import com.techcafe.todone.api.TestService
 import java.util.concurrent.TimeUnit
 import kotlinx.coroutines.ExperimentalCoroutinesApi

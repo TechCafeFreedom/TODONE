@@ -46,8 +46,6 @@ interface BoardEntityDao {
     @Transaction
     @Query("SELECT * FROM board_item WHERE board_id = :boardId LIMIT 1")
     suspend fun getBoardById(boardId: Int): BoardEntity?
-<<<<<<< HEAD
-=======
 
     /**
      * ユーザーに紐づいているボードを取得する関数
@@ -100,5 +98,4 @@ interface BoardEntityDao {
      */
     @Query("DELETE FROM board_item WHERE board_id = :boardId")
     fun deleteBoard(boardId: Int)
->>>>>>> e638e7cc2d39bdabffcfef4f05f7782bc21206d5
 }
