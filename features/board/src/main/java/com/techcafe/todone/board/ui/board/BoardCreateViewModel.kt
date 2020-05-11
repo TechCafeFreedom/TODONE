@@ -1,4 +1,4 @@
-package com.techcafe.todone.board.viewModel
+package com.techcafe.todone.board.ui.board
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

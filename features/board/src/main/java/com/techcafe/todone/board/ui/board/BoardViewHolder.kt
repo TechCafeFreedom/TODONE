@@ -1,4 +1,4 @@
-package com.techcafe.todone.board.ui
+package com.techcafe.todone.board.ui.board
 
 import androidx.recyclerview.widget.RecyclerView
 import com.techcafe.todone.board.databinding.ViewItemBinding

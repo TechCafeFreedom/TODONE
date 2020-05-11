@@ -1,12 +1,12 @@
-package com.techcafe.todone.board
+package com.techcafe.todone.board.ui.board
 
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
+import com.techcafe.todone.board.R
 import com.techcafe.todone.board.animation.ZoomOutPageTransformer
 import com.techcafe.todone.board.databinding.FragmentBoardBinding
 import com.techcafe.todone.board.model.SampleModel
-import com.techcafe.todone.board.ui.BoardAdapter
 
 class BoardFragment : Fragment(R.layout.fragment_board) {
 
