@@ -1,4 +1,4 @@
-package com.techcafe.todone.repository
+package com.example.usecase
 
 import androidx.lifecycle.LiveData
 import techcafe.todone.Label

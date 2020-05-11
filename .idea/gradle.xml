@@ -18,6 +18,7 @@
             <option value="$PROJECT_DIR$/data/api" />
             <option value="$PROJECT_DIR$/data/db" />
             <option value="$PROJECT_DIR$/data/repository" />
+            <option value="$PROJECT_DIR$/data/usecase" />
             <option value="$PROJECT_DIR$/features" />
             <option value="$PROJECT_DIR$/features/aboutapp" />
             <option value="$PROJECT_DIR$/features/auth" />

@@ -3,6 +3,9 @@ import dependencies.Dep
 
 apply from: rootProject.file('gradle/projectDependencyGraph.gradle')
 buildscript {
+    ext {
+        kotlin_version = '1.3.72'
+    }
     repositories {
         google()
         jcenter()
@@ -12,6 +15,7 @@ buildscript {
         classpath Dep.GradlePlugin.kotlin
         classpath Dep.GradlePlugin.playServices
         classpath Dep.GradlePlugin.dokka
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
 

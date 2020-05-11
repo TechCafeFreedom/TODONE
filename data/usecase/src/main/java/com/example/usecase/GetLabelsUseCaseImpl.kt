@@ -1,8 +1,9 @@
-package com.techcafe.todone.repository
+package com.example.usecase
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
+import com.techcafe.todone.repository.LabelRepository
 import techcafe.todone.Label
 import techcafe.todone.Results
 
