@@ -8,5 +8,5 @@ class ColorConverter {
     fun ConvertColor(value: Int?): LabelColor? = value?.let { LabelColor.toLabelColor(it) }
 
     @TypeConverter
-    fun ColorConvertTo(labelColor: LabelColor?): Int? = labelColor?.let {LabelColor.toLabelNumber(it)}
+    fun ColorConvertTo(labelColor: LabelColor?): Int? = labelColor?.let { LabelColor.toLabelNumber(it) }
 }

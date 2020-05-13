@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="Todone.app" target="1.8" />
+      <module name="Todone.buildSrc" target="1.8" />
+      <module name="Todone.corecomponent.androidcomponent" target="1.8" />
+      <module name="Todone.data.api" target="1.8" />
+      <module name="Todone.data.db" target="1.8" />
+      <module name="Todone.data.repository" target="1.8" />
+      <module name="Todone.features.aboutapp" target="1.8" />
+      <module name="Todone.features.auth" target="1.8" />
+      <module name="Todone.features.board" target="1.8" />
+      <module name="Todone.features.notifications" target="1.8" />
+      <module name="Todone.features.profile" target="1.8" />
+      <module name="Todone.features.settings" target="1.8" />
+      <module name="Todone.model" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
