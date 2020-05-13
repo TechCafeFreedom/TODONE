@@ -3,7 +3,7 @@ package com.techcafe.todone.db.internal
 import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import com.techcafe.todone.db.internal.converter.DateConverter
+import com.techcafe.todone.db.internal.converter.ColorConverter
 import com.techcafe.todone.db.internal.dao.*
 import com.techcafe.todone.db.internal.entity.*
 import com.techcafe.todone.db.internal.middleEntity.CardWithLabel
@@ -21,7 +21,7 @@ import com.techcafe.todone.db.internal.middleEntity.UserWithBoard
     ],
     version = 1
 )
-@TypeConverters(DateConverter::class)
+@TypeConverters(ColorConverter::class)
 abstract class LocalDataBase : RoomDatabase() {
     abstract fun userEntityDao(): UserEntityDao
     abstract fun boardEntityDao(): BoardEntityDao
