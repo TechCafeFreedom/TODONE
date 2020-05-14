@@ -1,4 +1,4 @@
-package com.techcafe.todone.board.viewModel
+package com.techcafe.todone.board.ui.board
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -10,18 +10,19 @@ class BoardCreateViewModel(
 ) : ViewModel() {
     val boardTitle = MutableLiveData("")
     val boardDesc = MutableLiveData("")
-    private val _errorTitle = MutableLiveData<String?>(null)
-    private val _errorDesc = MutableLiveData<String?>(null)
+    private val _errorTitleFlag = MutableLiveData(false)
+    private val _errorDescFlag = MutableLiveData(false)
 
-    val errorTitle: LiveData<String?>
-        get() = _errorTitle
-    val errorDesc: LiveData<String?>
-        get() = _errorDesc
+    val errorTitleFlag: LiveData<Boolean?>
+        get() = _errorTitleFlag
+    val errorDescFlag: LiveData<Boolean?>
+        get() = _errorDescFlag
 
     // TODO ココをRepository実装後処理差し替える repository.createBoard
     fun createBoard() {
-        _errorTitle.value = null
-        _errorDesc.value = null
+        _errorTitleFlag.value = false
+        _errorDescFlag.value = false
+
         // Repositoryの関数呼び出し
         if (validateInput()) {
             Timber.d("SUCCESS")
@@ -36,11 +37,11 @@ class BoardCreateViewModel(
         val desc = boardDesc.value ?: return false
 
         if (title.isEmpty()) {
-            _errorTitle.value = "タイトルを入力してください。"
+            _errorTitleFlag.value = true
             flag = false
         }
         if (desc.isEmpty()) {
-            _errorDesc.value = "説明を入力してください。"
+            _errorDescFlag.value = true
             flag = false
         }
 

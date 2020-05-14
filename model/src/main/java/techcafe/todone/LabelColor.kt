@@ -30,6 +30,7 @@ enum class LabelColor {
             11 -> YELLOW_ORANGE
             else -> YELLOW
         }
+
         fun toLabelNumber(color: LabelColor) = when (color) {
             YELLOW -> 0
             YELLOW_GREEN -> 1

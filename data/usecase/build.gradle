@@ -1,0 +1,14 @@
+import dependencies.Dep
+
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+apply from: rootProject.file('gradle/common.gradle')
+
+dependencies {
+    // TODO: repositoryはmodelをimplementation
+    implementation project(':data:repository')
+    api project(':model')
+    implementation Dep.Koin.koin
+}

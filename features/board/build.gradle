@@ -11,6 +11,7 @@ android.dataBinding.enabled = true
 
 dependencies {
     implementation project(':corecomponent:androidcomponent')
+    implementation project(':data:usecase')
 
     implementation Dep.AndroidX.appCompat
     implementation Dep.AndroidX.constraint
@@ -18,6 +19,7 @@ dependencies {
     implementation Dep.AndroidX.fragmentKtx
     implementation Dep.AndroidX.coreKtx
     implementation Dep.AndroidX.recyclerView
+    implementation Dep.liveEvent
     implementation Dep.Epoxy.epoxy
     implementation Dep.Epoxy.databindingSupport
     kapt Dep.Epoxy.processer

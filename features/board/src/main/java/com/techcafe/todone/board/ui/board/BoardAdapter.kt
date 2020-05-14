@@ -1,4 +1,4 @@
-package com.techcafe.todone.board.ui
+package com.techcafe.todone.board.ui.board
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
