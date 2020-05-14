@@ -11,11 +11,13 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 
 @ExperimentalCoroutinesApi
 val moduleList = listOf(
-    profileModule,
     apiModule,
     dbModule,
     repositoryModule,
     boardModule,
     useCaseModule,
-    authModule
+    authModule,
+    profileModule,
+    boardModule
+
 )
