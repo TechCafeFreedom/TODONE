@@ -1,4 +1,4 @@
-package com.example.usecase
+package com.techcafe.todone.usecase
 
 import androidx.lifecycle.LiveData
 import techcafe.todone.Label

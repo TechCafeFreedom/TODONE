@@ -1,6 +1,6 @@
 package com.techcafe.todone.di
 
-import com.example.usecase.di.useCaseModule
+import com.techcafe.todone.usecase.di.useCaseModule
 import com.techcafe.todone.api.di.apiModule
 import com.techcafe.todone.auth.di.authModule
 import com.techcafe.todone.board.di.boardModule
