@@ -51,18 +51,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/icon_image" />
 
-            <TextView
-                android:id="@+id/email_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:gravity="center"
-                android:text="horis@gmail.com"
-                android:textSize="28sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/user_name_text" />
-
             <Button
                 android:id="@+id/edit_button"
                 android:layout_width="wrap_content"
@@ -71,7 +59,7 @@
                 android:text="edit"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/email_text" />
+                app:layout_constraintTop_toBottomOf="@+id/user_name_text" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

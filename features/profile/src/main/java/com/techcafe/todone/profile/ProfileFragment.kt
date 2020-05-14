@@ -1,5 +1,6 @@
 package com.techcafe.todone.profile
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -24,6 +25,9 @@ class ProfileFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding = FragmentProfileBinding.bind(view)
+
+        val sharedPref = activity?.getSharedPreferences("USER", Context.MODE_PRIVATE)
+        binding.userNameText.text = sharedPref?.getString("NAME", "")
 
         binding.editButton.setOnClickListener {
             findNavController().navigate(R.id.action_profile_to_edit_profile)
