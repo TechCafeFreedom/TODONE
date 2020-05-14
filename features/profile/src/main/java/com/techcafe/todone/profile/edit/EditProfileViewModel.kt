@@ -5,4 +5,8 @@ import com.techcafe.todone.repository.TestRepository
 
 class EditProfileViewModel(
     private val repository: TestRepository
-) : ViewModel()
+) : ViewModel() {
+    fun updateUser() {
+        // TODO: JWTのTokenをヘッダーに混ぜてサーバにPOST
+    }
+}
