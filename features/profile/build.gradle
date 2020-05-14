@@ -10,8 +10,8 @@ dependencies {
     implementation project(':corecomponent:androidcomponent')
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation project(':model')
+    implementation project(':data:db')
     implementation project(':data:repository')
-
 
     implementation Dep.AndroidX.constraint
     implementation Dep.AndroidX.coreKtx

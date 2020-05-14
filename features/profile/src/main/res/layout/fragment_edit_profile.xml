@@ -62,18 +62,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/icon_image" />
 
-            <EditText
-                android:id="@+id/email_edit_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:gravity="center"
-                android:text="horis@gmail.com"
-                android:textSize="28sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/user_name_edit_text" />
-
             <Button
                 android:id="@+id/save_button"
                 android:layout_width="wrap_content"
@@ -82,7 +70,7 @@
                 android:text="保存"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/email_edit_text" />
+                app:layout_constraintTop_toBottomOf="@+id/user_name_edit_text" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </layout>

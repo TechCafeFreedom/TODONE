@@ -1,15 +1,16 @@
 package com.techcafe.todone.profile.edit
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.edit
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.techcafe.todone.profile.R
 import com.techcafe.todone.profile.databinding.FragmentEditProfileBinding
-import kotlinx.android.synthetic.main.fragment_profile.*
-import org.koin.android.ext.android.bind
+import org.koin.android.viewmodel.ext.android.viewModel
 
 class EditProfileFragment : Fragment() {
 
@@ -30,6 +31,19 @@ class EditProfileFragment : Fragment() {
 
         binding.backButton.setOnClickListener {
             findNavController().navigate(R.id.action_edit_profile_to_profile)
+        }
+
+        binding.iconImage.setOnClickListener {
+            //TODO: ローカルのファイルストレージ見に行って画像設定できるようにする
+        }
+
+        binding.saveButton.setOnClickListener {
+            val name = binding.userNameEditText.text.toString()
+            val sharedPref = activity?.getSharedPreferences("USER", Context.MODE_PRIVATE)
+            sharedPref?.edit {
+                putString("NAME", name)
+                putString("THUMBNAIL", "")
+            }
         }
     }
 }
