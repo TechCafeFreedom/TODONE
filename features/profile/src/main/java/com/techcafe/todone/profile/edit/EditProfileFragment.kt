@@ -10,7 +10,6 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.techcafe.todone.profile.R
 import com.techcafe.todone.profile.databinding.FragmentEditProfileBinding
-import org.koin.android.viewmodel.ext.android.viewModel
 
 class EditProfileFragment : Fragment() {
 
@@ -34,7 +33,7 @@ class EditProfileFragment : Fragment() {
         }
 
         binding.iconImage.setOnClickListener {
-            //TODO: ローカルのファイルストレージ見に行って画像設定できるようにする
+            // TODO: ローカルのファイルストレージ見に行って画像設定できるようにする
         }
 
         binding.saveButton.setOnClickListener {
