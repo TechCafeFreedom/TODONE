@@ -22,7 +22,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/icon_image"
+                android:id="@+id/icon_image_card_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
@@ -32,6 +32,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
+                    android:id="@+id/icon_image_view"
                     android:layout_width="140dp"
                     android:layout_height="140dp"
                     android:background="@drawable/rounded_image"
@@ -49,7 +50,7 @@
                 android:textSize="28sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/icon_image" />
+                app:layout_constraintTop_toBottomOf="@+id/icon_image_card_view" />
 
             <Button
                 android:id="@+id/edit_button"

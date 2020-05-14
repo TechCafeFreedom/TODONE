@@ -1,6 +1,7 @@
 package com.techcafe.todone.profile
 
 import android.content.Context
+import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -28,6 +29,9 @@ class ProfileFragment : Fragment() {
 
         val sharedPref = activity?.getSharedPreferences("USER", Context.MODE_PRIVATE)
         binding.userNameText.text = sharedPref?.getString("NAME", "")
+        val thumbnail = sharedPref?.getString("THUMBNAIL", "")
+        val thumbnailBitmap = BitmapFactory.decodeFile(thumbnail)
+        binding.iconImageView.setImageBitmap(thumbnailBitmap) // ここもこれでいいのか謎
 
         binding.editButton.setOnClickListener {
             findNavController().navigate(R.id.action_profile_to_edit_profile)
