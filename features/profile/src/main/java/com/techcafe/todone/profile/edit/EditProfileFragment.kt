@@ -1,11 +1,9 @@
 package com.techcafe.todone.profile.edit
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.edit
 import androidx.core.graphics.drawable.toBitmap
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -42,12 +40,7 @@ class EditProfileFragment : Fragment() {
         binding.saveButton.setOnClickListener {
             val name = binding.userNameEditText.text.toString()
             val thumbnail = binding.iconImageView.drawable.toBitmap().toString() // これどういう形式にしてサーバに投げればいいかわからん
-            val sharedPref = activity?.getSharedPreferences("USER", Context.MODE_PRIVATE)
-            viewModel.updateUser()
-            sharedPref?.edit {
-                putString("NAME", name)
-                putString("THUMBNAIL", thumbnail)
-            }
+            viewModel.updateUser(name, thumbnail)
         }
     }
 }
