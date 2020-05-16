@@ -7,12 +7,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.observe
 import androidx.navigation.fragment.findNavController
 import com.techcafe.todone.profile.databinding.FragmentProfileBinding
+import org.koin.android.viewmodel.ext.android.viewModel
 
 class ProfileFragment : Fragment() {
 
     private lateinit var binding: FragmentProfileBinding
+    private val viewModel: ProfileViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -39,6 +42,15 @@ class ProfileFragment : Fragment() {
 
         binding.backButton.setOnClickListener {
             findNavController().navigate(R.id.action_profile_to_board)
+        }
+
+        viewModel.getUserData()
+
+        viewModel.userName.observe(viewLifecycleOwner) {
+            binding.userNameText.text = it
+        }
+        viewModel.thumbnail.observe(viewLifecycleOwner) {
+            binding.iconImageView.setImageBitmap(BitmapFactory.decodeFile(it))
         }
     }
 }
