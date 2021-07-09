@@ -2,30 +2,26 @@ package dependencies
 
 object Dep {
     private object LibsVersion {
-        val Kotlin = "1.3.61"
-        val KotlinCoroutines = "1.3.3"
-        val Room = "2.2.3"
-        val Navigation = "2.2.1"
-        val Okhttp = "4.0.1"
-        val Retrofit = "2.7.2"
-        val Moshi = "1.9.2"
-        val Hyperion = "0.9.27"
+        val Kotlin = "1.5.10"
+        val KotlinCoroutines = "1.5.1"
+        val Room = "2.3.0"
+        val Navigation = "2.3.5"
+        val Okhttp = "4.9.0"
+        val Retrofit = "2.9.0"
+        val Moshi = "1.12.0"
+        val Hyperion = "0.9.31"
         val Ktlint = "0.36.0"
         val Koin = "2.0.1"
         val Epoxy = "3.9.0"
-        val Coil = "0.9.5"
-        val MockK = "1.9.3"
         val Timber = "4.7.1"
-        val Stetho = "1.5.1"
-        val DynamicFutureFragment = "2.3.0-SNAPSHOT"
-        val LiveData = "2.2.0"
-        val JitPack = "1.0.0"
+        val LiveData = "2.3.1"
+        val JitPack = "1.1.2"
         val ViewPager2 = "1.0.0"
-        val Dokka = "0.10.1"
+        val Dokka = "0.9.17"
     }
 
     object GradlePlugin {
-        val android = "com.android.tools.build:gradle:3.6.1"
+        val android = "com.android.tools.build:gradle:4.2.2"
         val kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${LibsVersion.Kotlin}"
         val safeArgs =
             "androidx.navigation:navigation-safe-args-gradle-plugin:${LibsVersion.Navigation}"
@@ -82,10 +78,6 @@ object Dep {
             val fragmentKtx =
                 "androidx.navigation:navigation-fragment-ktx:${LibsVersion.Navigation}"
             val uiKtx = "androidx.navigation:navigation-ui-ktx:${LibsVersion.Navigation}"
-            val dynamicFeaturesFragment =
-                "androidx.navigation:navigation-dynamic-features-fragment:${LibsVersion.DynamicFutureFragment}"
-            val dynamicFeaturesRuntime =
-                "androidx.navigation:navigation-dynamic-features-runtime:${LibsVersion.DynamicFutureFragment}"
         }
     }
 
@@ -93,8 +85,6 @@ object Dep {
         val stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${LibsVersion.Kotlin}"
         val coroutines =
             "org.jetbrains.kotlinx:kotlinx-coroutines-core:${LibsVersion.KotlinCoroutines}"
-        val androidCoroutinesDispatcher =
-            "org.jetbrains.kotlinx:kotlinx-coroutines-android:${LibsVersion.KotlinCoroutines}"
         val playServices = "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:${LibsVersion.KotlinCoroutines}"
     }
 
@@ -111,7 +101,6 @@ object Dep {
     object OkHttp {
         val client = "com.squareup.okhttp3:okhttp:${LibsVersion.Okhttp}"
         val loggingInterceptor = "com.squareup.okhttp3:logging-interceptor:${LibsVersion.Okhttp}"
-        val okio = "com.squareup.okio:okio:1.14.0"
     }
 
     object Retrofit {
@@ -126,15 +115,6 @@ object Dep {
     }
 
     val liveEvent = "com.github.hadilq.liveevent:liveevent:1.0.1"
-
-    object LeakCanary {
-        val LibsVersion = "2.1"
-        val leakCanary = "com.squareup.leakcanary:leakcanary-android:$LibsVersion"
-    }
-
-    object Stetho {
-        val stetho = "com.facebook.stetho:stetho:${LibsVersion.Stetho}"
-    }
 
     object Hyperion {
 
@@ -171,15 +151,6 @@ object Dep {
         val epoxy = "com.airbnb.android:epoxy:${LibsVersion.Epoxy}"
         val processer = "com.airbnb.android:epoxy-processor:${LibsVersion.Epoxy}"
         val databindingSupport = "com.airbnb.android:epoxy-databinding:${LibsVersion.Epoxy}"
-    }
-
-    object Coil {
-        val coil = "io.coil-kt:coil:${LibsVersion.Coil}"
-    }
-
-    object MockK {
-        val jvm = "io.mockk:mockk:${LibsVersion.MockK}"
-        val common = "io.mockk:mockk-common:${LibsVersion.MockK}"
     }
 
     object Timber {
