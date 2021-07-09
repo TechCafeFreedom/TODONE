@@ -1,6 +1,5 @@
 rootProject.name='Todone'
 include ':app'
-include ':buildSrc'
 include ':corecomponent:androidcomponent'
 
 
