@@ -82,7 +82,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: get commit message
         run: |
-          echo ::set-env name=commitmsg::$(git log --format=%B -n 1 ${{ github.event.after }})
+          echo "commitmsg=$(git log --format=%B -n 1 ${{ github.event.after }})" >>$GITHUB_ENV
       # 失敗したときのSlackへの通知
       - name: Slack Notification Failure
         if: failure()
