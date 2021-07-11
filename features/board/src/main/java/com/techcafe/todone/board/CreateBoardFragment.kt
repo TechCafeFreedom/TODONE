@@ -4,16 +4,18 @@ import android.app.AlertDialog
 import android.app.Dialog
 import android.os.Bundle
 import androidx.fragment.app.DialogFragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.observe
 import com.techcafe.todone.board.databinding.FragmentCreateBinding
 import com.techcafe.todone.board.viewModel.BoardCreateViewModel
-import org.koin.android.viewmodel.ext.android.viewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class CreateBoardFragment(private val lifecycleOwner: LifecycleOwner) : DialogFragment() {
     private lateinit var dialog: AlertDialog
     private lateinit var binding: FragmentCreateBinding
-    private val viewModel: BoardCreateViewModel by viewModel()
+    private val viewModel: BoardCreateViewModel by viewModels()
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val inflater = requireActivity().layoutInflater

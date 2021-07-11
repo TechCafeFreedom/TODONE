@@ -7,7 +7,9 @@ import com.techcafe.todone.board.animation.ZoomOutPageTransformer
 import com.techcafe.todone.board.databinding.FragmentBoardBinding
 import com.techcafe.todone.board.model.SampleModel
 import com.techcafe.todone.board.ui.BoardAdapter
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class BoardFragment : Fragment(R.layout.fragment_board) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
