@@ -89,14 +89,14 @@ jobs:
         uses: rtCamp/action-slack-notify@v2.0.1
         env:
           SLACK_CHANNEL: todone
-          SLACK_ICON: https://github.com/actions.png?size=48
+          SLACK_ICON: https://media-exp1.licdn.com/dms/image/C5603AQFuUfqaHw0HPA/profile-displayphoto-shrink_200_200/0/1598935909258?e=1631750400&v=beta&t=2CMct_2004N566F80Vw7j0DLWQXTYh92HOCa1ePYX3c
           SLACK_COLOR: '#ff0000'
           SLACK_TITLE: ':fire: Build Failure :fire:'
           SLACK_MESSAGE: |
             Build failure!
             See more detail to check github.
             commit -> `$commitmsg`
-          SLACK_USERNAME: Github Actions
+          SLACK_USERNAME: nana
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
       # 成功した時のSlackへの通知
       - name: Slack Notification Success
@@ -104,10 +104,10 @@ jobs:
         uses: rtCamp/action-slack-notify@v2.0.1
         env:
           SLACK_CHANNEL: todone
-          SLACK_ICON: https://github.com/actions.png?size=48
+          SLACK_ICON: https://media-exp1.licdn.com/dms/image/C5603AQFuUfqaHw0HPA/profile-displayphoto-shrink_200_200/0/1598935909258?e=1631750400&v=beta&t=2CMct_2004N566F80Vw7j0DLWQXTYh92HOCa1ePYX3c
           SLACK_TITLE: ':rocket: Build Success :rocket:'
           SLACK_MESSAGE: |
             Build success! yattane!
             commit -> `$commitmsg`
-          SLACK_USERNAME: Github Actions
+          SLACK_USERNAME: nana
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
