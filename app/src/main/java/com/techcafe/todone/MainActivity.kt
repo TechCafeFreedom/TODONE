@@ -9,7 +9,6 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI.setupWithNavController
 import com.techcafe.todone.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.activity_main.*
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -20,21 +19,21 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        setSupportActionBar(toolbar)
+        setSupportActionBar(binding.toolbar)
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         val navController = navHostFragment.navController
-        setupWithNavController(bottom_navigation_view, navController)
+        setupWithNavController(binding.bottomNavigationView, navController)
 
         val actionBarDrawerToggle = ActionBarDrawerToggle(
-            this, drawer_layout, toolbar, R.string.app_name, R.string.app_name
+            this, binding.drawerLayout, binding.toolbar, R.string.app_name, R.string.app_name
         )
-        drawer_layout.addDrawerListener(actionBarDrawerToggle)
+        binding.drawerLayout.addDrawerListener(actionBarDrawerToggle)
         actionBarDrawerToggle.syncState()
 
         binding.navView.getHeaderView(0).setOnClickListener {
             navController.navigate(R.id.profile)
-            drawer_layout.closeDrawer(nav_view)
+            binding.drawerLayout.closeDrawer(binding.navView)
         }
 
         binding.navView.setNavigationItemSelectedListener {
@@ -44,7 +43,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.drawer_menu_about_app -> navController.navigate(R.id.aboutapp)
                 R.id.drawer_menu_auth -> navController.navigate(R.id.auth)
             }
-            drawer_layout.closeDrawer(nav_view)
+            binding.drawerLayout.closeDrawer(binding.navView)
             true
         }
 
