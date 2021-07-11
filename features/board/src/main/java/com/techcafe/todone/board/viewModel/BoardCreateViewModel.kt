@@ -3,9 +3,12 @@ package com.techcafe.todone.board.viewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import dagger.hilt.android.lifecycle.HiltViewModel
 import timber.log.Timber
+import javax.inject.Inject
 
-class BoardCreateViewModel(
+@HiltViewModel
+class BoardCreateViewModel @Inject constructor(
 //    private val repository: TestRepository
 ) : ViewModel() {
     val boardTitle = MutableLiveData("")

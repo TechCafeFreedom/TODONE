@@ -11,13 +11,13 @@ object Dep {
         val Moshi = "1.12.0"
         val Hyperion = "0.9.31"
         val Ktlint = "0.36.0"
-        val Koin = "2.0.1"
         val Epoxy = "3.9.0"
         val Timber = "4.7.1"
         val LiveData = "2.3.1"
         val JitPack = "1.1.2"
         val ViewPager2 = "1.0.0"
         val Dokka = "0.9.17"
+        val Hilt = "2.37"
     }
 
     object GradlePlugin {
@@ -29,6 +29,7 @@ object Dep {
         val crashlytics = "com.google.firebase:firebase-crashlytics-gradle:2.0.0-beta01"
         val dokka = "org.jetbrains.dokka:dokka-gradle-plugin:${LibsVersion.Dokka}"
         val dokkaPlugin = "org.jetbrains.dokka"
+        val hilt = "com.google.dagger:hilt-android-gradle-plugin:${LibsVersion.Hilt}"
     }
 
     object Test {
@@ -141,12 +142,6 @@ object Dep {
         val ktlint = "com.pinterest:ktlint:${LibsVersion.Ktlint}"
     }
 
-    object Koin {
-        val koin = "org.koin:koin-android:${LibsVersion.Koin}"
-        val lifecycle = "org.koin:koin-android-scope:${LibsVersion.Koin}"
-        val viewModel = "org.koin:koin-android-viewmodel:${LibsVersion.Koin}"
-    }
-
     object Epoxy {
         val epoxy = "com.airbnb.android:epoxy:${LibsVersion.Epoxy}"
         val processer = "com.airbnb.android:epoxy-processor:${LibsVersion.Epoxy}"
@@ -155,5 +150,10 @@ object Dep {
 
     object Timber {
         val timber = "com.jakewharton.timber:timber:${LibsVersion.Timber}"
+    }
+
+    object Hilt {
+        val android = "com.google.dagger:hilt-android:${LibsVersion.Hilt}"
+        val compiler = "com.google.dagger:hilt-compiler:${LibsVersion.Hilt}"
     }
 }

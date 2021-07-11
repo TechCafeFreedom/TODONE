@@ -14,7 +14,4 @@ dependencies {
     implementation Dep.AndroidX.fragmentKtx
     implementation Dep.AndroidX.coreKtx
     implementation Dep.AndroidX.preference
-
-    implementation Dep.Koin.koin
-    implementation Dep.Koin.viewModel
 }

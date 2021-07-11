@@ -12,6 +12,7 @@ buildscript {
         classpath Dep.GradlePlugin.kotlin
         classpath Dep.GradlePlugin.playServices
         classpath Dep.GradlePlugin.dokka
+        classpath Dep.GradlePlugin.hilt
     }
 }
 

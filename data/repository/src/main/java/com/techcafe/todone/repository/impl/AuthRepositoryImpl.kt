@@ -4,11 +4,11 @@ import androidx.lifecycle.asLiveData
 import com.techcafe.todone.api.FirebaseService
 import com.techcafe.todone.repository.AuthRepository
 import com.techcafe.todone.repository.mapper.toModel
-import java.util.*
 import techcafe.todone.Results
 import techcafe.todone.User
+import javax.inject.Inject
 
-class AuthRepositoryImpl(
+class AuthRepositoryImpl @Inject constructor(
     private val service: FirebaseService
 ) : AuthRepository {
 
