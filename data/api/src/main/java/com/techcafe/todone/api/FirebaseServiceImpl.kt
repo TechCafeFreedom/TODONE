@@ -7,9 +7,10 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.callbackFlow
 import kotlinx.coroutines.tasks.await
+import javax.inject.Inject
 
 @ExperimentalCoroutinesApi
-class FirebaseServiceImpl(
+class FirebaseServiceImpl @Inject constructor(
     private val auth: FirebaseAuth
 ) : FirebaseService {
 

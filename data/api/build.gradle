@@ -6,7 +6,6 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'dagger.hilt.android.plugin'
 
-
 apply from: rootProject.file('gradle/common.gradle')
 dependencies {
     implementation Dep.Retrofit.retrofit

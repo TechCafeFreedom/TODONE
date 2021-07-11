@@ -28,6 +28,7 @@ dependencies {
     implementation Dep.AndroidX.design
     implementation Dep.Koin.koin
     implementation Dep.AndroidX.design
+    implementation Dep.Firebase.auth
 
     debugImplementation Dep.Hyperion.core
     debugImplementation Dep.Hyperion.attr

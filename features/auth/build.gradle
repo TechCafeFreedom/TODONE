@@ -4,6 +4,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'dagger.hilt.android.plugin'
 
 apply from: rootProject.file('gradle/common.gradle')
 android.buildFeatures.dataBinding = true
@@ -15,4 +16,7 @@ dependencies {
     implementation Dep.liveEvent
     implementation Dep.AndroidX.appCompat
     implementation Dep.AndroidX.constraint
+
+    implementation Dep.Hilt.android
+    kapt Dep.Hilt.compiler
 }
