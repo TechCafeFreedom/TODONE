@@ -5,15 +5,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.techcafe.todone.profile.R
 import com.techcafe.todone.profile.databinding.FragmentEditProfileBinding
-import kotlinx.android.synthetic.main.fragment_profile.*
-import org.koin.android.ext.android.bind
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class EditProfileFragment : Fragment() {
 
     private lateinit var binding: FragmentEditProfileBinding
+    private val viewModel: ProfileEditorViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -27,6 +29,8 @@ class EditProfileFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding = FragmentEditProfileBinding.bind(view)
+
+        viewModel.testMessage()
 
         binding.backButton.setOnClickListener {
             findNavController().navigate(R.id.action_edit_profile_to_profile)

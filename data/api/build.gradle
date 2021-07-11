@@ -3,6 +3,8 @@ import dependencies.Dep
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'dagger.hilt.android.plugin'
 
 
 apply from: rootProject.file('gradle/common.gradle')
@@ -19,4 +21,7 @@ dependencies {
     implementation Dep.Kotlin.playServices
 
     implementation Dep.Koin.koin
+
+    implementation Dep.Hilt.android
+    kapt Dep.Hilt.compiler
 }

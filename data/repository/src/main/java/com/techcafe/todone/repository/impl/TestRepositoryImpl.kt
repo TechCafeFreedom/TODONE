@@ -7,9 +7,10 @@ import com.techcafe.todone.db.internal.entity.LabelEntity
 import com.techcafe.todone.db.internal.entity.UserEntity
 import com.techcafe.todone.db.internal.middleEntity.CardWithLabel
 import com.techcafe.todone.repository.TestRepository
+import javax.inject.Inject
 
 // TODO: 削除
-class TestRepositoryImpl(
+class TestRepositoryImpl @Inject constructor(
     private val userDao: UserEntityDao,
     private val boardDao: BoardEntityDao,
     private val cardDao: CardEntityDao,

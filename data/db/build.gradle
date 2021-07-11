@@ -4,6 +4,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'dagger.hilt.android.plugin'
 
 apply from: rootProject.file('gradle/common.gradle')
 
@@ -13,6 +14,9 @@ dependencies {
     implementation Dep.AndroidX.Room.coroutine
     implementation Dep.AndroidX.Room.runtime
     kapt Dep.AndroidX.Room.compiler
+
+    implementation Dep.Hilt.android
+    kapt Dep.Hilt.compiler
 
     implementation Dep.Koin.koin
     android {

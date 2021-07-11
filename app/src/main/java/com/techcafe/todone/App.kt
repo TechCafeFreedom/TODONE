@@ -5,10 +5,12 @@ import android.content.Context
 import android.os.Build
 import androidx.appcompat.app.AppCompatDelegate
 import com.techcafe.todone.di.moduleList
+import dagger.hilt.android.HiltAndroidApp
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 import timber.log.Timber
 
+@HiltAndroidApp
 class App : Application() {
 
     override fun onCreate() {
