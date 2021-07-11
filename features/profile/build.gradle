@@ -22,9 +22,6 @@ dependencies {
     implementation Dep.AndroidX.design
     implementation Dep.AndroidX.fragmentKtx
     implementation Dep.AndroidX.activityKtx
-    // DI
-    implementation Dep.Koin.koin
-    implementation Dep.Koin.viewModel
 
     implementation Dep.Hilt.android
     kapt Dep.Hilt.compiler

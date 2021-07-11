@@ -12,8 +12,6 @@ dependencies {
     implementation project(':data:api')
     implementation project(':data:db')
 
-    implementation Dep.Koin.koin
-
     implementation Dep.Hilt.android
     kapt Dep.Hilt.compiler
 }

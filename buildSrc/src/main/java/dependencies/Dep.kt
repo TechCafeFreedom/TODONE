@@ -11,7 +11,6 @@ object Dep {
         val Moshi = "1.12.0"
         val Hyperion = "0.9.31"
         val Ktlint = "0.36.0"
-        val Koin = "2.0.1"
         val Epoxy = "3.9.0"
         val Timber = "4.7.1"
         val LiveData = "2.3.1"
@@ -141,12 +140,6 @@ object Dep {
 
     object Ktlint {
         val ktlint = "com.pinterest:ktlint:${LibsVersion.Ktlint}"
-    }
-
-    object Koin {
-        val koin = "org.koin:koin-android:${LibsVersion.Koin}"
-        val lifecycle = "org.koin:koin-android-scope:${LibsVersion.Koin}"
-        val viewModel = "org.koin:koin-android-viewmodel:${LibsVersion.Koin}"
     }
 
     object Epoxy {

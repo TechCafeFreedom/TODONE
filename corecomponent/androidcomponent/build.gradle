@@ -14,9 +14,6 @@ dependencies {
     api Dep.AndroidX.Navigation.runtimeKtx
     implementation Dep.AndroidX.design
 
-    api Dep.Koin.koin
-    api Dep.Koin.viewModel
-    api Dep.Koin.lifecycle
     implementation Dep.Epoxy.databindingSupport
     kapt Dep.Epoxy.processer
 }

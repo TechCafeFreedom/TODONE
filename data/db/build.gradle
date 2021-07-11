@@ -18,7 +18,6 @@ dependencies {
     implementation Dep.Hilt.android
     kapt Dep.Hilt.compiler
 
-    implementation Dep.Koin.koin
     android {
         defaultConfig {
             javaCompileOptions{
