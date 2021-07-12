@@ -4,7 +4,7 @@ include ':corecomponent:androidcomponent'
 
 
 // Feature
-include ':features:board'
+include ':features:home'
 include ':features:notifications'
 include ':features:profile'
 // Data

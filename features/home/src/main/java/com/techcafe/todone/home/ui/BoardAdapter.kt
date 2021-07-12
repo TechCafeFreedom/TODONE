@@ -1,10 +1,10 @@
-package com.techcafe.todone.board.ui
+package com.techcafe.todone.home.ui
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.techcafe.todone.board.databinding.ViewItemBinding
-import com.techcafe.todone.board.model.SampleModel
+import com.techcafe.todone.home.databinding.ViewItemBinding
+import com.techcafe.todone.home.model.SampleModel
 
 internal class BoardAdapter : RecyclerView.Adapter<BoardViewHolder>() {
     private var list: List<SampleModel> = listOf()

@@ -8,7 +8,7 @@ apply plugin: 'dagger.hilt.android.plugin'
 apply from: rootProject.file("gradle/common.gradle")
 android.buildFeatures.dataBinding = true
 dependencies {
-    implementation project(':features:board')
+    implementation project(':features:home')
     implementation project(':features:notifications')
     implementation project(':features:profile')
     implementation project(':features:settings')

@@ -1,12 +1,12 @@
-package com.techcafe.todone.board
+package com.techcafe.todone.home
 
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
-import com.techcafe.todone.board.animation.ZoomOutPageTransformer
-import com.techcafe.todone.board.databinding.FragmentBoardBinding
-import com.techcafe.todone.board.model.SampleModel
-import com.techcafe.todone.board.ui.BoardAdapter
+import com.techcafe.todone.home.animation.ZoomOutPageTransformer
+import com.techcafe.todone.home.databinding.FragmentBoardBinding
+import com.techcafe.todone.home.model.SampleModel
+import com.techcafe.todone.home.ui.BoardAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

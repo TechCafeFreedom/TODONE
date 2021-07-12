@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name" translatable="false">Todone</string>
     <string name="title_now">Now</string>
-    <string name="title_board" translatable="false">Board</string>
+    <string name="title_board" translatable="false">Home</string>
     <string name="title_sign_in">SignIn</string>
     <string name="title_Auth">Auth</string>
     <string name="title_notifications">Notifications</string>

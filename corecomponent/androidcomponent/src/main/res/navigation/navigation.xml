@@ -2,13 +2,13 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/navigation"
-    app:startDestination="@id/board">
+    app:startDestination="@id/home">
     <fragment
-        android:id="@+id/board"
-        android:name="com.techcafe.todone.board.BoardFragment"
-        android:label="Board">
+        android:id="@+id/home"
+        android:name="com.techcafe.todone.home.BoardFragment"
+        android:label="Home">
         <action
-            android:id="@+id/action_board_fragment_to_auth"
+            android:id="@+id/action_home_fragment_to_auth"
             app:destination="@id/auth" />
     </fragment>
     <fragment
@@ -27,8 +27,8 @@
             android:id="@+id/action_profile_to_edit_profile"
             app:destination="@+id/edit_profile" />
         <action
-            android:id="@+id/action_profile_to_board"
-            app:destination="@id/board" />
+            android:id="@+id/action_profile_to_home"
+            app:destination="@id/home" />
     </fragment>
     <fragment
         android:id="@+id/edit_profile"
