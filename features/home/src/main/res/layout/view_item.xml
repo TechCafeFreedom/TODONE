@@ -7,7 +7,7 @@
 
         <variable
             name="model"
-            type="com.techcafe.todone.board.model.SampleModel" />
+            type="com.techcafe.todone.home.model.SampleModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

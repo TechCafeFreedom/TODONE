@@ -30,7 +30,7 @@ class ProfileFragment : Fragment() {
         }
 
         binding.backButton.setOnClickListener {
-            findNavController().navigate(R.id.action_profile_to_board)
+            findNavController().navigate(R.id.action_profile_to_home)
         }
     }
 }

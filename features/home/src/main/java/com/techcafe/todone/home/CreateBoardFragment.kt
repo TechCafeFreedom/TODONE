@@ -1,4 +1,4 @@
-package com.techcafe.todone.board
+package com.techcafe.todone.home
 
 import android.app.AlertDialog
 import android.app.Dialog
@@ -7,8 +7,8 @@ import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.observe
-import com.techcafe.todone.board.databinding.FragmentCreateBinding
-import com.techcafe.todone.board.viewModel.BoardCreateViewModel
+import com.techcafe.todone.home.databinding.FragmentCreateBinding
+import com.techcafe.todone.home.viewModel.BoardCreateViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

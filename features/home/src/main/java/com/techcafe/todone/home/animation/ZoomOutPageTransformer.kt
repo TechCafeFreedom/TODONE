@@ -1,4 +1,4 @@
-package com.techcafe.todone.board.animation
+package com.techcafe.todone.home.animation
 
 import android.view.View
 import androidx.viewpager2.widget.ViewPager2
