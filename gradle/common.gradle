@@ -22,13 +22,11 @@ allprojects {
             }
         }
         compileOptions {
-            compileOptions {
-                sourceCompatibility = JavaVersion.VERSION_1_8
-                targetCompatibility = JavaVersion.VERSION_1_8
-            }
-            kotlinOptions {
-                jvmTarget = "1.8"
-            }
+            sourceCompatibility = JavaVersion.VERSION_1_8
+            targetCompatibility = JavaVersion.VERSION_1_8
+        }
+        kotlinOptions {
+            jvmTarget = "1.8"
         }
         lintOptions {
             abortOnError false
@@ -43,6 +41,7 @@ dependencies {
     implementation Dep.Timber.timber
     implementation Dep.Kotlin.coroutines
     implementation Dep.Kotlin.stdlib
+    implementation Dep.Kotlin.stdlibCommon
     implementation Dep.AndroidX.liveDataKtx
     implementation Dep.AndroidX.liveDataCoreKtx
     implementation Dep.AndroidX.lifecycleLiveData

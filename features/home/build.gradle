@@ -6,7 +6,16 @@ apply plugin: 'kotlin-kapt'
 apply plugin: 'dagger.hilt.android.plugin'
 
 apply from: rootProject.file('gradle/common.gradle')
-android.buildFeatures.dataBinding = true
+android {
+    buildFeatures {
+        dataBinding true
+        compose true
+    }
+    composeOptions {
+        kotlinCompilerVersion "1.5.10"
+        kotlinCompilerExtensionVersion "1.0.0-rc01"
+    }
+}
 dependencies {
     implementation project(':corecomponent:androidcomponent')
 
@@ -22,4 +31,9 @@ dependencies {
 
     implementation Dep.Hilt.android
     kapt Dep.Hilt.compiler
+
+    implementation Dep.AndroidX.Compose.ui
+    implementation Dep.AndroidX.Compose.foundation
+    implementation Dep.AndroidX.Compose.material
+    implementation Dep.AndroidX.Compose.runtime
 }
