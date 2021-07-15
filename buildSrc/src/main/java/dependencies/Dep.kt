@@ -18,6 +18,7 @@ object Dep {
         val ViewPager2 = "1.0.0"
         val Dokka = "0.9.17"
         val Hilt = "2.37"
+        val Compose = "1.0.0-rc01"
     }
 
     object GradlePlugin {
@@ -50,16 +51,14 @@ object Dep {
     }
 
     object AndroidX {
-        val appCompat = "androidx.appcompat:appcompat:1.1.0"
-        val recyclerView = "androidx.recyclerview:recyclerview:1.1.0"
-        val swipeRefresh = "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
-        val constraint = "androidx.constraintlayout:constraintlayout:2.0.0-beta4"
-        val emoji = "androidx.emoji:emoji-appcompat:1.0.0"
-        val design = "com.google.android.material:material:1.2.0-alpha05"
-        val coreKtx = "androidx.core:core-ktx:1.2.0-rc01"
-        val preference = "androidx.preference:preference:1.1.0"
-        val activityKtx = "androidx.activity:activity-ktx:1.1.0"
-        val fragmentKtx = "androidx.fragment:fragment-ktx:1.2.2"
+        val appCompat = "androidx.appcompat:appcompat:1.3.0"
+        val recyclerView = "androidx.recyclerview:recyclerview:1.2.1"
+        val constraint = "androidx.constraintlayout:constraintlayout:2.0.4"
+        val design = "com.google.android.material:material:1.4.0"
+        val coreKtx = "androidx.core:core-ktx:1.6.0"
+        val preference = "androidx.preference:preference:1.1.1"
+        val activityKtx = "androidx.activity:activity-ktx:1.2.3"
+        val fragmentKtx = "androidx.fragment:fragment-ktx:1.3.5"
 
         val lifecycleLiveData = "androidx.lifecycle:lifecycle-livedata:${LibsVersion.LiveData}"
         val liveDataCoreKtx =
@@ -80,10 +79,18 @@ object Dep {
                 "androidx.navigation:navigation-fragment-ktx:${LibsVersion.Navigation}"
             val uiKtx = "androidx.navigation:navigation-ui-ktx:${LibsVersion.Navigation}"
         }
+
+        object Compose {
+            val ui = "androidx.compose.ui:ui:${LibsVersion.Compose}"
+            val foundation = "androidx.compose.foundation:foundation:${LibsVersion.Compose}"
+            val material = "androidx.compose.material:material:${LibsVersion.Compose}"
+            val runtime = "androidx.compose.runtime:runtime:${LibsVersion.Compose}"
+        }
     }
 
     object Kotlin {
         val stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${LibsVersion.Kotlin}"
+        val stdlibCommon = "org.jetbrains.kotlin:kotlin-stdlib-common:${LibsVersion.Kotlin}"
         val coroutines =
             "org.jetbrains.kotlinx:kotlinx-coroutines-core:${LibsVersion.KotlinCoroutines}"
         val playServices = "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:${LibsVersion.KotlinCoroutines}"
