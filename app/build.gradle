@@ -62,6 +62,10 @@ dependencies {
     implementation Dep.AndroidX.Navigation.runtimeKtx
     implementation Dep.AndroidX.Navigation.fragmentKtx
     implementation Dep.AndroidX.Navigation.uiKtx
+    implementation Dep.AndroidX.Room.runtime
+
+    implementation Dep.Retrofit.retrofit
+    implementation Dep.Moshi.moshi
 
     implementation Dep.Hilt.android
     kapt Dep.Hilt.compiler
