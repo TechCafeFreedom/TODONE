@@ -19,6 +19,7 @@ object Dep {
         val Dokka = "0.9.17"
         val Hilt = "2.37"
         val Compose = "1.0.0-rc01"
+        val Takahirom = "0.5.0"
     }
 
     object GradlePlugin {
@@ -162,5 +163,9 @@ object Dep {
     object Hilt {
         val android = "com.google.dagger:hilt-android:${LibsVersion.Hilt}"
         val compiler = "com.google.dagger:hilt-compiler:${LibsVersion.Hilt}"
+    }
+
+    object Takahirom {
+        val hyperionSimpleItem = "com.github.takahirom:Hyperion-Simple-Item:${LibsVersion.Takahirom}"
     }
 }
