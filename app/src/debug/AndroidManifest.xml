@@ -5,6 +5,7 @@
 
     <application
         android:name=".DebugApp"
+        android:allowBackup="true"
         tools:replace="android:name" />
 
 </manifest>
