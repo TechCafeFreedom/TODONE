@@ -12,7 +12,7 @@ data class HyperionDebugItem(
     val onItemClicked: () -> Unit
 ) {
     companion object {
-        fun init(context: Context): List<HyperionDebugItem> {
+        fun createItems(context: Context): List<HyperionDebugItem> {
             return listOf(
                 HyperionDebugItem(
                     title = "Zoo's Playground",

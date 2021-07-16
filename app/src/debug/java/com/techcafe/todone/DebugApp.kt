@@ -6,7 +6,7 @@ import com.github.takahirom.hyperion.plugin.simpleitem.SimpleItemHyperionPlugin
 class DebugApp : App() {
     override fun onCreate() {
         super.onCreate()
-        HyperionDebugItem.init(this).forEach { item ->
+        HyperionDebugItem.createItems(this).forEach { item ->
             val simpleItem = SimpleItem.Builder()
                 .title(item.title)
                 .text(item.description)
