@@ -60,6 +60,7 @@ object Dep {
         val preference = "androidx.preference:preference:1.1.1"
         val activityKtx = "androidx.activity:activity-ktx:1.2.3"
         val fragmentKtx = "androidx.fragment:fragment-ktx:1.3.5"
+        // val activityCompose = "androidx.activity:activity-compose:1.3.0-alpha01"
 
         val lifecycleLiveData = "androidx.lifecycle:lifecycle-livedata:${LibsVersion.LiveData}"
         val liveDataCoreKtx =
@@ -83,6 +84,7 @@ object Dep {
 
         object Compose {
             val ui = "androidx.compose.ui:ui:${LibsVersion.Compose}"
+            // val tools = "androidx.compose.ui:tools:${LibsVersion.Compose}"
             val foundation = "androidx.compose.foundation:foundation:${LibsVersion.Compose}"
             val material = "androidx.compose.material:material:${LibsVersion.Compose}"
             val runtime = "androidx.compose.runtime:runtime:${LibsVersion.Compose}"

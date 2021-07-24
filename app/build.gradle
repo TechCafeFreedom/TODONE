@@ -15,6 +15,21 @@ android {
         kotlinCompilerVersion "1.5.10"
         kotlinCompilerExtensionVersion "1.0.0-rc01"
     }
+/*
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+*/
+    kotlinOptions {
+        jvmTarget = '1.8'
+        useIR = true
+    }
+    defaultConfig {
+        vectorDrawables {
+            useSupportLibrary true
+        }
+    }
 }
 
 dependencies {
@@ -37,6 +52,7 @@ dependencies {
     implementation Dep.AndroidX.constraint
     implementation Dep.AndroidX.design
     implementation Dep.AndroidX.design
+    // implementation Dep.AndroidX.activityCompose
     implementation Dep.Firebase.auth
 
     debugImplementation Dep.Hyperion.core
@@ -73,6 +89,12 @@ dependencies {
 
     implementation Dep.Firebase.analytics
 
+/*
+    implementation Dep.AndroidX.Compose.ui
+    // implementation Dep.AndroidX.Compose.tools
+    implementation Dep.AndroidX.Compose.foundation
+    implementation Dep.AndroidX.Compose.material
+*/
     implementation Dep.AndroidX.Compose.runtime
 }
 
