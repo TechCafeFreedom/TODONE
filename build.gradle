@@ -4,6 +4,9 @@ import dependencies.Dep
 
 apply from: rootProject.file('gradle/projectDependencyGraph.gradle')
 buildscript {
+    ext {
+        compose_version = '1.0.0-rc01'
+    }
     repositories {
         google()
         jcenter()
@@ -15,6 +18,7 @@ buildscript {
         classpath Dep.GradlePlugin.playServices
         classpath Dep.GradlePlugin.dokka
         classpath Dep.GradlePlugin.hilt
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.32'
     }
 }
 

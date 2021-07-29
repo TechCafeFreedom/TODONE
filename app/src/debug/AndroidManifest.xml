@@ -6,6 +6,11 @@
     <application
         android:name=".DebugApp"
         android:allowBackup="true"
-        tools:replace="android:name" />
-
+        tools:replace="android:name">
+        <activity
+            android:name=".ZooMainActivity"
+            android:exported="true"
+            android:label="@string/title_activity_zoo_main"
+            android:theme="@style/Theme.Todone.DayNight.NoActionBar" />
+    </application>
 </manifest>
