@@ -64,6 +64,7 @@ dependencies {
     implementation Dep.AndroidX.Navigation.fragmentKtx
     implementation Dep.AndroidX.Navigation.uiKtx
     implementation Dep.AndroidX.Room.runtime
+    implementation Dep.AndroidX.compose
 
     implementation Dep.Retrofit.retrofit
     implementation Dep.Moshi.moshi
@@ -74,6 +75,9 @@ dependencies {
     implementation Dep.Firebase.analytics
 
     implementation Dep.AndroidX.Compose.runtime
+    implementation Dep.AndroidX.Compose.ui
+    implementation Dep.AndroidX.Compose.foundation
+    implementation Dep.AndroidX.Compose.material
 }
 
 apply plugin: 'com.google.gms.google-services'
