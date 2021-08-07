@@ -1,5 +1,7 @@
 package com.techcafe.todone
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -12,6 +14,14 @@ import com.techcafe.todone.ui.theme.TodoneTheme
 // import androidx.compose.ui.tooling.preview.Preview
 
 class ZooMainActivity : ComponentActivity() {
+
+    companion object {
+        fun createIntent(context: Context) {
+            val intent = Intent(context, ZooMainActivity::class.java)
+            context.startActivity(intent)
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {

@@ -6,12 +6,12 @@ import com.github.takahirom.hyperion.plugin.simpleitem.SimpleItemHyperionPlugin
 class DebugApp : App() {
     override fun onCreate() {
         super.onCreate()
-        HyperionDebugItem.createItems(this).forEach { item ->
+        HyperionDebugItem.createItems().forEach { item ->
             val simpleItem = SimpleItem.Builder()
                 .title(item.title)
                 .text(item.description)
                 .image(item.imageRes)
-                .clickListener { item.onItemClicked() }
+                .clickListener { item.onItemClicked(it.context) }
                 .build()
             SimpleItemHyperionPlugin.addItem(simpleItem)
         }
