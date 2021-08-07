@@ -17,7 +17,8 @@ data class HyperionDebugItem(
                     title = "Zoo's Playground",
                     description = "俺が最強だ",
                 ) {
-                    ZooMainActivity.createIntent(it)
+                    val intent = ZooMainActivity.createIntent(it)
+                    it.startActivity(intent)
                 }
             )
         }
