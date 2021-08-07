@@ -4,9 +4,6 @@ import dependencies.Dep
 
 apply from: rootProject.file('gradle/projectDependencyGraph.gradle')
 buildscript {
-    ext {
-        compose_version = '1.0.0-rc01'
-    }
     repositories {
         google()
         jcenter()
