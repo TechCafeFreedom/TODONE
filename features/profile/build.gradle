@@ -24,4 +24,11 @@ dependencies {
 
     implementation Dep.Hilt.android
     kapt Dep.Hilt.compiler
+
+    testImplementation Dep.Test.junit
+    androidTestImplementation Dep.Test.fragmentTesting
+    androidTestImplementation Dep.Test.testCoreKtx
+    androidTestImplementation Dep.Test.testRunner
+    androidTestImplementation Dep.Test.testRules
+    androidTestImplementation Dep.Test.androidJunit4Ktx
 }
