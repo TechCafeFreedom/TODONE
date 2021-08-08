@@ -18,7 +18,7 @@ object Dep {
         const val ViewPager2 = "1.0.0"
         const val Dokka = "0.9.17"
         const val Hilt = "2.37"
-        const val Compose = "1.0.0-rc01"
+        const val Compose = "1.0.1"
         const val Takahirom = "0.5.0"
     }
 
