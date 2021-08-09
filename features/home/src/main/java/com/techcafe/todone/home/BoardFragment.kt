@@ -1,54 +1,97 @@
 package com.techcafe.todone.home
 
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
+import android.widget.Toast
+import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.Card
+import androidx.compose.material.Icon
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.ComposeView
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.unit.dp
 import androidx.fragment.app.Fragment
-import com.techcafe.todone.home.animation.ZoomOutPageTransformer
-import com.techcafe.todone.home.databinding.FragmentBoardBinding
 import com.techcafe.todone.home.model.SampleModel
-import com.techcafe.todone.home.ui.BoardAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class BoardFragment : Fragment(R.layout.fragment_board) {
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        val binding = FragmentBoardBinding.bind(view)
-
-        val adapter = BoardAdapter()
-
-        val sampleItem = listOf(
-            SampleModel(
-                title = "Hogeeeee",
-                description = "最初のBoardだよ"
-            ),
-            SampleModel(
-                title = "Fugaaaaa",
-                description = "2つ目のBoardだよ"
-            ),
-            SampleModel(
-                title = "Piyooooo",
-                description = "3つ目のBoardだよ"
-            ),
-            SampleModel(
-                title = "Hogeraaaaa",
-                description = "最後ののBoardだよ"
-            )
-        )
-
-        binding.viewpager.offscreenPageLimit = 2
-        binding.viewpager.setPageTransformer(ZoomOutPageTransformer())
-
-        binding.viewpager.apply {
-            this.adapter = adapter
-            adapter.setItem(sampleItem)
+class BoardFragment : Fragment() {
+    private val sampleTodos = buildList {
+        for (i in 0..20) {
+            add(SampleModel(title = "TODO$i", description = "TODO$i の説明"))
         }
+    }
 
-        binding.fab.setOnClickListener {
-            val dialog = CreateBoardFragment(this)
-            dialog.show(childFragmentManager, "CreateBoardFragment")
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+        return ComposeView(requireContext()).apply {
+            setContent {
+                MaterialTheme {
+                    LazyColumn {
+                        items(sampleTodos) {
+                            Spacer(modifier = Modifier.height(16.dp))
+                            Box(modifier = Modifier.padding(horizontal = 16.dp)) {
+                                TodoListItem(sampleTodo = it)
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
+
+@Composable
+private fun TodoListItem(sampleTodo: SampleModel) {
+    val context = LocalContext.current
+
+    Card(
+        modifier = Modifier
+            .fillMaxWidth(),
+    ) {
+        Row(
+            modifier = Modifier
+                .clickable {
+                    Toast
+                        .makeText(context, sampleTodo.title, Toast.LENGTH_SHORT)
+                        .show()
+                }
+                .background(color = Color.LightGray)
+                .padding(horizontal = 16.dp, vertical = 8.dp),
+        ) {
+            Box(
+                modifier = Modifier
+                    .clip(shape = RoundedCornerShape(4.dp))
+                    .background(color = Color.Gray)
+                    .padding(8.dp)
+            ) {
+                Icon(painter = painterResource(R.drawable.ic_dashboard), contentDescription = null)
+            }
+            Spacer(modifier = Modifier.width(16.dp))
+            Column {
+                Text(sampleTodo.title)
+                Text(sampleTodo.description)
+            }
+        }
+    }
+}
+
