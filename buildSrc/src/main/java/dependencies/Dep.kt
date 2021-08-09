@@ -20,6 +20,7 @@ object Dep {
         const val Hilt = "2.37"
         const val Compose = "1.0.1"
         const val Takahirom = "0.5.0"
+        const val Activity = "1.3.1"
     }
 
     object GradlePlugin {
@@ -59,7 +60,7 @@ object Dep {
         const val coreKtx = "androidx.core:core-ktx:1.6.0"
         const val preference = "androidx.preference:preference:1.1.1"
         const val activityKtx = "androidx.activity:activity-ktx:1.2.3"
-        const val compose = "androidx.activity:activity-compose:1.3.0-alpha06"
+        const val activityCompose = "androidx.activity:activity-compose:${LibsVersion.Activity}"
         const val fragmentKtx = "androidx.fragment:fragment-ktx:1.3.5"
 
         const val lifecycleLiveData = "androidx.lifecycle:lifecycle-livedata:${LibsVersion.LiveData}"
